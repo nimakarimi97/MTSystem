@@ -3,7 +3,7 @@
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
-  title: 'Vitesse',
+  title: 'Fx Trading',
   meta: [
     { name: 'description', content: 'Opinionated Vite Starter Template' },
     {
@@ -22,5 +22,11 @@ useHead({
 </script>
 
 <template>
-  <RouterView />
+  <main
+    px-4 py-10
+    text="center gray-700 dark:gray-200"
+  >
+    <RouterView />
+    <TheFooter />
+  </main>
 </template>
