@@ -1,3 +1,15 @@
+nav:
+  home: Home
+  who: Chi siamo
+  fx: Myfxbook
+  profit: Profito
+  estimates: Estimato
+  reviews: Recensioni
+  price: Prezzi
+  vps: VPS
+  faq: FAQ
+  work: Lavora con noi
+  contact: Contatti
 button:
   about: Su di me
   back: Indietro
