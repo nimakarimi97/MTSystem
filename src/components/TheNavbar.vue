@@ -1,72 +1,85 @@
-
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
+
+const { navbarHeight, scrollTo = () => {} } = defineProps({ navbarHeight: Number, scrollTo: Function })
 
 const { t, locale } = useI18n()
 
 async function toggleLocales() {
-  // change to some real logic
   const locales = availableLocales
   const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length]
   await loadLanguageAsync(newLocale)
   locale.value = newLocale
 }
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY
+  const navbar = document.querySelector('.navbar')
+
+  if (scrollPosition > 0) 
+    navbar?.classList.add('scrolled', 'bg-gray-2', 'dark:bg-black')
+  else 
+    navbar?.classList.remove('scrolled', 'bg-gray-2', 'dark:bg-black')
+  
+})
 </script>
 
 <template>
-  <nav flex="~ gap-4" items-center justify-center text-xl>
+  <nav 
+    class="navbar" 
+    :style="{ maxHeight: `${navbarHeight}px` }"
+    flex="~ gap-4" items-center justify-center text-xl opacity-90 dark:bg-neutral-900
+  >
     <div class="navbar-brand">
-      <RouterLink to="/">
+      <button icon-btn :title="t('button.home')" @click="$route.path !== '/' ? $router.push('/') : scrollTo('home')">
         <img src="/logo-without-background-cropped.png" alt="Logo">
-      </RouterLink> 
+      </button>
     </div>
 
     <div class="navbar-items">
-      <RouterLink icon-btn to="/" :title="t('button.home')">
+      <button icon-btn :title="t('button.home')" @click="$route.path !== '/' ? $router.push('/') : scrollTo('home')">
         {{ t('nav.home') }}
-      </RouterLink>
+      </button>
   
-      <RouterLink icon-btn to="/who" :title="t('nav.who')" data-test-id="who">
+      <button icon-btn :title="t('nav.who')" @click="scrollTo('who')">
         {{ t('nav.who') }}
-      </RouterLink>
+      </button>
   
-  
-      <RouterLink icon-btn to="/fx" :title="t('nav.fx')" data-test-id="fx">
+      <button icon-btn to="/fx" :title="t('nav.fx')">
         {{ t('nav.fx') }}
-      </RouterLink>
+      </button>
   
-      <RouterLink icon-btn to="/profit" :title="t('nav.profit')" data-test-id="profit">
+      <button icon-btn :title="t('nav.profit')" @click="scrollTo('profit')">
         {{ t('nav.profit') }}
-      </RouterLink>
+      </button>
   
-      <RouterLink icon-btn to="/estimates" :title="t('nav.estimates')" data-test-id="estimates">
+      <button icon-btn :title="t('nav.estimates')" @click="scrollTo('estimate')">
         {{ t('nav.estimates') }}
-      </RouterLink>
+      </button>
   
-      <RouterLink icon-btn to="/reviews" :title="t('nav.reviews')" data-test-id="reviews">
+      <button icon-btn :title="t('nav.reviews')" @click="scrollTo('reviews')">
         {{ t('nav.reviews') }}
-      </RouterLink>
+      </button>
   
-      <RouterLink icon-btn to="/price" :title="t('nav.price')" data-test-id="price">
+      <button icon-btn :title="t('nav.price')" @click="scrollTo('price')">
         {{ t('nav.price') }}
-      </RouterLink>
+      </button>
   
-      <RouterLink icon-btn to="/vps" :title="t('nav.vps')" data-test-id="vps">
+      <button icon-btn :title="t('nav.vps')" @click="scrollTo('vps')">
         {{ t('nav.vps') }}
-      </RouterLink>
+      </button>
         
-      <RouterLink icon-btn to="/faq" :title="t('nav.faq')" data-test-id="faq">
+      <button icon-btn :title="t('nav.faq')" @click="scrollTo('faq')">
         {{ t('nav.faq') }}
-      </RouterLink>
+      </button>
         
-      <RouterLink icon-btn to="/work" :title="t('nav.work')" data-test-id="work">
+      <button icon-btn :title="t('nav.work')" @click="scrollTo('work')">
         {{ t('nav.work') }}
-      </RouterLink>
+      </button>
         
-      <RouterLink icon-btn to="/contact" :title="t('nav.contact')" data-test-id="contact">
+      <button icon-btn @click="scrollTo('contact')">
         {{ t('nav.contact') }}
-      </RouterLink>
+      </button>
     </div>
     
     <div>
@@ -81,14 +94,23 @@ async function toggleLocales() {
   </nav>
 </template>
   
-  <style scoped>
-  .navbar {
-    display: flex;
+<style scoped>
+  nav.navbar {
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.4rem 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
   }
-  
+  .navbar.scrolled {
+    padding: 0.2rem 1rem;
+    transition: all 0.5s ease-in-out;
+  }
+
   .navbar-brand {
     display: flex;
     align-items: center;

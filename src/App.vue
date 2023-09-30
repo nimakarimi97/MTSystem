@@ -15,18 +15,27 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: () => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg',
+      href: () => preferredDark.value ? '/logo-without-background-cropped' : '/logo-without-background-logo-without-background-cropped',
     },
   ],
 })
+
+const navbarHeight = 100 // Height of the navbar in pixels
+
+function scrollTo(section: any) {
+  const element = document.getElementById(section)
+  if (element) {
+    const offset = element.offsetTop - navbarHeight
+    window.scrollTo({ top: offset, behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
   <main
-    px-4 py-10
     text="center gray-700 dark:gray-200"
   >
-    <TheNavbar />
+    <TheNavbar :scroll-to="scrollTo" :navbar-height="navbarHeight" />
     <RouterView />
     <TheFooter />
   </main>
