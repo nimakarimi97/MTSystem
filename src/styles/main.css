@@ -3,6 +3,7 @@
 :root {
   --dark-bg-color: rgb(23, 23, 23); /* dark:bg-neutral-900 */
 }
+
 html,
 body,
 #app {

@@ -22,20 +22,25 @@ useHead({
 
 const navbarHeight = 100 // Height of the navbar in pixels
 
-function scrollTo(section: any) {
+function scrollToComponent(section: any) {
   const element = document.getElementById(section)
   if (element) {
     const offset = element.offsetTop - navbarHeight
     window.scrollTo({ top: offset, behavior: 'smooth' })
   }
 }
+
+onMounted(() => {
+  if (window.location.hash) {
+    const section = window.location.hash.substring(1)
+    scrollToComponent(section)
+  }
+})
 </script>
 
 <template>
-  <main
-    text="center gray-700 dark:gray-200"
-  >
-    <TheNavbar :scroll-to="scrollTo" :navbar-height="navbarHeight" />
+  <main text="center gray-700 dark:gray-200">
+    <TheNavbar :scroll-to-component="scrollToComponent" :navbar-height="navbarHeight" />
     <RouterView />
     <TheFooter />
   </main>

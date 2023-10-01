@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
 
-const { navbarHeight, scrollTo = () => { } } = defineProps({ navbarHeight: Number, scrollTo: Function })
+const { navbarHeight, scrollToComponent = () => { } } = defineProps({ navbarHeight: Number, scrollToComponent: Function })
 
 const { t, locale } = useI18n()
 
@@ -20,7 +20,6 @@ window.addEventListener('scroll', () => {
     navbar?.classList.add('scrolled', 'bg-gray-2', 'dark:bg-black')
   else
     navbar?.classList.remove('scrolled', 'bg-gray-2', 'dark:bg-black')
-
 })
 </script>
 
@@ -30,55 +29,58 @@ window.addEventListener('scroll', () => {
     opacity-90 dark:bg-neutral-900
   >
     <div class="navbar-brand">
-      <button icon-btn :title="t('button.home')" @click="$route.path !== '/' ? $router.push('/') : scrollTo('home')">
+      <button
+        icon-btn :title="t('button.home')"
+        @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home')"
+      >
         <img src="/logo-without-background-cropped.png" alt="Logo">
       </button>
     </div>
 
     <div class="navbar-items">
-      <button icon-btn :title="t('button.home')" @click="$route.path !== '/' ? $router.push('/') : scrollTo('home')">
+      <router-link to="/" icon-btn :title="t('button.home')" @click="scrollToComponent('home')">
         {{ t('nav.home') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.who')" @click="scrollTo('who')">
+      <router-link to="/#who" icon-btn :title="t('nav.who')" @click="scrollToComponent('who')">
         {{ t('nav.who') }}
-      </button>
+      </router-link>
 
-      <button icon-btn to="/fx" :title="t('nav.fx')">
+      <router-link to="/#fx" icon-btn :title="t('nav.fx')">
         {{ t('nav.fx') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.profit')" @click="scrollTo('profit')">
+      <router-link to="/#profit" icon-btn :title="t('nav.profit')" @click="scrollToComponent('profit')">
         {{ t('nav.profit') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.estimates')" @click="scrollTo('estimate')">
+      <router-link to="/#estimate" icon-btn :title="t('nav.estimates')" @click="scrollToComponent('estimate')">
         {{ t('nav.estimates') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.reviews')" @click="scrollTo('reviews')">
+      <router-link to="/#reviews" icon-btn :title="t('nav.reviews')" @click="scrollToComponent('reviews')">
         {{ t('nav.reviews') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.price')" @click="scrollTo('price')">
+      <router-link to="/#price" icon-btn :title="t('nav.price')" @click="scrollToComponent('price')">
         {{ t('nav.price') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.vps')" @click="scrollTo('vps')">
+      <router-link to="/#vps" icon-btn :title="t('nav.vps')" @click="scrollToComponent('vps')">
         {{ t('nav.vps') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.faq')" @click="scrollTo('faq')">
+      <router-link to="/#faq" icon-btn :title="t('nav.faq')" @click="scrollToComponent('faq')">
         {{ t('nav.faq') }}
-      </button>
+      </router-link>
 
-      <button icon-btn :title="t('nav.work')" @click="scrollTo('work')">
+      <router-link to="/#work" icon-btn :title="t('nav.work')" @click="scrollToComponent('work')">
         {{ t('nav.work') }}
-      </button>
+      </router-link>
 
-      <button icon-btn @click="scrollTo('contact')">
+      <router-link to="/#contact" icon-btn @click="scrollToComponent('contact')">
         {{ t('nav.contact') }}
-      </button>
+      </router-link>
     </div>
 
     <div>
@@ -136,3 +138,4 @@ nav.navbar {
   }
 }
 </style>
+
