@@ -12,6 +12,20 @@ async function toggleLocales() {
   locale.value = newLocale
 }
 
+const routes = [
+  { to: 'home', title: t('button.home') },
+  { to: 'who', title: t('nav.who') },
+  { to: 'fx', title: t('nav.fx') },
+  { to: 'profit', title: t('nav.profit') },
+  { to: 'estimate', title: t('nav.estimates') },
+  { to: 'reviews', title: t('nav.reviews') },
+  { to: 'price', title: t('nav.price') },
+  { to: 'vps', title: t('nav.vps') },
+  { to: 'faq', title: t('nav.faq') },
+  { to: 'work', title: t('nav.work') },
+  { to: 'contact', title: t('nav.contact') },
+]
+
 window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY
   const navbar = document.querySelector('.navbar')
@@ -38,49 +52,10 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="navbar-items">
-      <router-link to="/" icon-btn :title="t('button.home')" @click="scrollToComponent('home')">
-        {{ t('nav.home') }}
-      </router-link>
-
-      <router-link to="/#who" icon-btn :title="t('nav.who')" @click="scrollToComponent('who')">
-        {{ t('nav.who') }}
-      </router-link>
-
-      <router-link to="/#fx" icon-btn :title="t('nav.fx')">
-        {{ t('nav.fx') }}
-      </router-link>
-
-      <router-link to="/#profit" icon-btn :title="t('nav.profit')" @click="scrollToComponent('profit')">
-        {{ t('nav.profit') }}
-      </router-link>
-
-      <router-link to="/#estimate" icon-btn :title="t('nav.estimates')" @click="scrollToComponent('estimate')">
-        {{ t('nav.estimates') }}
-      </router-link>
-
-      <router-link to="/#reviews" icon-btn :title="t('nav.reviews')" @click="scrollToComponent('reviews')">
-        {{ t('nav.reviews') }}
-      </router-link>
-
-      <router-link to="/#price" icon-btn :title="t('nav.price')" @click="scrollToComponent('price')">
-        {{ t('nav.price') }}
-      </router-link>
-
-      <router-link to="/#vps" icon-btn :title="t('nav.vps')" @click="scrollToComponent('vps')">
-        {{ t('nav.vps') }}
-      </router-link>
-
-      <router-link to="/#faq" icon-btn :title="t('nav.faq')" @click="scrollToComponent('faq')">
-        {{ t('nav.faq') }}
-      </router-link>
-
-      <router-link to="/#work" icon-btn :title="t('nav.work')" @click="scrollToComponent('work')">
-        {{ t('nav.work') }}
-      </router-link>
-
-      <router-link to="/#contact" icon-btn @click="scrollToComponent('contact')">
-        {{ t('nav.contact') }}
-      </router-link>
+      <TheNavbarLink
+        v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="route.title"
+        :scroll-to-component="scrollToComponent"
+      />
     </div>
 
     <div>
@@ -99,17 +74,17 @@ window.addEventListener('scroll', () => {
 nav.navbar {
   justify-content: center;
   align-items: center;
-  padding: 1.4rem 1rem;
+  padding: 1rem;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
-.navbar.scrolled {
-  padding: 0.2rem 1rem;
+nav.navbar.scrolled {
+  padding: .2rem 1rem .1rem;
   transition: all 0.5s ease-in-out;
 }
 
