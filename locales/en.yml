@@ -17,10 +17,13 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
+  send: Send
 intro:
   desc: Opinionated Vite Starter Template
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
+form:
+  name: Your Name
+  email: Your Email
+  message: Your Message
 not-found: Not found
