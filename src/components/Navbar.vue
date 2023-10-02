@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
     </div>
 
     <div class="navbar-items">
-      <TheNavbarLink
+      <NavbarLink
         v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="route.title"
         :scroll-to-component="scrollToComponent"
       />

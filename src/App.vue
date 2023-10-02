@@ -40,8 +40,8 @@ onMounted(() => {
 
 <template>
   <main text="center gray-700 dark:gray-200">
-    <TheNavbar :scroll-to-component="scrollToComponent" :navbar-height="navbarHeight" />
+    <Navbar :scroll-to-component="scrollToComponent" :navbar-height="navbarHeight" />
     <RouterView />
-    <TheFooter />
+    <Footer />
   </main>
 </template>
