@@ -15,9 +15,19 @@ const formData = ref<FormData>({
 const formError: Ref<string> = ref('')
 
 function submitForm(e: Event) {
+  const { name, email, message } = formData.value
+
+  if (!name || !email || message.length < 1)
+    return formError.value = 'Please, complete the inputs'
+
   try {
-    // console.log(formData.value);
     formError.value = ''
+    // console.log(formData.value);
+
+    alert('Form submitted successfully!')
+
+    //to do, reset form after submission 
+
   }
   catch (error: any) {
     formError.value = error.message
@@ -27,12 +37,9 @@ function submitForm(e: Event) {
 
 <template>
   <form @submit.prevent="submitForm">
-    <Input v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" @keydown.enter="submitForm" />
+    <Input v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" />
 
-    <Input
-      v-model="formData.email" :placeholder="t('form.email')" autocomplete="true" type="email"
-      @keydown.enter="submitForm"
-    />
+    <Input v-model="formData.email" :placeholder="t('form.email')" autocomplete="true" type="email" />
 
     <textarea
       v-model="formData.message" :placeholder="t('form.message')" text="center" h-26 bg="transparent"
