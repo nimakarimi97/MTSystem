@@ -12,9 +12,17 @@ const formData = ref<FormData>({
   email: '',
   message: '',
 })
-// let formError : Ref<string> =ref('');
+const formError: Ref<string> = ref('')
 
-function submitForm() { }
+function submitForm(e: Event) {
+  try {
+    // console.log(formData.value);
+    formError.value = ''
+  }
+  catch (error: any) {
+    formError.value = error.message
+  }
+}
 </script>
 
 <template>
@@ -31,8 +39,11 @@ function submitForm() { }
       border="~ rounded blue-200 dark:blue-500" outline="none active:none"
     />
 
-    <button text-m m-3 w-40 btn @click="submitForm">
-      <!-- :disabled="!name || !email || message.length < 1 " -->
+    <div v-if="formError" class="error italic text-red-7">
+      {{ formError }}
+    </div>
+
+    <button text-m m-3 w-40 btn :disabled="!formData.name || !formData.email || formData.message.length < 1">
       {{ t('button.send') }}
     </button>
   </form>
