@@ -19,9 +19,9 @@ function submitForm() { }
 
 <template>
   <form @submit.prevent="submitForm">
-    <TheInput v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" @keydown.enter="submitForm" />
+    <Input v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" @keydown.enter="submitForm" />
 
-    <TheInput
+    <Input
       v-model="formData.email" :placeholder="t('form.email')" autocomplete="true" type="email"
       @keydown.enter="submitForm"
     />
@@ -41,18 +41,18 @@ function submitForm() { }
 
 <style scoped>
 form {
-    max-width: 500px;
-    margin: 0 auto;
-    border: 1.5px solid #ddd;
-    border-radius: 15px;
-    padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1.5px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
 }
 
 input,
 textarea {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 </style>
