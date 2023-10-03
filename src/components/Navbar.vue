@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
+import { scrollToComponent } from '~/composables/scrollToComponent'
 
-const { navbarHeight, scrollToComponent = () => { } } = defineProps({ navbarHeight: Number, scrollToComponent: Function })
+const navbarHeight = 100 // Height of the navbar in pixels
 
 const { t, locale } = useI18n()
 
+
 async function toggleLocales() {
-  const locales = availableLocales
-  const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+  const currentLocaleIndex = availableLocales.indexOf(locale.value)
+  const newLocale = availableLocales[(currentLocaleIndex + 1) % availableLocales.length]
   await loadLanguageAsync(newLocale)
   locale.value = newLocale
 }
@@ -26,7 +28,8 @@ const routes = [
   { to: 'contact', title: t('nav.contact') },
 ]
 
-window.addEventListener('scroll', () => {
+// Function to handle scroll event
+function handleScroll() {
   const scrollPosition = window.scrollY
   const navbar = document.querySelector('.navbar')
 
@@ -34,18 +37,20 @@ window.addEventListener('scroll', () => {
     navbar?.classList.add('scrolled', 'bg-gray-2', 'dark:bg-black')
   else
     navbar?.classList.remove('scrolled', 'bg-gray-2', 'dark:bg-black')
-})
+}
+
+window.addEventListener('scroll', handleScroll)
 </script>
 
 <template>
   <nav
-    class="navbar" :style="{ maxHeight: `${navbarHeight}px` }" flex="~ gap-4" items-center justify-center text-xl
-    opacity-90 dark:bg-neutral-900
+    class="navbar" :style="{ maxHeight: `${100}px` }" flex="~ gap-4" items-center justify-center text-xl opacity-90
+    dark:bg-neutral-900
   >
     <div class="navbar-brand">
       <button
         icon-btn :title="t('button.home')"
-        @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home')"
+        @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
       >
         <img src="/logo-without-background-cropped.png" alt="Logo">
       </button>
@@ -54,7 +59,7 @@ window.addEventListener('scroll', () => {
     <div class="navbar-items">
       <NavbarLink
         v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="route.title"
-        :scroll-to-component="scrollToComponent"
+        :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent"
       />
     </div>
 

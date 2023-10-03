@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { scrollToComponent } from '~/composables/scrollToComponent'
+
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
@@ -20,27 +22,20 @@ useHead({
   ],
 })
 
-const navbarHeight = 100 // Height of the navbar in pixels
-
-function scrollToComponent(section: any) {
-  const element = document.getElementById(section)
-  if (element) {
-    const offset = element.offsetTop - navbarHeight
-    window.scrollTo({ top: offset, behavior: 'smooth' })
-  }
-}
-
 onMounted(() => {
   if (window.location.hash) {
     const section = window.location.hash.substring(1)
     scrollToComponent(section)
+  }
+  else {
+    console.error('Failed to find the page')
   }
 })
 </script>
 
 <template>
   <main text="center gray-700 dark:gray-200">
-    <Navbar :scroll-to-component="scrollToComponent" :navbar-height="navbarHeight" />
+    <Navbar />
     <RouterView />
     <Footer />
   </main>
