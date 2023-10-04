@@ -1,14 +1,14 @@
 nav:
   home: Home
-  who: Chi siamo
+  who: Chi Siamo
   fx: Myfxbook
   profit: Profito
-  estimates: Estimato
+  calculator: Calcolatore MT
   reviews: Recensioni
   price: Prezzi
   vps: VPS
   faq: FAQ
-  work: Lavora con noi
+  work: Lavora Con Noi
   contact: Contatti
 button:
   about: Su di me
@@ -27,3 +27,40 @@ form:
   email: Il tuo email
   message: Il tuo messaggio 
 not-found: Non trovato
+
+home:
+  title: Massimizza i tuoi guadagni con il nostro sistema di trading MT
+  button: Inizia Ora
+
+
+prices:
+  title: Prezzi
+  title2: 'Benvenuto nell''MTS Team 🎯'
+  description: Miglior expert sul mercato del Forex 🤖🥇
+  features:
+    - ✅ GRATUITO
+    - '✅ 100% automatico'
+    - ✅ utilizzabile a vita
+    - ✅ Nessun vincolo
+    - ✅ Assistenza H24
+    - ✅ Accessibile a chiunque
+    - ✅ Profitto NETTO
+    - ✅ Risultati Certificati
+    - ✅ No commissioni sui prelievi
+
+
+vps:
+  title: Server Virtuali Privati
+
+faq:
+  title: Domande Frequenti
+  subtitle: Ecco alcune delle domande più comuni.
+
+work:
+  body1: Se sei una persona determinata in cerca di un'opportunità per cambiare la tua vita, abbiamo una proposta per te. Unisciti al nostro team MT e preparati a trasformare il futuro del trading. I nostri investitori avranno l’opportunità di collaborare direttamente con noi.
+  body2: Siamo alla ricerca d’individui appassionati e ambiziosi. Se credi di avere la determinazione e la voglia di fare la differenza nel mondo del trading automatizzato, non esitare a contattarci o contattare chi ti ha presentato MT. La tua prossima avventura professionale potrebbe iniziare qui.
+
+
+Contact: Contact
+contact:
+  title: Hai una domanda? Contattaci!
