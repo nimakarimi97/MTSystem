@@ -25,10 +25,7 @@ useHead({
 onMounted(() => {
   if (window.location.hash) {
     const section = window.location.hash.substring(1)
-    scrollToComponent(section)
-  }
-  else {
-    console.error('Failed to find the page')
+    scrollToComponent(section, 0)
   }
 })
 </script>
