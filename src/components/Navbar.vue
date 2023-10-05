@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
+import { useI18n } from 'vue-i18n'
 import { scrollToComponent } from '~/composables/scrollToComponent'
-
-const navbarHeight = 100 // Height of the navbar in pixels
+import { isLaptop } from '~/composables/deviceType'
+import { getRoutes } from '~/routes'
+import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
 
 const { t, locale } = useI18n()
-
 
 async function toggleLocales() {
   const currentLocaleIndex = availableLocales.indexOf(locale.value)
@@ -14,19 +14,8 @@ async function toggleLocales() {
   locale.value = newLocale
 }
 
-const routes = [
-  { to: 'home', title: t('button.home') },
-  { to: 'who', title: t('nav.who') },
-  { to: 'fx', title: t('nav.fx') },
-  { to: 'profit', title: t('nav.profit') },
-  { to: 'calculator', title: t('nav.calculator') },
-  { to: 'reviews', title: t('nav.reviews') },
-  { to: 'prices', title: t('nav.prices') },
-  { to: 'vps', title: t('nav.vps') },
-  { to: 'faq', title: t('nav.faq') },
-  { to: 'work', title: t('nav.work') },
-  { to: 'contact', title: t('nav.contact') },
-]
+const routes = getRoutes()
+const navbarHeight = 100 // Height of the navbar in pixels
 
 // Function to handle scroll event
 function handleScroll() {
@@ -56,9 +45,9 @@ window.addEventListener('scroll', handleScroll)
       </button>
     </div>
 
-    <div class="navbar-items">
+    <div v-if="isLaptop" class="navbar-items">
       <NavbarLink
-        v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="route.title"
+        v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="`nav.${route.to}`"
         :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent"
       />
     </div>
@@ -118,4 +107,3 @@ nav.navbar.scrolled {
   }
 }
 </style>
-
