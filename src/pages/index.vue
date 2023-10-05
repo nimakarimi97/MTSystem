@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Contact from './Contact.vue'
+import Prices from './Prices.vue'
+import WorkWithUs from './WorkWithUs.vue'
+import Reviews from '~/components/Reviews.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -8,6 +11,9 @@ defineOptions({
 
 <template>
   <Home id="home" />
-  <Contact id="contact" />
+  <Reviews id="reviews" />
   <WhoWeAre id="who" />
+  <Prices id="prices" />
+  <WorkWithUs id="work" my-5 />
+  <Contact id="contact" />
 </template>
