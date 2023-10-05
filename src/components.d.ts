@@ -15,8 +15,10 @@ declare module 'vue' {
     NavbarLink: typeof import('./components/NavbarLink.vue')['default']
     Profit: typeof import('./components/Profit.vue')['default']
     README: typeof import('./components/README.md')['default']
+    Reviews: typeof import('./components/Reviews.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Slideshow: typeof import('./components/Slideshow.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
     WhoWeAre: typeof import('./components/WhoWeAre.vue')['default']
   }
