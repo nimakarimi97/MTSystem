@@ -1,19 +1,25 @@
-import { useI18n } from 'vue-i18n'
+/**
+ * Represents a route in the application.
+ * @typedef {object} Route
+ * @property {string} to - The route path.
+ */
 
-export function routes() {
-  const { t } = useI18n()
-
+/**
+ * Returns an array of routes.
+ * @returns {Array<{ to: string }>} - The array of routes.
+ */
+export function getRoutes(): Array<{ to: string }> {
   return [
-    { to: 'home', title: t('button.home') },
-    { to: 'who', title: t('nav.who') },
-    { to: 'fx', title: t('nav.fx') },
-    { to: 'profit', title: t('nav.profit') },
-    { to: 'estimate', title: t('nav.estimates') },
-    { to: 'reviews', title: t('nav.reviews') },
-    { to: 'price', title: t('nav.price') },
-    { to: 'vps', title: t('nav.vps') },
-    { to: 'faq', title: t('nav.faq') },
-    { to: 'work', title: t('nav.work') },
-    { to: 'contact', title: t('nav.contact') },
+    { to: 'home' },
+    { to: 'who' },
+    { to: 'fx' },
+    { to: 'profit' },
+    { to: 'calculator' },
+    { to: 'reviews' },
+    { to: 'prices' },
+    { to: 'vps' },
+    { to: 'faq' },
+    { to: 'work' },
+    { to: 'contact' },
   ]
 }
