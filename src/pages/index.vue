@@ -3,6 +3,7 @@ import Contact from './Contact.vue'
 import Prices from './Prices.vue'
 import WorkWithUs from './WorkWithUs.vue'
 import Reviews from '~/components/Reviews.vue'
+import WhoWeAre from '~/components/WhoWeAre.vue'
 
 defineOptions({
   name: 'IndexPage',
