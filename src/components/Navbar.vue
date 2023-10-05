@@ -1,26 +1,21 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import DarkModeToggle from './DarkModeToggle.vue'
+import LanguageToggle from './LanguageToggle.vue'
 import { scrollToComponent } from '~/composables/scrollToComponent'
 import { isLaptop } from '~/composables/deviceType'
 import { getRoutes } from '~/routes'
-import { availableLocales, loadLanguageAsync } from '~/modules/i18n'
 
-const { t, locale } = useI18n()
-
-async function toggleLocales() {
-  const currentLocaleIndex = availableLocales.indexOf(locale.value)
-  const newLocale = availableLocales[(currentLocaleIndex + 1) % availableLocales.length]
-  await loadLanguageAsync(newLocale)
-  locale.value = newLocale
-}
+const { t } = useI18n()
 
 const routes = getRoutes()
-const navbarHeight = 100 // Height of the navbar in pixels
+const navbarHeight: number = 100 // Height of the navbar in pixels
+const isNavbarOpen: Ref<boolean> = ref(true)
 
 // Function to handle scroll event
 function handleScroll() {
   const scrollPosition = window.scrollY
-  const navbar = document.querySelector('.navbar')
+  const navbar = document.querySelector('.navbar-desktop')
 
   if (scrollPosition > 0)
     navbar?.classList.add('scrolled', 'bg-gray-2', 'dark:bg-black')
@@ -33,8 +28,8 @@ window.addEventListener('scroll', handleScroll)
 
 <template>
   <nav
-    class="navbar" :style="{ maxHeight: `${100}px` }" flex="~ gap-4" items-center justify-center text-xl opacity-90
-    dark:bg-neutral-900
+    v-if="isLaptop" class="navbar-desktop" :style="{ maxHeight: `${100}px` }" flex="~ gap-4" items-center
+    justify-center text-xl opacity-90 dark:bg-neutral-900
   >
     <div class="navbar-brand">
       <button
@@ -45,7 +40,7 @@ window.addEventListener('scroll', handleScroll)
       </button>
     </div>
 
-    <div v-if="isLaptop" class="navbar-items">
+    <div class="navbar-items">
       <NavbarLink
         v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="`nav.${route.to}`"
         :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent"
@@ -53,19 +48,44 @@ window.addEventListener('scroll', handleScroll)
     </div>
 
     <div>
-      <button :title="t('button.toggle_dark')" mr-4 icon-btn @click="toggleDark()">
-        <div i="carbon-sun dark:carbon-moon" />
+      <DarkModeToggle />
+      <LanguageToggle />
+    </div>
+  </nav>
+
+  <nav v-else>
+    <div v-if="isNavbarOpen" class="navbar-items" flex flex-col items-center justify-center>
+      <button @click="isNavbarOpen = !isNavbarOpen">
+        hide Navbar
       </button>
 
-      <a icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
-        <div i-carbon-language />
-      </a>
+      <div class="navbar-brand">
+        <button
+          icon-btn :title="t('button.home')"
+          @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
+        >
+          <img src="/logo-without-background-cropped.png" alt="Logo">
+        </button>
+
+        <DarkModeToggle />
+        <LanguageToggle />
+      </div>
+      <div flex flex-row flex-wrap items-center justify-center gap-5 bg-slate-8>
+        <NavbarLink
+          v-for="route of routes" :key="route.to" :to="route.to" :title="`nav.${route.to}`"
+          :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent" flex-row icon-btn
+        />
+      </div>
     </div>
+
+    <button v-else @click="isNavbarOpen = !isNavbarOpen">
+      show
+    </button>
   </nav>
 </template>
   
 <style scoped>
-nav.navbar {
+nav.navbar-desktop {
   justify-content: center;
   align-items: center;
   padding: 1rem;
@@ -77,7 +97,7 @@ nav.navbar {
   transition: all 0.3s ease;
 }
 
-nav.navbar.scrolled {
+nav.navbar-desktop.scrolled {
   padding: .2rem 1rem .1rem;
   transition: all 0.5s ease-in-out;
 }

@@ -8,9 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Contact: typeof import('./pages/Contact.vue')['default']
+    DarkModeToggle: typeof import('./components/DarkModeToggle.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Home: typeof import('./components/Home.vue')['default']
     Input: typeof import('./components/Input.vue')['default']
+    LanguageToggle: typeof import('./components/LanguageToggle.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']
     NavbarLink: typeof import('./components/NavbarLink.vue')['default']
     Profit: typeof import('./components/Profit.vue')['default']
