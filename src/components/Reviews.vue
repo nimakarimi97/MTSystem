@@ -1,11 +1,13 @@
 <script setup lang="ts">
-
+const { t } = useI18n()
 </script>
 
 <template>
-  <Slideshow />
   <div my-10 class="reviews">
-    Reviews
+    <h5 my-10 tracking-widest class="reviews">
+      {{ t('reviews.title') }}
+    </h5>
+    <Slideshow />
   </div>
 </template>
 
