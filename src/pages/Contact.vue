@@ -36,24 +36,30 @@ function submitForm(e: Event) {
 </script>
 
 <template>
-  <form border="~ rounded blue-400" @submit.prevent="submitForm">
-    <Input v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" />
+  <div flex-center flex-col gap-8 lg:flex-row class="mx-auto w-85%">
+    <h3 rounded px-5 py-3 primary-color shadow-blue-9 shadow-sm lg:self-start>
+      {{ t('contact.title') }}
+    </h3>
 
-    <Input v-model="formData.email" :placeholder="t('form.email')" autocomplete="true" type="email" />
+    <form border="~ rounded blue-400" @submit.prevent="submitForm">
+      <Input v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" />
 
-    <textarea
-      v-model="formData.message" :placeholder="t('form.message')" text="center" h-26 bg="transparent"
-      border="~ rounded blue-400" outline="none active:none"
-    />
+      <Input v-model="formData.email" :placeholder="t('form.email')" autocomplete="true" type="email" />
 
-    <div v-if="formError" class="error italic text-red-7">
-      {{ formError }}
-    </div>
+      <textarea
+        v-model="formData.message" :placeholder="t('form.message')" text="center" h-26 bg="transparent"
+        border="~ rounded blue-400" outline="none active:none"
+      />
 
-    <button text-m m-3 w-40 btn :disabled="!formData.name || !formData.email || formData.message.length < 1">
-      {{ t('button.send') }}
-    </button>
-  </form>
+      <div v-if="formError" class="error italic text-red-7">
+        {{ formError }}
+      </div>
+
+      <button text-m m-3 w-40 btn :disabled="!formData.name || !formData.email || formData.message.length < 1">
+        {{ t('button.send') }}
+      </button>
+    </form>
+  </div>
 </template>
 
 
