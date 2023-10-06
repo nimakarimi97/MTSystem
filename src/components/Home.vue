@@ -13,7 +13,7 @@ watchEffect(() => {
       <h3 mb-10 class="title">
         {{ t('home.title') }}
       </h3>
-      <button btn>
+      <button btn @click="scrollToComponent('#prices')">
         {{ t('home.button') }}
       </button>
     </div>
