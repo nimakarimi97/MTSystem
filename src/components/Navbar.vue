@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { Slide } from 'vue3-burger-menu'
 import DarkModeToggle from './DarkModeToggle.vue'
 import LanguageToggle from './LanguageToggle.vue'
 import { scrollToComponent } from '~/composables/scrollToComponent'
@@ -10,7 +11,7 @@ const { t } = useI18n()
 
 const routes = getRoutes()
 const navbarHeight: number = 100 // Height of the navbar in pixels
-const isNavbarOpen: Ref<boolean> = ref(true)
+// const isNavbarOpen: Ref<boolean> = ref(true)
 
 // Function to handle scroll event
 function handleScroll() {
@@ -47,44 +48,35 @@ window.addEventListener('scroll', handleScroll)
       />
     </div>
 
-    <div>
+    <div flex="~ row justify-center gap-3">
       <DarkModeToggle />
       <LanguageToggle />
     </div>
   </nav>
 
-  <nav v-else>
-    <div v-if="isNavbarOpen" class="navbar-items" flex flex-col items-center justify-center>
-      <button @click="isNavbarOpen = !isNavbarOpen">
-        hide Navbar
+  <Slide v-else is-open :close-on-navigation="true" no-overlay mb-22 flex flex-col items-center justify-center>
+    <div class="navbar-brand">
+      <button
+        icon-btn :title="t('button.home')"
+        @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
+      >
+        <img src="/logo-without-background-cropped.png" alt="Logo">
       </button>
 
-      <div class="navbar-brand">
-        <button
-          icon-btn :title="t('button.home')"
-          @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
-        >
-          <img src="/logo-without-background-cropped.png" alt="Logo">
-        </button>
-
-        <DarkModeToggle />
-        <LanguageToggle />
-      </div>
-      <div flex flex-row flex-wrap items-center justify-center gap-5 bg-slate-8>
-        <NavbarLink
-          v-for="route of routes" :key="route.to" :to="route.to" :title="`nav.${route.to}`"
-          :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent" flex-row icon-btn
-        />
-      </div>
+      <DarkModeToggle mx-3 text-xl />
+      <LanguageToggle text-xl />
     </div>
 
-    <button v-else @click="isNavbarOpen = !isNavbarOpen">
-      show
-    </button>
-  </nav>
+    <div flex flex-col flex-wrap items-center justify-center gap-5 px-6>
+      <NavbarLink
+        v-for="route of routes" :key="route.to" :to="route.to" :title="`nav.${route.to}`"
+        :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent" flex-row icon-btn
+      />
+    </div>
+  </Slide>
 </template>
   
-<style scoped>
+<style>
 nav.navbar-desktop {
   justify-content: center;
   align-items: center;
@@ -125,5 +117,60 @@ nav.navbar-desktop.scrolled {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 7%;
+  top: 4%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.bm-burger-button:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.bm-burger-bars {
+  background-color: var(--btn-bg-color);
+}
+
+.line-style {
+  position: absolute;
+  height: 20%;
+  left: 0;
+  right: 0;
+}
+
+.cross-style {
+  position: absolute;
+  right: 7%;
+  top: 4%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.bm-cross {
+  background: white;
+}
+
+.bm-cross-button {
+  height: 2rem;
+  width: 2rem;
+  background: rgba(128, 128, 128, 0.5);
+  background: rgb(128, 128, 128);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+
+.cross-style:hover {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 </style>
