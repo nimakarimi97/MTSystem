@@ -3,14 +3,12 @@ import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import { isMobile } from '~/composables/deviceType'
 
-const itemsToShow = ref(isMobile.value ? 1 : 3.95)
-
 const totalImages = 21
 const slides = ref(Array.from({ length: totalImages }, (_, i) => `/feedback/feedback${i + 1}.jpg`))
 </script>
 
 <template>
-  <Carousel :items-to-show="itemsToShow" :wrap-around="true" :transition="500">
+  <Carousel :items-to-show="isMobile ? 1.95 : 3.95" :wrap-around="true" :transition="500">
     <Slide v-for="slide in slides" :key="slide">
       <div class="carousel__item">
         <img :src="slide" alt="Slideshow image" h-120>
@@ -41,7 +39,7 @@ const slides = ref(Array.from({ length: totalImages }, (_, i) => `/feedback/feed
 }
 
 .carousel__slide {
-  opacity: 0.5;
+  opacity: 0.3;
   transform: rotateY(-20deg) scale(0.9);
 }
 
@@ -50,12 +48,12 @@ const slides = ref(Array.from({ length: totalImages }, (_, i) => `/feedback/feed
 }
 
 .carousel__slide--prev {
-  opacity: 1;
+  opacity: .6;
   transform: rotateY(-10deg) scale(0.95);
 }
 
 .carousel__slide--next {
-  opacity: 1;
+  opacity: .6;
   transform: rotateY(10deg) scale(0.95);
 }
 
