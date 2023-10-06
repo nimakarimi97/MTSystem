@@ -29,8 +29,8 @@ window.addEventListener('scroll', handleScroll)
 
 <template>
   <nav
-    v-if="isLaptop" class="navbar-desktop" :style="{ maxHeight: `${100}px` }" flex="~ gap-4" items-center
-    justify-center text-xl opacity-90 dark:bg-neutral-900
+    v-if="isLaptop" class="navbar-desktop" :style="{ maxHeight: `${100}px` }"    
+    flex-center gap-4 text-xl opacity-90 dark:bg-neutral-900
   >
     <div class="navbar-brand">
       <button
@@ -54,20 +54,22 @@ window.addEventListener('scroll', handleScroll)
     </div>
   </nav>
 
-  <Slide v-else is-open :close-on-navigation="true" no-overlay mb-22 flex flex-col items-center justify-center>
-    <div class="navbar-brand">
+  <Slide v-else :close-on-navigation="true" no-overlay mb-22 flex-center flex-col>
+    <div flex-center flex-col gap-4>
       <button
         icon-btn :title="t('button.home')"
         @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
       >
-        <img src="/logo-without-background-cropped.png" alt="Logo">
+        <img src="/logo-without-background.png" alt="Logo" h-28>
       </button>
 
-      <DarkModeToggle mx-3 text-xl />
-      <LanguageToggle text-xl />
+      <div flex items-start>
+        <DarkModeToggle mx-3 text-xl />
+        <LanguageToggle text-xl />
+      </div>
     </div>
 
-    <div flex flex-col flex-wrap items-center justify-center gap-5 px-6>
+    <div flex-center flex-col flex-wrap gap-5 px-4>
       <NavbarLink
         v-for="route of routes" :key="route.to" :to="route.to" :title="`nav.${route.to}`"
         :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent" flex-row icon-btn
@@ -76,10 +78,8 @@ window.addEventListener('scroll', handleScroll)
   </Slide>
 </template>
   
-<style>
+<style lang="scss">
 nav.navbar-desktop {
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -87,36 +87,25 @@ nav.navbar-desktop {
   width: 100%;
   z-index: 999;
   transition: all 0.3s ease;
-}
 
-nav.navbar-desktop.scrolled {
-  padding: .2rem 1rem .1rem;
-  transition: all 0.5s ease-in-out;
-}
+  &.scrolled {
+    padding: .2rem 1rem .1rem;
+    transition: all 0.5s ease-in-out;
+  }
 
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
+  .navbar-brand {
+    display: flex;
+    align-items: center;
 
-.navbar-brand img {
-  height: 4rem;
+    img {
+      height: 4rem;
+    }
+  }
 }
 
 .navbar-items {
   display: flex;
   gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar-items {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 }
 
 .bm-burger-button {
@@ -128,49 +117,46 @@ nav.navbar-desktop.scrolled {
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0.7;
-}
 
-.bm-burger-button:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 
-.bm-burger-bars {
-  background-color: var(--btn-bg-color);
-}
+  .bm-burger-bars {
+    background-color: var(--btn-bg-color);
+  }
 
-.line-style {
-  position: absolute;
-  height: 20%;
-  left: 0;
-  right: 0;
-}
+  .line-style {
+    position: absolute;
+    height: 20%;
+    left: 0;
+    right: 0;
+  }
 
-.cross-style {
-  position: absolute;
-  right: 7%;
-  top: 4%;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-}
+  .cross-style {
+    position: absolute;
+    right: 7%;
+    top: 4%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
 
-.bm-cross {
-  background: white;
-}
+    .bm-cross-button {
+      height: 2rem;
+      width: 2rem;
+      background: rgba(128, 128, 128, 0.5);
+      background: rgb(128, 128, 128);
+      border-radius: 50%;
+      opacity: 0.5;
+      transition: all 0.4s ease;
+    }
 
-.bm-cross-button {
-  height: 2rem;
-  width: 2rem;
-  background: rgba(128, 128, 128, 0.5);
-  background: rgb(128, 128, 128);
-  border-radius: 50%;
-  opacity: 0.5;
-  transition: all 0.4s ease;
-}
-
-.cross-style:hover {
-  transform: rotate(180deg);
-  opacity: 1;
+    &:hover {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+  }
 }
 </style>
+
