@@ -3,14 +3,14 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="bg-gray-100 p-4 text-center">
-    <h2 class="text-4xl font-bold text-gray-800">
+  <div class="mx-auto w-85% p-14 text-center text-left">
+    <h3 class="font-bold">
       {{ t('nav.work') }}
-    </h2>
-    <p class="mt-2 text-lg text-gray-600">
+    </h3>
+    <p class="my-8 text-lg">
       {{ $t('work.body1') }}
     </p>
-    <p class="mt-2 text-lg text-gray-600">
+    <p class="text-lg">
       {{ $t('work.body2') }}
     </p>
   </div>
