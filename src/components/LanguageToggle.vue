@@ -14,6 +14,10 @@ async function toggleLocales() {
 
 <template>
   <a icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
-    <div i-carbon-language />
+    <span v-if="locale === 'en'">🇺🇸</span>
+    <span v-else-if="locale === 'it'">🇮🇹</span>
+    <span v-else>
+      <div i-carbon-language />
+    </span>
   </a>
 </template>
