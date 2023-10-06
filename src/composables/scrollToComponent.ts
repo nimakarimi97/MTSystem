@@ -5,7 +5,8 @@
  * @return {void} No return value.
  */
 export function scrollToComponent(section: any, navbarHeight: number = 100) {
-  const element = document.getElementById(section)
+  const sectionWithoutHash = section.startsWith('#') ? section.slice(1) : section
+  const element = document.getElementById(sectionWithoutHash)
 
   if (element) {
     const offset = element.offsetTop - navbarHeight
