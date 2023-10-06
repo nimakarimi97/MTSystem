@@ -2,8 +2,8 @@
 import Contact from './Contact.vue'
 import Prices from './Prices.vue'
 import WorkWithUs from './WorkWithUs.vue'
-import Reviews from '~/components/Reviews.vue'
-import WhoWeAre from '~/components/WhoWeAre.vue'
+import Reviews from './Reviews.vue'
+import WhoWeAre from './WhoWeAre.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -12,8 +12,8 @@ defineOptions({
 
 <template>
   <Home id="home" />
-  <Reviews id="reviews" />
   <WhoWeAre id="who" />
+  <Reviews id="reviews" />
   <Prices id="prices" />
   <WorkWithUs id="work" my-5 />
   <Contact id="contact" />

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Profit from './Profit.vue'
+
 const name: string = 'Who'
 const isContactVisible = ref(true)
 
