@@ -38,7 +38,7 @@ reviews:
   title: We are pleased to present some positive feedback that we have received from our satisfied customers.
 
 prices:
-  title: Prices
+  title: The Prices
   body1: The free MT bot instead of 1000€, while Vps 20€ per month
   title2: Welcome to the MTS Team 🎯
   description: The best expert in the Forex market 🤖🥇
@@ -52,6 +52,8 @@ prices:
     - ✅ NET profit
     - ✅ Certified results
     - ✅ No withdrawal fees
+  footer: 0€ instead of 1000€
+  button: Get Now
 
 
 

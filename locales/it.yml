@@ -37,7 +37,7 @@ reviews:
   title: Siamo lieti di presentare alcuni feedback positivi che abbiamo ricevuto dai nostri clienti soddisfatti.
 
 prices:
-  title: Prezzi
+  title: I Prezzi
   body1: Il bot MT gratuito anziché 1000€, mentre Vps 20€ al mese
   title2: Benvenuto nell''MTS Team 🎯
   description: Miglior expert sul mercato del Forex 🤖🥇
@@ -51,6 +51,8 @@ prices:
     - ✅ Profitto NETTO
     - ✅ Risultati Certificati
     - ✅ No commissioni sui prelievi
+  footer: 0€ anziché 1000€
+  button: Ottieni Ora
 
 
 vps:

@@ -15,7 +15,15 @@ const { t } = useI18n()
       <li v-for="i in 8" :key="i">
         {{ t(`prices.features[${i}]`) }}
       </li>
-      <hr m-8>
+
+      <hr class="mx-auto w-70%" my-4>
+
+      <div flex-center flex-col gap-4>
+        <span>{{ t('prices.footer') }}</span>
+        <button btn @click="scrollToComponent('#prices')">
+          {{ t('prices.button') }}
+        </button>
+      </div>
     </ul>
   </div>
 </template>
