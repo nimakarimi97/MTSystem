@@ -4,16 +4,18 @@ import 'vue3-carousel/dist/carousel.css'
 import { isMobile } from '~/composables/deviceType'
 
 const totalImages = 21
-const slides = ref(Array.from({ length: totalImages }, (_, i) => `/feedback/feedback${i + 1}.jpg`))
+const slides = ref(
+  Array.from({ length: totalImages }, (_, i) => `/feedback/feedback${i + 1}.jpg`),
+)
 </script>
 
 <template>
   <Carousel :items-to-show="isMobile ? 1.95 : 3.95" :wrap-around="true" :transition="500">
     <Slide v-for="slide in slides" :key="slide">
       <div class="carousel__item">
-        <img :src="slide" alt="Slideshow image" h-120>
+        <img :src="slide" alt="Slideshow image" max-h-120>
       </div>
-    </slide>
+    </Slide>
     <template #addons>
       <Navigation v-if="slides.length > 1" />
       <Pagination />
@@ -43,17 +45,17 @@ const slides = ref(Array.from({ length: totalImages }, (_, i) => `/feedback/feed
   transform: rotateY(-20deg) scale(0.9);
 }
 
-.carousel__slide--active~.carousel__slide {
+.carousel__slide--active ~ .carousel__slide {
   transform: rotateY(20deg) scale(0.9);
 }
 
 .carousel__slide--prev {
-  opacity: .6;
+  opacity: 0.6;
   transform: rotateY(-10deg) scale(0.95);
 }
 
 .carousel__slide--next {
-  opacity: .6;
+  opacity: 0.6;
   transform: rotateY(10deg) scale(0.95);
 }
 

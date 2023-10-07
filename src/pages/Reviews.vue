@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <div my-10 class="reviews">
     <h5 my-10 tracking-widest class="reviews">
-      {{ t('reviews.title') }}
+      {{ t("reviews.title") }}
     </h5>
     <Slideshow />
   </div>
