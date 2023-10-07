@@ -33,6 +33,22 @@ home:
   button: Inizia Ora
 
 
+who:
+  title: Chi Siamo
+
+
+fx:
+  title: Risultati Certificati
+  description: Conto MT da 10.000 a 16.000£ generando in automatico 6.365£ di profitto netto.
+  body1: Percentuali dal Myfxbook
+  body2: Profitto dall'MT4 in Euro
+
+profit:
+  title: Ecco Altri Risultati Dei Nostri Investitori
+  body1: Conto MT da 3000£ a 6556£ generando in automatico 3556£ di profitto netto
+  body2: Conto MT da 1500£ a 2558£ generando in automatico 1058£ di profitto netto
+  title2: Profitti degli investitori dagli MT4
+
 reviews:
   title: Siamo lieti di presentare alcuni feedback positivi che abbiamo ricevuto dai nostri clienti soddisfatti.
 

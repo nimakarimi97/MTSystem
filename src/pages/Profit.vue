@@ -1,24 +1,45 @@
 <script setup lang="ts">
-// const props = defineProps({ name:String })
-
-interface Props { name?: string  }
-
-const props = withDefaults(defineProps<Props>(), { name: 'default name' })
-
-const emits = defineEmits(['customEvent'])
-function getAlert() { 
-  emits('customEvent', `to parent  ${ props.name}`)
-}
+const { t } = useI18n()
 </script>
 
 <template>
-  <div class="contact mx-auto w-30% bg-gray-7" mb-5 p-2 text-blue-3>
-    <h2>
-      Contact -> {{ props.name }}
-    </h2>
-    <button m-3 bg-red5 p-3 text-white @click="getAlert">
-      alert
-    </button>
+  <div class="mx-auto my-15 p-2">
+    <h3 primary-color>
+      {{ t("profit.title").toUpperCase() }}
+    </h3>
+
+    <div class="mx-auto my-15 p-2 md:w-60%">
+      <p my-5>
+        {{ t("profit.body1") }}
+      </p>
+      <img src="/risultati/MYFXBOOK/a.jpg" alt="">
+
+      <p my-5>
+        {{ t("profit.body2") }}
+      </p>
+      <img src="/risultati/MYFXBOOK/b.jpg" alt="hi">
+    </div>
+
+    <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
+      <img pb-4 md:p-0 src="/risultati/MYFXBOOK/left.jpg" alt="">
+      <img src="/risultati/MYFXBOOK/right.jpg" alt="">
+    </div>
+
+    <div class="mx-auto flex flex-col gap-3 lg:w-90%">
+      <h3 primary-color>
+        {{ t("profit.title2") }}
+      </h3>
+      <img class="max-w-2xl object-cover" src="/risultati/MT4/1.jpg" alt="">
+      <img class="max-w-2xl self-end" src="/risultati/MT4/2.jpg" alt="">
+      <img class="max-w-2xl" src="/risultati/MT4/3.jpg" alt="">
+      <img class="max-w-2xl self-end" src="/risultati/MT4/4.jpg" alt="">
+    </div>
   </div>
 </template>
 
+<style scoped lang="scss">
+img {
+  width: 90%;
+  object-fit: cover;
+}
+</style>
