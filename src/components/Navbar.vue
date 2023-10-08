@@ -18,10 +18,9 @@ function handleScroll() {
   const scrollPosition = window.scrollY
   const navbar = document.querySelector('.navbar-desktop')
 
-  if (scrollPosition > 0)
+  if (scrollPosition > 0) 
     navbar?.classList.add('scrolled', 'bg-gray-2', 'dark:bg-black')
-  else
-    navbar?.classList.remove('scrolled', 'bg-gray-2', 'dark:bg-black')
+  else navbar?.classList.remove('scrolled', 'bg-gray-2', 'dark:bg-black')
 }
 
 window.addEventListener('scroll', handleScroll)
@@ -29,13 +28,24 @@ window.addEventListener('scroll', handleScroll)
 
 <template>
   <nav
-    v-if="isLaptop" class="navbar-desktop" :style="{ maxHeight: `${100}px` }"    
-    flex-center gap-4 text-xl opacity-90 dark:bg-neutral-900
+    v-if="isLaptop"
+    class="navbar-desktop"
+    :style="{ maxHeight: `${100}px` }"
+    flex-center
+    gap-4
+    text-xl
+    opacity-90
+    dark:bg-neutral-900
   >
     <div class="navbar-brand">
       <button
-        icon-btn :title="t('button.home')"
-        @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
+        icon-btn
+        :title="t('button.home')"
+        @click="
+          $route.path !== '/'
+            ? $router.push('/')
+            : scrollToComponent('home', navbarHeight)
+        "
       >
         <img src="/logo-without-background-cropped.png" alt="Logo">
       </button>
@@ -43,8 +53,12 @@ window.addEventListener('scroll', handleScroll)
 
     <div class="navbar-items">
       <NavbarLink
-        v-for="route of routes" :key="route.to" icon-btn :to="route.to" :title="`nav.${route.to}`"
-        :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent"
+        v-for="route of routes"
+        :key="route.to"
+        icon-btn
+        :to="route.to"
+        :title="`nav.${route.to}`"
+        :navbar-height="navbarHeight"
       />
     </div>
 
@@ -57,10 +71,15 @@ window.addEventListener('scroll', handleScroll)
   <Slide v-else :close-on-navigation="true" no-overlay mb-22 flex-center flex-col>
     <div flex-center flex-col gap-4>
       <button
-        icon-btn :title="t('button.home')"
-        @click="$route.path !== '/' ? $router.push('/') : scrollToComponent('home', navbarHeight)"
+        icon-btn
+        :title="t('button.home')"
+        @click="
+          $route.path !== '/'
+            ? $router.push('/')
+            : scrollToComponent('home', navbarHeight)
+        "
       >
-        <img src="/logo-without-background.png" alt="Logo" h-28>
+        <img src="/logo-without-background.png" alt="Logo" w-32>
       </button>
 
       <div flex items-start>
@@ -71,13 +90,19 @@ window.addEventListener('scroll', handleScroll)
 
     <div flex-center flex-col flex-wrap gap-5 px-4>
       <NavbarLink
-        v-for="route of routes" :key="route.to" :to="route.to" :title="`nav.${route.to}`"
-        :navbar-height="navbarHeight" :scroll-to-component="scrollToComponent" flex-row icon-btn
+        v-for="route of routes"
+        :key="route.to"
+        :to="route.to"
+        :title="`nav.${route.to}`"
+        :navbar-height="navbarHeight"
+        :scroll-to-component="scrollToComponent"
+        flex-row
+        icon-btn
       />
     </div>
   </Slide>
 </template>
-  
+
 <style lang="scss">
 nav.navbar-desktop {
   padding: 1rem;
@@ -89,7 +114,7 @@ nav.navbar-desktop {
   transition: all 0.3s ease;
 
   &.scrolled {
-    padding: .2rem 1rem .1rem;
+    padding: 0.2rem 1rem 0.1rem;
     transition: all 0.5s ease-in-out;
   }
 
@@ -159,4 +184,3 @@ nav.navbar-desktop {
   }
 }
 </style>
-

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { scrollToComponent } from '~/composables/scrollToComponent'
 
-const { to, title, navbarHeight, scrollToComponent = () => { } } = defineProps({
+const { to, title, navbarHeight = () => {} } = defineProps({
   to: {
     type: String,
     required: true,
@@ -13,17 +14,18 @@ const { to, title, navbarHeight, scrollToComponent = () => { } } = defineProps({
   navbarHeight: {
     type: Number,
   },
-  scrollToComponent: {
-    type: Function,
-    required: true,
-  },
 })
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <router-link icon-btn :to="`/#${to}`" :title="t(title)" @click="scrollToComponent(to, navbarHeight)">
+  <router-link
+    icon-btn
+    :to="`/#${to}`"
+    :title="t(title)"
+    @click="scrollToComponent(to, navbarHeight)"
+  >
     {{ t(title) }}
   </router-link>
 </template>
