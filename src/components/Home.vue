@@ -11,10 +11,10 @@ watchEffect(() => {
   <div mb-9 flex flex-col items-center justify-center gap-10 p-4 px-12 md:flex-row>
     <div flex flex-col items-center justify-center>
       <h3 mb-10 class="title">
-        {{ t('home.title') }}
+        {{ t("home.title") }}
       </h3>
       <button btn @click="scrollToComponent('#prices')">
-        {{ t('home.button') }}
+        {{ t("home.button") }}
       </button>
     </div>
     {{ isDark.value }}
