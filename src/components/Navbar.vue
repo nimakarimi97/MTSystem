@@ -95,7 +95,6 @@ window.addEventListener('scroll', handleScroll)
         :to="route.to"
         :title="`nav.${route.to}`"
         :navbar-height="navbarHeight"
-        :scroll-to-component="scrollToComponent"
         flex-row
         icon-btn
       />
