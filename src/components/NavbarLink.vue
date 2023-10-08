@@ -17,14 +17,24 @@ const { to, title, navbarHeight = () => {} } = defineProps({
 })
 
 const { t } = useI18n()
+
+function handleClick(target: any, to: string) {
+  const navClass = 'nav-active'
+  const navbar = document.querySelector(`.navbar-link.${navClass}`)
+  navbar?.classList.remove(navClass)
+  target.classList.add(navClass)
+
+  scrollToComponent(to, navbarHeight)
+}
 </script>
 
 <template>
   <router-link
+    class="navbar-link"
     icon-btn
     :to="`/#${to}`"
     :title="t(title)"
-    @click="scrollToComponent(to, navbarHeight)"
+    @click="handleClick($event.target, to)"
   >
     {{ t(title) }}
   </router-link>

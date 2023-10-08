@@ -16,6 +16,7 @@ export default defineConfig({
     ['btn', 'px-4 py-1 rounded inline-block primary-color-bg text-white cursor-pointer !outline-none hover:bg-amber-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-300 ease-in-out hover:opacity-100 hover:primary-color'],
     ['flex-center', 'flex items-center justify-center'],
+    ['nav-active', 'text-orange-5 inline-block cursor-pointer select-none opacity-75 transition duration-400 ease-in-out'],
   ],
   presets: [
     presetUno(),
