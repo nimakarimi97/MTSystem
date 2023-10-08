@@ -31,7 +31,9 @@ window.addEventListener('scroll', handleScroll)
     v-if="isLaptop"
     class="navbar-desktop"
     :style="{ maxHeight: `${100}px` }"
-    flex-center
+    flex
+    items-center
+    justify-around
     gap-4
     text-xl
     opacity-90
