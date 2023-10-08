@@ -4,6 +4,7 @@ import Prices from './Prices.vue'
 import WorkWithUs from './WorkWithUs.vue'
 import Reviews from './Reviews.vue'
 import WhoWeAre from './WhoWeAre.vue'
+import Fx from './Fx.vue'
 import Profit from './Profit.vue'
 
 defineOptions({
@@ -14,6 +15,8 @@ defineOptions({
 <template>
   <Home id="home" />
   <WhoWeAre id="who" />
+  <barChart id="barChart" />
+  <Fx id="fX" />
   <Profit id="profit" />
   <Reviews id="reviews" />
   <Prices id="prices" />
