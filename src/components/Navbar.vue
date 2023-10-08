@@ -102,7 +102,7 @@ window.addEventListener('scroll', handleScroll)
   </Slide>
 </template>
 
-<style lang="scss">
+<style>
 nav.navbar-desktop {
   padding: 1rem;
   position: sticky;
@@ -111,20 +111,20 @@ nav.navbar-desktop {
   width: 100%;
   z-index: 999;
   transition: all 0.3s ease;
+}
 
-  &.scrolled {
-    padding: 0.2rem 1rem 0.1rem;
-    transition: all 0.5s ease-in-out;
-  }
+nav.navbar-desktop.scrolled {
+  padding: 0.2rem 1rem 0.1rem;
+  transition: all 0.5s ease-in-out;
+}
 
-  .navbar-brand {
-    display: flex;
-    align-items: center;
+.navbar-desktop .navbar-brand {
+  display: flex;
+  align-items: center;
+}
 
-    img {
-      height: 4rem;
-    }
-  }
+.navbar-desktop .navbar-brand img {
+  height: 4rem;
 }
 
 .navbar-items {
@@ -133,7 +133,7 @@ nav.navbar-desktop {
 }
 
 .bm-burger-button {
-  position: fixed;
+  position: fixed !important;
   width: 36px;
   height: 30px;
   left: 7%;
@@ -141,45 +141,42 @@ nav.navbar-desktop {
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0.7;
+}
 
-  &:hover {
-    transform: scale(1.1);
-    opacity: 1;
-  }
+.bm-burger-button:hover {
+  transform: scale(1.06);
+  opacity: 1;
+}
 
-  .bm-burger-bars {
-    background-color: var(--btn-bg-color);
-  }
+.bm-burger-button .bm-burger-bars {
+  background-color: var(--btn-bg-color);
+}
 
-  .line-style {
-    position: absolute;
-    height: 20%;
-    left: 0;
-    right: 0;
-  }
+.bm-burger-button .line-style {
+  position: absolute;
+  height: 20%;
+  left: 0;
+  right: 0;
+}
 
-  .cross-style {
-    position: absolute;
-    right: 7%;
-    top: 4%;
-    cursor: pointer;
-    display: grid;
-    place-items: center;
+.bm-cross-button {
+  position: absolute;
+  right: 4% !important;
+  top: 2% !important;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  height: 2rem;
+  width: 2rem;
+  background: rgba(128, 128, 128, 0.5);
+  background: rgb(128, 128, 128);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
 
-    .bm-cross-button {
-      height: 2rem;
-      width: 2rem;
-      background: rgba(128, 128, 128, 0.5);
-      background: rgb(128, 128, 128);
-      border-radius: 50%;
-      opacity: 0.5;
-      transition: all 0.4s ease;
-    }
-
-    &:hover {
-      transform: rotate(180deg);
-      opacity: 1;
-    }
-  }
+.bm-cross-button:hover {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 </style>
