@@ -4,6 +4,7 @@ import Prices from './Prices.vue'
 import WorkWithUs from './WorkWithUs.vue'
 import Reviews from './Reviews.vue'
 import WhoWeAre from './WhoWeAre.vue'
+import Profit from './Profit.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -13,6 +14,7 @@ defineOptions({
 <template>
   <Home id="home" />
   <WhoWeAre id="who" />
+  <Profit id="profit" />
   <Reviews id="reviews" />
   <Prices id="prices" />
   <WorkWithUs id="work" my-5 />
