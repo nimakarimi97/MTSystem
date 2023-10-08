@@ -23,10 +23,10 @@ const { t } = useI18n()
         Developed by Nima Karimi
       </p>
 
-      <a icon-btn rel="noreferrer" href="https://github.com/nimakarimi97" target="_blank" title="GitHub">
+      <a text-xl icon-btn rel="noreferrer" href="https://github.com/nimakarimi97" target="_blank" title="GitHub">
         <div i-carbon-logo-github />
       </a>
-      <a icon-btn rel="noreferrer" href="https://www.linkedin.com/in/nimakarimi97/" target="_blank" title="LinkedIn">
+      <a text-xl icon-btn hover:text-blue-6 rel="noreferrer" href="https://www.linkedin.com/in/nimakarimi97/" target="_blank" title="LinkedIn">
         <div i-carbon-logo-linkedin />
       </a>
     </div>
