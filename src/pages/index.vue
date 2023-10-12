@@ -6,6 +6,8 @@ import Reviews from './Reviews.vue'
 import WhoWeAre from './WhoWeAre.vue'
 import Fx from './Fx.vue'
 import Profit from './Profit.vue'
+import Calculator from './Calculator.vue'
+import FAQ from './FAQ.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -15,11 +17,12 @@ defineOptions({
 <template>
   <Home id="home" />
   <WhoWeAre id="who" />
-  <barChart id="barChart" />
-  <Fx id="fX" />
+  <Fx id="fx" />
   <Profit id="profit" />
+  <Calculator id="calculator" />
   <Reviews id="reviews" />
   <Prices id="prices" />
+  <FAQ id="faq" my-5 />
   <WorkWithUs id="work" my-5 />
   <Contact id="contact" />
 </template>
