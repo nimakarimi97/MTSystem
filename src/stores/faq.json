@@ -1,0 +1,70 @@
+[
+  {
+    "question": "Cos’è il sistema MTHedging ?",
+    "answer": "Un sistema di trading automatico in Hedging è un bot, detto anche Expert Advisor che esegue operazioni di trading con obiettivo di mitigare il rischio e trarre profitto utilizzando strategie di copertura nei mercati finanziari. Non lavora in martingala o con le solite strategie aggressive che si trovano sul mercato, ma ha una strategia unica e conservativa."
+  },
+  {
+    "question": "Posso utilizzare il bot di trading anche se sono un principiante nel trading?",
+    "answer": "Assolutamente sì, il nostro bot di trading è stato progettato per essere utilizzabile anche dai principianti. Non è necessaria una vasta esperienza nel trading per iniziare a utilizzarlo con successo."
+  },
+  {
+    "question": "Quali sono i vantaggi del trading automatico rispetto al trading manuale?",
+    "answer": "Il trading automatico offre vantaggi come l'assenza di emozioni, l'operatività continua, la velocità, la gestione del rischio, l'analisi avanzata e la riduzione degli errori umani rispetto al trading manuale."
+  },
+  {
+    "question": "Come funziona il vostro bot di trading MT?",
+    "answer": "Una volta investito, il software MTHedging esegue operazioni di acquisto e di vendita in modo automatizzato. Opera in totale autonomia senza alcun bisogno di intervento manuale."
+  },
+  {
+    "question": "In quale asset e mercato esso opera?",
+    "answer": "Il nostro bot di trading automatico opera esclusivamente sulla coppia di valute EUR/USD, cioè l'euro rispetto al dollaro statunitense, nel mercato del Forex. Abbiamo ottimizzato il nostro algoritmo per fornire performance eccezionali su questa specifica coppia di valute."
+  },
+  {
+    "question": "È gratuito utilizzare il vostro bot di trading ?",
+    "answer": "Sì, il nostro bot di trading automatico è assolutamente gratuito. Ciò che ci distingue dalla massa è il nostro impegno a rendere il trading accessibile a tutti, senza costi nascosti o commissioni."
+  },
+  {
+    "question": "Perché è gratuito ?",
+    "answer": "Abbiamo scelto di offrire gratuitamente il nostro bot per diverse ragioni. Crediamo che tutti dovrebbero avere l'opportunità di sfruttare algoritmi avanzati per il trading senza dover pagare per l'accesso. Ci differenziamo dalla concorrenza attraverso la nostra filosofia di accessibilità, trasparenza e impegno per il successo dei nostri utenti, rendendo il nostro bot una scelta distintiva nel mondo del trading automatizzato."
+  },
+  {
+    "question": "Quali sono i requisiti minimi per utilizzare il vostro bot ?",
+    "answer": "Per utilizzare il nostro bot di trading, i requisiti principali sono tre: la registrazione presso il broker TopFX, un deposito minimo e l'accesso alla MT Vps. Il deposito minimo accettato è di 1500€, ma è consigliato iniziare con almeno 2500-3000€ per ridurre il rischio. Un capitale più elevato fornisce una maggiore tranquillità e flessibilità nel gestire le fluttuazioni di mercato e le perdite potenziali. Questi requisiti sono essenziali per garantire un'esperienza di trading senza interruzioni e ottimizzata per i nostri utenti."
+  },
+  {
+    "question": "Quanto posso guadagnare utilizzando il mio bot di trading?",
+    "answer": "Non possiamo promettere guadagni garantiti o fissi attraverso il nostro bot di trading. Investire comporta sempre un grado di rischio, e il trading non è diverso. Sebbene lavoriamo per offrire performance solide basate su dati storici e analisi, è fondamentale ricordare che il passato non è un indicatore affidabile dei risultati futuri. Nel trading, ci sono rischi e le perdite sono possibili. Si consiglia di investire con cautela e di avere aspettative realistiche. È possibile comunque effettuare una stima dei profitti tenendo conto delle performance avute fin ora tramite il calcolatore MT."
+  },
+  {
+    "question": "Vengono detratte commissioni sui profitti generati dal bot di trading?",
+    "answer": "No, non vengono detratte commissioni sui profitti generati dal nostro bot di trading. Non ci sono commissioni applicate ai singoli trade né commissioni di prelievo. Potrai godere dei tuoi profitti integralmente."
+  },
+  {
+    "question": "Ho pieno controllo del capitale investito ?",
+    "answer": "Certamente, ogni investitore ha il pieno controllo del proprio capitale. Il nostro bot di trading automatico non ha accesso al tuo capitale e non può prelevarlo. Solo l'investitore ha il diritto e la capacità di depositare o prelevare fondi dal proprio conto presso il broker senza vincoli da parte del nostro bot. La sicurezza e la gestione del capitale rimangono completamente sotto il controllo dell'investitore."
+  },
+  {
+    "question": "Quanto tempo devo dedicare e come faccio a capire se sta lavorando bene il bot?",
+    "answer": "Il nostro bot è progettato per essere completamente automatico, quindi gli utenti non dovranno dedicare molto tempo. È solo consigliabile tenere d'occhio regolarmente i profitti del bot su smartphone direttamente dall’MT4, in modo da confrontarli con i risultati presenti nel canale telegram ufficiale. Se confrontando notate una grande differenza di risultati giornalieri, potete contattarmi su telegram in modo da capire insieme il problema."
+  },
+  {
+    "question": "Cosa faccio se ho domande o problemi durante l’utilizzo del bot ?",
+    "answer": "Siamo qui per aiutarti. Sia in caso di problemi che per collaborazioni con MT, avrai sempre al tuo fianco un referente su telegram pronto ad assisterti. Avrai un'assistenza H24 a vita."
+  },
+  {
+    "question": "È necessario disporre di un computer personale per utilizzare il bot?",
+    "answer": "No, non è necessario un computer personale. Per utilizzare il nostro bot di trading, è sufficiente avere accesso a una VPS (Virtual Private Server), che è un ambiente remoto dedicato all'esecuzione del bot. Non è richiesto un computer personale in funzione continua, poiché la MT VPS si occupa dell'esecuzione del bot 24/7 in modo affidabile."
+  },
+  {
+    "question": "Cos’è l’MT VPS?",
+    "answer": "La MT VPS è un computer virtuale sul quale andrà installato il bot per far si che il bot ti lavori H24. Questa VPS è ottima ed è con server Londra, ideale perché offre bassa latenza nei mercati finanziari europei. Questo significa che le tue strategie di trading possono eseguirsi in modo più veloce ed efficiente, riducendo il rischio di ritardi nell'esecuzione delle operazioni. Inoltre, incluso nel servizio, avrai gratuitamente assistenza H24 in caso di problemi più il setup di trading completo comprendente Metatrader4 e Software MT configurato. Questo in modo da semplificare il processo di avvio e iniziare ad operare fin da subito senza problemi."
+  },
+  {
+    "question": "Gli investitori avranno la possibilità di collaborare direttamente con il team di MT?",
+    "answer": "Sì, diamo il benvenuto alla collaborazione diretta con il nostro team da parte degli investitori. Siamo aperti a comunicazioni, domande e feedback diretti per garantire un'esperienza di investimento positiva e soddisfacente. Potrai unirti al canale telegram pubblico e iscriverti alla pagina Instagram per entrare a far parte della nostra community."
+  },
+  {
+    "question": "Qual è l'obiettivo della community di trading MT?",
+    "answer": "L'obiettivo principale del team va ben oltre i guadagni. Vogliamo creare una forte community e aiutare tutti i membri che ci hanno dato fiducia a raggiungere la libertà finanziaria attraverso il trading nel mercato del forex. Vogliamo sfatare il mito che non è possibile vivere di trading e offrire conoscenze, strumenti e supporto per aiutare gli utenti a ottenere successo nei mercati finanziari attraverso l'automazione delle strategie di trading."
+  }
+]

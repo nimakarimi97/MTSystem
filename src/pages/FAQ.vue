@@ -1,27 +1,32 @@
 <script setup>
-const faqItems = ref([
-  { question: 'Question 1', answer: 'Answer 1', isOpen: false },
-  { question: 'Question 2', answer: 'Answer 2', isOpen: false },
-  { question: 'Question 3', answer: 'Answer 3', isOpen: false },
-])
+import faq from '~/stores/faq.json'
 
-function toggleItem(index) {
-  // close others
-  //   faqItems.value.map((item) => (item.isOpen = false));
-  faqItems.value[index].isOpen = !faqItems.value[index].isOpen
+const faqItems = ref(faq)
+
+function toggleItem($event, index) {
+  const el = $event.target
+  const answerEl = el.closest('.card').querySelector('.answer')
+  answerEl.classList.toggle('active')
 }
 </script>
 
 <template>
-  <div v-for="(item, index) in faqItems" :key="index" class="card">
-    <div class="question" @click="toggleItem(index)">
-      {{ item.question }}
-    </div>
-    <transition name="expand">
-      <div v-if="item.isOpen" class="answer">
-        {{ item.answer }}
+  <div>
+    <div
+      v-for="(item, index) in faqItems"
+      :key="index"
+      class="card"
+      @click="toggleItem($event, index)"
+    >
+      <div class="question">
+        {{ item.question }}
       </div>
-    </transition>
+      <transition name="fade">
+        <div class="answer">
+          {{ item.answer }}
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -51,33 +56,22 @@ function toggleItem(index) {
 
   .answer {
     display: none;
-    transition: max-height 0.2s ease-out;
-    max-height: 0;
-    overflow: hidden;
+    margin-top: 1rem;
+    text-align: left;
+    transition: all 0s;
   }
 
-  .question + .answer {
+  .answer.active {
     display: block;
-    max-height: 200px;
   }
 }
 
-// .fade-enter-active,
-// .fade-leave-active {
-//   transition: opacity 0.5s;
-// }
-// .fade-enter,
-// .fade-leave-to {
-//   opacity: 0;
-// }
-
-.expand-enter-active .answer,
-.expand-leave-active .answer {
-  transition: max-height 0.5s ease-in-out;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-.expand-enter .answer,
-.expand-leave-to .answer {
-  max-height: 500px;
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
