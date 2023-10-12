@@ -3,7 +3,16 @@ import faq from '~/stores/faq.json'
 
 const faqItems = ref(faq)
 
+function closeOtherQuestions() {
+  const activeAnswerEl = document.querySelector('.answer.active')
+
+  if (activeAnswerEl) 
+    activeAnswerEl.classList.remove('active')
+}
+
 function toggleItem($event, index) {
+  closeOtherQuestions()
+
   const el = $event.target
   const answerEl = el.closest('.card').querySelector('.answer')
   answerEl.classList.toggle('active')
@@ -21,7 +30,8 @@ function toggleItem($event, index) {
       <div class="question">
         {{ item.question }}
       </div>
-      <transition name="fade">
+
+      <transition name="flip-list" tag="div" mode="out-in" appear>
         <div class="answer">
           {{ item.answer }}
         </div>
@@ -55,23 +65,20 @@ function toggleItem($event, index) {
   }
 
   .answer {
-    display: none;
-    margin-top: 1rem;
+    display: block;
     text-align: left;
-    transition: all 0s;
+    transition: max-height 0.5s, opacity 0.2s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
   }
 
   .answer.active {
     display: block;
+    margin-top: 1rem;
+    max-height: 1000px; /* This value should be larger than the maximum height your text could ever be */
+    opacity: 1;
+    transition: max-height 0.3s, opacity 0.2s;
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
