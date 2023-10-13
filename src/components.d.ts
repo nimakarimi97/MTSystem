@@ -10,6 +10,7 @@ declare module 'vue' {
     BarChart: typeof import('./components/BarChart.vue')['default']
     Contact: typeof import('./pages/Contact.vue')['default']
     DarkModeToggle: typeof import('./components/DarkModeToggle.vue')['default']
+    FAQ: typeof import('./pages/FAQ.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Fx: typeof import('./pages/Fx.vue')['default']
     Home: typeof import('./components/Home.vue')['default']

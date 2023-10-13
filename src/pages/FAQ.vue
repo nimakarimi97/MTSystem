@@ -4,7 +4,7 @@ import faq from '~/stores/faq.json'
 const faqItems = ref(faq)
 
 function closeOtherQuestions() {
-  const activeAnswerEl = document.querySelector('.answer.active')
+  const activeAnswerEl = document.querySelector('.answer-wrapper.active')
 
   if (activeAnswerEl) 
     activeAnswerEl.classList.remove('active')
@@ -14,9 +14,14 @@ function toggleItem($event, index) {
   closeOtherQuestions()
 
   const el = $event.target
-  const answerEl = el.closest('.card').querySelector('.answer')
+  const cardEl = el.closest('.card')
+  const answerEl = cardEl.querySelector('.answer-wrapper')
+
   answerEl.classList.toggle('active')
+  cardEl.style.margin = '2rem auto'
 }
+
+const show = ref(true)
 </script>
 
 <template>
@@ -31,11 +36,11 @@ function toggleItem($event, index) {
         {{ item.question }}
       </div>
 
-      <transition name="flip-list" tag="div" mode="out-in" appear>
+      <div class="answer-wrapper">
         <div class="answer">
           {{ item.answer }}
         </div>
-      </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -64,21 +69,24 @@ function toggleItem($event, index) {
     transition: all 0.5s ease-in-out;
   }
 
-  .answer {
-    display: block;
-    text-align: left;
-    transition: max-height 0.5s, opacity 0.2s;
-    max-height: 0;
-    opacity: 0;
+  .answer-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
     overflow: hidden;
-  }
+    transition: all 300ms ease-in-out;
+    padding: 0 0.5em;
 
-  .answer.active {
-    display: block;
-    margin-top: 1rem;
-    max-height: 1000px; /* This value should be larger than the maximum height your text could ever be */
-    opacity: 1;
-    transition: max-height 0.3s, opacity 0.2s;
+    &.active {
+      margin-top: 1rem;
+      grid-template-rows: 1fr;
+    }
+
+    .answer {
+      text-align: justify;
+      min-height: 0;
+      padding: 0 2rem 0 1rem;
+      border-left: 3px solid var(--secondary-color);
+    }
   }
 }
 </style>
