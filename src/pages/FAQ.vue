@@ -53,14 +53,16 @@ const show = ref(true)
   border-radius: 5px;
   padding: 1rem;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out, color 0.5s ease-in-out;
   cursor: pointer;
 
   &:hover {
     opacity: 0.9;
     border-color: var(--primary-color);
+    transform: scale(1.01);
 
     .question {
+      transform: scale(1.02);
       color: var(--primary-color);
     }
   }
