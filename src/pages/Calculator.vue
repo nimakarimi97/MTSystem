@@ -1,10 +1,8 @@
-<script setup lang="ts"></script>
+<script setup></script>
 
 <template>
-  <div>
-    <BarChart id="BarChart" />
-    <PieChart />
+  <div my-14 flex-center flex-col justify-around gap-20>
+    <BarChartComponent />
+    <PieChartComponent />
   </div>
 </template>
-
-<style scoped></style>
