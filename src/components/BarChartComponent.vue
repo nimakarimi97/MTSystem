@@ -7,31 +7,24 @@ const { t } = useI18n()
 
 const chartInputsData = ref({
   capital: 0,
-  setting: 0,
+  setting: 0.01,
   month: 12,
   estimated: 0,
 })
 
 const sliderValue = ref(10)
-const data = ref([Number.parseInt(sliderValue.value), 30, 40, 60, 70])
+const data = ref([])
 
 watch(() => {
   sliderValue.value = Number.parseInt(sliderValue.value)
   data.value[0] = sliderValue.value
+  data.value[1] = chartInputsData.value.capital
+  data.value[2] = chartInputsData.value.setting
+  data.value[3] = chartInputsData.value.month
 })
 
-// const chartData = {
-//   labels: ["January", "February", "March", "April", "May", "June", "July"],
-//   datasets: [
-//     {
-//       label: "Sales",
-//       data: [10, 20, 30, 40, 50, 60, 70],
-//     },
-//   ],
-// };
-
 const chartData = computed(() => ({
-  labels: ['Paris', 'Nîmes', 'Toulon', 'Perpignan', 'Autre'],
+  labels: ['Paris', '2', 'Toulon', '3'],
   datasets: [
     {
       data: data.value,
@@ -59,9 +52,9 @@ const { barChartProps } = useBarChart({
         :placeholder="t('chart.setting')"
       />
       <Input
-        v-model="chartInputsData.estimated"
+        v-model="chartInputsData.month"
         type="number"
-        :placeholder="t('chart.estimated')"
+        :placeholder="t('chart.month')"
       />
 
       <div class="PB-range-slider-div" mx-8 px-5>
