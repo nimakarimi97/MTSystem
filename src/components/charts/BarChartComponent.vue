@@ -15,7 +15,7 @@ const chartInputsData = ref({
 const sliderValue = ref(10)
 const data = ref([])
 
-watch(() => {
+watchEffect(() => {
   sliderValue.value = Number.parseInt(sliderValue.value)
   data.value[0] = sliderValue.value
   data.value[1] = chartInputsData.value.capital
@@ -44,17 +44,17 @@ const { barChartProps } = useBarChart({
       <Input
         v-model="chartInputsData.capital"
         type="number"
-        :placeholder="t('chart.capital')"
+        :placeholder="t('calculator.chart.capital')"
       />
       <Input
         v-model="chartInputsData.setting"
         type="number"
-        :placeholder="t('chart.setting')"
+        :placeholder="t('calculator.chart.setting')"
       />
       <Input
         v-model="chartInputsData.month"
         type="number"
-        :placeholder="t('chart.month')"
+        :placeholder="t('calculator.chart.month')"
       />
 
       <div class="PB-range-slider-div" mx-8 px-5>

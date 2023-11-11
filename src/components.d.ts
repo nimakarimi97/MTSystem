@@ -7,8 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    BarChart: typeof import('./components/BarChart.vue')['default']
-    BarChartComponent: typeof import('./components/BarChartComponent.vue')['default']
+    BarChartComponent: typeof import('./components/charts/BarChartComponent.vue')['default']
     Contact: typeof import('./pages/Contact.vue')['default']
     DarkModeToggle: typeof import('./components/DarkModeToggle.vue')['default']
     FAQ: typeof import('./pages/FAQ.vue')['default']
@@ -19,7 +18,7 @@ declare module 'vue' {
     LanguageToggle: typeof import('./components/LanguageToggle.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']
     NavbarLink: typeof import('./components/NavbarLink.vue')['default']
-    PieChart: typeof import('./components/PieChart.vue')['default']
+    PieChartComponent: typeof import('./components/charts/PieChartComponent.vue')['default']
     Profit: typeof import('./pages/Profit.vue')['default']
     README: typeof import('./components/README.md')['default']
     Reviews: typeof import('./pages/Reviews.vue')['default']

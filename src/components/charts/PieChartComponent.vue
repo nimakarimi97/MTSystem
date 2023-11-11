@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { Chart, registerables } from 'chart.js'
-import { shuffle } from 'lodash'
-import { computed, defineComponent, ref } from 'vue'
+
+// import { shuffle } from 'lodash'
+import { computed, ref } from 'vue'
 import type { ExtractComponentData } from 'vue-chart-3'
 import { DoughnutChart } from 'vue-chart-3'
 
 Chart.register(...registerables)
 
-
 const data = ref([30, 40, 60, 70, 5])
 const doughnutRef = ref<ExtractComponentData<typeof DoughnutChart>>()
 
-const options = ref<ChartOptions<'doughnut'>>({
+const options = ref({
   responsive: true,
   plugins: {
     legend: {
@@ -24,7 +24,7 @@ const options = ref<ChartOptions<'doughnut'>>({
   },
 })
 
-const testData2 = computed<ChartData<'doughnut'>>(() => ({
+const testData2 = computed(() => ({
   labels: ['Paris', 'Roma', 'Toulon', 'Palermo', 'Autre'],
   datasets: [
     {
@@ -35,7 +35,8 @@ const testData2 = computed<ChartData<'doughnut'>>(() => ({
 }))
 
 function shuffleData() {
-  data.value = shuffle(data.value)
+  // data.value = shuffle(data.value)
+  // console.log(data.value);
 }
 </script>
 
