@@ -7,8 +7,8 @@ const { t } = useI18n()
 
 <template>
   <div my-14 flex-center flex-col justify-around gap-4>
-    <PieChartComponent />
     <BarChartComponent />
+    <PieChartComponent />
 
     <div flex flex-col gap-7 text-left>
       <p v-for="index in 6" :key="index">

@@ -7,13 +7,28 @@ const { t } = useI18n()
 
 const chartInputsData = ref({
   capital: 0,
-  setting: 0.01,
+  setting: 1,
   month: 12,
   estimated: 0,
 })
 
 const sliderValue = ref(10)
 const data = ref([])
+const total = ref(0)
+const months = ref([
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+])
 
 watchEffect(() => {
   sliderValue.value = Number.parseInt(sliderValue.value)
@@ -21,10 +36,12 @@ watchEffect(() => {
   data.value[1] = chartInputsData.value.capital
   data.value[2] = chartInputsData.value.setting
   data.value[3] = chartInputsData.value.month
+
+  total.value = 400 * chartInputsData.value.setting
 })
 
 const chartData = computed(() => ({
-  labels: ['Paris', '2', 'Toulon', '3'],
+  labels: months.value,
   datasets: [
     {
       data: data.value,
@@ -41,21 +58,35 @@ const { barChartProps } = useBarChart({
 <template>
   <div my-14 flex-center flex-col justify-around gap-20 md:flex-row>
     <div my-14 flex-center flex-col gap-7>
-      <Input
-        v-model="chartInputsData.capital"
-        type="number"
-        :placeholder="t('calculator.chart.capital')"
-      />
-      <Input
-        v-model="chartInputsData.setting"
-        type="number"
-        :placeholder="t('calculator.chart.setting')"
-      />
-      <Input
-        v-model="chartInputsData.month"
-        type="number"
-        :placeholder="t('calculator.chart.month')"
-      />
+      <div grid gap-2 text-left>
+        <span>{{ t("calculator.chart.capital") }}</span>
+        <Input
+          v-model="chartInputsData.capital"
+          :value="chartInputsData.capital"
+          type="number"
+          :placeholder="t('calculator.chart.capital')"
+        />
+      </div>
+
+      <div grid gap-2 text-left>
+        <span>{{ t("calculator.chart.setting") }}</span>
+        <Input
+          v-model="chartInputsData.setting"
+          :value="chartInputsData.setting"
+          type="number"
+          :placeholder="t('calculator.chart.setting')"
+        />
+      </div>
+
+      <div grid gap-2 text-left>
+        <span>{{ t("calculator.chart.month") }}</span>
+        <Input
+          v-model="chartInputsData.month"
+          :value="chartInputsData.month"
+          type="number"
+          :placeholder="t('calculator.chart.month')"
+        />
+      </div>
 
       <div class="PB-range-slider-div" mx-8 px-5>
         <input
@@ -72,6 +103,13 @@ const { barChartProps } = useBarChart({
     </div>
 
     <BarChart id="BarChart" v-bind="barChartProps" />
+  </div>
+
+  <div>
+    <h5>
+      Total Estimated Profit:
+      {{ total }}
+    </h5>
   </div>
 </template>
 
