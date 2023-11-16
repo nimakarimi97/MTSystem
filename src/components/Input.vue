@@ -7,7 +7,14 @@ const { name, type } = defineModels<{
 
 <template>
   <input
-    v-model="name" class="input" v-bind="$attrs" p="x-4 y-2" text="center" bg="transparent"
-    border="~ rounded blue-400" outline="none active:none" :type="type"
+    v-model="name"
+    class="input"
+    v-bind="$attrs"
+    p="x-4 y-2"
+    text="center"
+    bg="transparent"
+    border="~ rounded blue-400"
+    outline="none active:none"
+    :type="type"
   >
 </template>

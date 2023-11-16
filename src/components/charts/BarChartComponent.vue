@@ -6,8 +6,8 @@ Chart.register(...registerables)
 const { t } = useI18n()
 
 const chartInputsData = ref({
-  capital: 0,
-  setting: 1,
+  capital: 1000,
+  setting: 0.01,
   month: 12,
   estimated: 0,
 })
@@ -29,6 +29,7 @@ const months = ref([
   'November',
   'December',
 ])
+const monthsToShow = ref([months])
 
 watchEffect(() => {
   sliderValue.value = Number.parseInt(sliderValue.value)
@@ -37,15 +38,21 @@ watchEffect(() => {
   data.value[2] = chartInputsData.value.setting
   data.value[3] = chartInputsData.value.month
 
-  total.value = 400 * chartInputsData.value.setting
+  total.value =
+    chartInputsData.value.capital +
+    400 * chartInputsData.value.setting * 100 * chartInputsData.value.month
+  // console.log([total.value] * 6);
+
+  monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
+  // console.log(monthsToShow.value.length);
 })
 
 const chartData = computed(() => ({
-  labels: months.value,
+  labels: monthsToShow.value,
   datasets: [
     {
-      data: data.value,
-      backgroundColor: ['#77CEFF', '#0079AF', '#123E6B', '#97B0C4', '#A5C8ED'],
+      data: Array.from({ length: monthsToShow.value.length }).fill(total.value),
+      backgroundColor: ['orange'],
     },
   ],
 }))
@@ -75,6 +82,7 @@ const { barChartProps } = useBarChart({
           :value="chartInputsData.setting"
           type="number"
           :placeholder="t('calculator.chart.setting')"
+          step="0.01"
         />
       </div>
 
@@ -85,6 +93,9 @@ const { barChartProps } = useBarChart({
           :value="chartInputsData.month"
           type="number"
           :placeholder="t('calculator.chart.month')"
+          max="12"
+          min="1"
+          w-50
         />
       </div>
 
