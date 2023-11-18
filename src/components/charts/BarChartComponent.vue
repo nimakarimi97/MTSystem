@@ -12,9 +12,10 @@ const chartInputsData = ref({
   estimated: 0,
 })
 
-const sliderValue = ref(10)
-const data = ref([])
-const total = ref(0)
+// const sliderValue = ref(10);
+const balance = ref(0)
+const profit = ref(0)
+const profitPerMonth = ref(400)
 const months = ref([
   'January',
   'February',
@@ -32,15 +33,11 @@ const months = ref([
 const monthsToShow = ref([months])
 
 watchEffect(() => {
-  sliderValue.value = Number.parseInt(sliderValue.value)
-  data.value[0] = sliderValue.value
-  data.value[1] = chartInputsData.value.capital
-  data.value[2] = chartInputsData.value.setting
-  data.value[3] = chartInputsData.value.month
+  // sliderValue.value = Number.parseInt(sliderValue.value);
 
-  total.value =
-    chartInputsData.value.capital +
-    400 * chartInputsData.value.setting * 100 * chartInputsData.value.month
+  profitPerMonth.value = 400 * chartInputsData.value.setting * 100
+  profit.value = profitPerMonth.value * chartInputsData.value.month
+  balance.value = profit.value + chartInputsData.value.capital
   // console.log([total.value] * 6);
 
   monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
@@ -51,8 +48,9 @@ const chartData = computed(() => ({
   labels: monthsToShow.value,
   datasets: [
     {
-      data: Array.from({ length: monthsToShow.value.length }).fill(total.value),
-      backgroundColor: ['orange'],
+      data: Array.from({ length: monthsToShow.value.length }).fill(profitPerMonth.value),
+      backgroundColor: ['rgba(217, 119, 6)'],
+      label: 'Profit per month',
     },
   ],
 }))
@@ -63,14 +61,15 @@ const { barChartProps } = useBarChart({
 </script>
 
 <template>
-  <div my-14 flex-center flex-col justify-around gap-20 md:flex-row>
-    <div my-14 flex-center flex-col gap-7>
+  <div my-14 flex-center-col justify-around gap-3>
+    <div my-4 flex-center gap-7>
       <div grid gap-2 text-left>
         <span>{{ t("calculator.chart.capital") }}</span>
         <Input
           v-model="chartInputsData.capital"
           :value="chartInputsData.capital"
           type="number"
+          name="capital"
           :placeholder="t('calculator.chart.capital')"
         />
       </div>
@@ -99,28 +98,30 @@ const { barChartProps } = useBarChart({
         />
       </div>
 
-      <div class="PB-range-slider-div" mx-8 px-5>
+      <!-- <div class="PB-range-slider-div" mx-8 px-5>
         <input
           v-model="sliderValue"
           type="range"
           min="0"
           max="100"
           class="PB-range-slider"
-        >
+        />
         <p class="PB-range-slidervalue">
           {{ sliderValue }}
         </p>
-      </div>
+      </div> -->
     </div>
 
-    <BarChart id="BarChart" v-bind="barChartProps" />
-  </div>
+    <div>
+      <p>
+        {{ `${t("calculator.profit")}: ${profit}` }}
+      </p>
+      <p>
+        {{ `${t("calculator.balance")}: ${balance}` }}
+      </p>
+    </div>
 
-  <div>
-    <h5>
-      Total Estimated Profit:
-      {{ total }}
-    </h5>
+    <BarChart id="BarChart" class="w-100%" v-bind="barChartProps" />
   </div>
 </template>
 
