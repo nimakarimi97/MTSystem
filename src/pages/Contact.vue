@@ -41,14 +41,14 @@ function submitForm(e: Event) {
       {{ t('contact.title') }}
     </h3>
 
-    <form border="~ rounded blue-400" @submit.prevent="submitForm">
+    <form border="~ rounded amber-600" @submit.prevent="submitForm">
       <Input v-model="formData.name" :placeholder="t('form.name')" autocomplete="true" />
 
       <Input v-model="formData.email" :placeholder="t('form.email')" autocomplete="true" type="email" />
 
       <textarea
         v-model="formData.message" :placeholder="t('form.message')" text="center" h-26 bg="transparent"
-        border="~ rounded blue-400" outline="none active:none"
+        border="~ rounded amber-600" outline="none active:none"
       />
 
       <div v-if="formError" class="error italic text-red-7">
