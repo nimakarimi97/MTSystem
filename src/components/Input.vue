@@ -13,7 +13,7 @@ const { name, type } = defineModels<{
     p="x-4 y-2"
     text="center"
     bg="transparent"
-    border="~ rounded blue-400"
+    border="~ rounded amber-600"
     outline="none active:none"
     :type="type"
   >
