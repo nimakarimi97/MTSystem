@@ -27,7 +27,6 @@ form:
   email: Your Email
   message: Your Message
 not-found: Not found
-Profit: Profit
 
 
 home:
@@ -45,7 +44,7 @@ fx:
   body1: Percentages from Myfxbook
   body2: Profit from MT4 in Euro
 
-
+Profit: Profit
 profit:
   title: Here are more results from our investors
   body1: MT account from £3,000 to £6,556 generating £3,556 of net profit automatically.
@@ -91,8 +90,17 @@ Contact: Contact
 contact:
   title: Have a Question? Contact Us!
 
+calculator:
+  description1: For conservative risk we recommend investors follow the following ratios
+  description2: from €1,500 to €6,000 invested select 0.01
+  description3: from 6000 to 12,000 € invested select 0.02
+  description4: from 12,000 to 15,000 € invested select 0.03
+  description5: from €15,000 to €18,000 invested select 0.04
+  description6: Increasing the fight setting by +0.01 for every 3000 capital added.
+  chart:
+    capital: capital
+    setting: setting
+    month: month
+  balance: Total Balance
+  profit: Estimated Net Profit
 
-chart:
-  capital: capital
-  setting: setting
-  month: month

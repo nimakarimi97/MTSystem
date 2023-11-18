@@ -43,6 +43,8 @@ fx:
   body1: Percentuali dal Myfxbook
   body2: Profitto dall'MT4 in Euro
 
+
+Profit: Profito
 profit:
   title: Ecco Altri Risultati Dei Nostri Investitori
   body1: Conto MT da 3000£ a 6556£ generando in automatico 3556£ di profitto netto
@@ -78,6 +80,7 @@ faq:
   title: Domande Frequenti
   subtitle: Ecco alcune delle domande più comuni.
 
+Work: Lavora Con Noi
 work:
   body1: Se sei una persona determinata in cerca di un'opportunità per cambiare la tua vita, abbiamo una proposta per te. Unisciti al nostro team MT e preparati a trasformare il futuro del trading. I nostri investitori avranno l’opportunità di collaborare direttamente con noi.
   body2: Siamo alla ricerca d’individui appassionati e ambiziosi. Se credi di avere la determinazione e la voglia di fare la differenza nel mondo del trading automatizzato, non esitare a contattarci o contattare chi ti ha presentato MT. La tua prossima avventura professionale potrebbe iniziare qui.
@@ -87,7 +90,18 @@ Contact: Contact
 contact:
   title: Hai una domanda? Contattaci!
 
-chart:
-  capital: capital
-  setting: setting
-  month: mesi
+calculator:
+  description1: Per un rischio conservativo consigliamo agli investitori di seguire le seguenti proporzioni
+  description2: dagli 1.500 € ai 6000 € investiti selezionare 0.01
+  description3: da 6000 a 12.000 € investiti selezionare 0.02 
+  description4: da 12.000 a 15.000 € investiti selezionare 0.03
+  description5: da 15.000 a 18.000 € investiti selezionare 0.04 
+  description6: Aumentando il lottaggio del settaggio di +0.01 ogni 3000 di capitale aggiunto.
+  chart:
+    capital: capital
+    setting: setting
+    month: mesi
+  balance: Totale Equilibrio
+  profit: Profitto Netto Stimato
+
+
