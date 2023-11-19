@@ -91,6 +91,9 @@ contact:
   title: Have a Question? Contact Us!
 
 calculator:
+  title:
+    simple: MTCalculator Simple Interest
+    compound: MTCalculator Compound Interest
   description1: For conservative risk we recommend investors follow the following ratios
   description2: from €1,500 to €6,000 invested select 0.01
   description3: from 6000 to 12,000 € invested select 0.02
@@ -98,9 +101,10 @@ calculator:
   description5: from €15,000 to €18,000 invested select 0.04
   description6: Increasing the fight setting by +0.01 for every 3000 capital added.
   chart:
-    capital: capital
-    setting: setting
-    month: month
+    capital: Capital
+    capital_error: The capital must be greater than 1500€
+    setting: Setting
+    month: Month
   balance: Total Balance
   profit: Estimated Net Profit
 
