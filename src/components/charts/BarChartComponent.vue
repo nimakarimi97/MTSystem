@@ -6,7 +6,7 @@ Chart.register(...registerables)
 const { t } = useI18n()
 
 const chartInputsData = ref({
-  capital: 1000,
+  capital: 1500,
   setting: 0.01,
   month: 12,
   estimated: 0,
@@ -33,15 +33,12 @@ const months = ref([
 const monthsToShow = ref([months])
 
 watchEffect(() => {
-  // sliderValue.value = Number.parseInt(sliderValue.value);
-
   profitPerMonth.value = 400 * chartInputsData.value.setting * 100
   profit.value = profitPerMonth.value * chartInputsData.value.month
   balance.value = profit.value + chartInputsData.value.capital
-  // console.log([total.value] * 6);
 
   monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
-  // console.log(monthsToShow.value.length);
+  // sliderValue.value = Number.parseInt(sliderValue.value);
 })
 
 const chartData = computed(() => ({
@@ -62,15 +59,25 @@ const { barChartProps } = useBarChart({
 
 <template>
   <div my-14 flex-center-col justify-around gap-3>
+    <h2>{{ t("calculator.title.simple") }}</h2>
+
     <div my-4 flex-center gap-7>
       <div grid gap-2 text-left>
-        <span>{{ t("calculator.chart.capital") }}</span>
+        <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
+          {{ t("calculator.chart.capital_error") }}
+        </span>
+        <span v-else>{{ t("calculator.chart.capital") }}</span>
+
         <Input
           v-model="chartInputsData.capital"
           :value="chartInputsData.capital"
           type="number"
           name="capital"
+          :class="{
+            'border-red-7': chartInputsData.capital < 1500,
+          }"
           :placeholder="t('calculator.chart.capital')"
+          min="1500"
         />
       </div>
 
@@ -112,12 +119,16 @@ const { barChartProps } = useBarChart({
       </div> -->
     </div>
 
-    <div>
+    <div flex-center-col gap-3 primary-color>
       <p>
-        {{ `${t("calculator.profit")}: ${profit}` }}
+        {{ `${t("calculator.profit")} : ` }}
+        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-else text-white>{{ profit }}</span>
       </p>
       <p>
-        {{ `${t("calculator.balance")}: ${balance}` }}
+        {{ `${t("calculator.balance")} : ` }}
+        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-else text-white>{{ balance }}</span>
       </p>
     </div>
 
