@@ -1,12 +1,14 @@
 <script setup>
 import BarChartComponent from '~/components/charts/BarChartComponent.vue'
+import CompoundProfit from '~/components/charts/CompoundProfit.vue'
 import PieChartComponent from '~/components/charts/PieChartComponent.vue'
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <div my-14 flex-center flex-col justify-around gap-12>
+  <div my-4 flex-center flex-col justify-around gap-12>
+    <CompoundProfit />
     <BarChartComponent />
     <PieChartComponent />
 
