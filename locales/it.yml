@@ -102,7 +102,7 @@ calculator:
   description6: Aumentando il lottaggio del settaggio di +0.01 ogni 3000 di capitale aggiunto.
   chart:
     capital: Capital
-    capital_error: Il capitale dev essere più di 1500€
+    capital_error: Il capitale deve essere maggiore di 1500€
     setting: Setting
     month: Mesi
   balance: Totale Equilibrio

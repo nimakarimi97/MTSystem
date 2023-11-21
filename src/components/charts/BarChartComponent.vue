@@ -9,7 +9,6 @@ const chartInputsData = ref({
   capital: 1500,
   setting: 0.01,
   month: 12,
-  estimated: 0,
 })
 
 // const sliderValue = ref(10);
@@ -89,6 +88,7 @@ const { barChartProps } = useBarChart({
           type="number"
           :placeholder="t('calculator.chart.setting')"
           step="0.01"
+          min="0"
         />
       </div>
 

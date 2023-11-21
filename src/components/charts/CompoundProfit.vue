@@ -7,9 +7,8 @@ const { t } = useI18n()
 
 const chartInputsData = ref({
   capital: 5000,
-  setting: 0.01,
-  month: 10,
-  estimated: 0,
+  setting: [0.01],
+  month: 1,
 })
 
 const balance = ref(0)
@@ -31,30 +30,34 @@ const months = ref([
 ])
 const monthsToShow = ref([months])
 
+function calculateSetting(money) {
+  return Number(Math.max(0.01, Math.floor(money / 3000) / 100).toFixed(2))
+}
+
 watchEffect(() => {
-  balance.value = profit.value + chartInputsData.value.capital
+  profit.value = 0
+  balance.value = chartInputsData.value.capital
+  chartInputsData.value.setting = [0.01]
+  profitPerMonth.value = []
 
-  chartInputsData.value.setting = Math.max(0.01, Math.floor(balance.value / 3000) / 100)
-  chartInputsData.value.setting = Number(chartInputsData.value.setting.toFixed(2))
+  for (let i = 0; i < chartInputsData.value.month; i++) {
+    const currentSetting = calculateSetting(balance.value)
+    chartInputsData.value.setting.push(currentSetting)
 
-  for (let i = 0; i < chartInputsData.value.month; i++) 
-    profitPerMonth.value[i] = 400 * chartInputsData.value.setting * 100
-  
-
-  profit.value = profitPerMonth.value[0] * chartInputsData.value.month
-  balance.value = profit.value + chartInputsData.value.capital
+    const monthlyProfit = 400 * currentSetting * 100
+    profitPerMonth.value[i] = monthlyProfit
+    profit.value += monthlyProfit
+    balance.value += monthlyProfit
+  }
 
   monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
-
-  // console.log(profitPerMonth.value[0]);
-  // console.log("profit", profit.value);
 })
 
 const chartData = computed(() => ({
   labels: monthsToShow.value,
   datasets: [
     {
-      data: Array.from({ length: monthsToShow.value.length }).fill(profitPerMonth.value),
+      data: profitPerMonth.value,
       backgroundColor: ['rgba(217, 119, 6)'],
       label: 'Profit per month',
     },
@@ -67,13 +70,10 @@ const { barChartProps } = useBarChart({
 </script>
 
 <template>
-  <span>{{ balance }}</span>
-  <span>{{ chartInputsData.setting }}</span>
-
-  <div my-14 w-6xl flex-center-col justify-around gap-3>
+  <div my-14 flex-center-col justify-around gap-3>
     <h2>{{ t("calculator.title.compound") }}</h2>
 
-    <div my-4 flex-center gap-7 class="w-100%">
+    <div my-4 flex-center gap-7>
       <div grid gap-2 text-left>
         <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
           {{ t("calculator.chart.capital_error") }}
@@ -97,10 +97,11 @@ const { barChartProps } = useBarChart({
         <span>{{ t("calculator.chart.setting") }}</span>
         <Input
           v-model="chartInputsData.setting"
-          :value="chartInputsData.setting"
+          :value="chartInputsData.setting.slice(-1)"
           type="number"
           :placeholder="t('calculator.chart.setting')"
           step="0.01"
+          min="0"
         />
       </div>
 
