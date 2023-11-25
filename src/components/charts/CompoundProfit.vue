@@ -13,7 +13,7 @@ const chartInputsData = ref({
 
 const balance = ref(0)
 const profit = ref(0)
-const profitPerMonth = ref([400])
+const profitPerMonth = ref([400])         
 const months = ref([
   'January',
   'February',
@@ -31,7 +31,7 @@ const months = ref([
 const monthsToShow = ref([months])
 
 function calculateSetting(money) {
-  return Number(Math.max(0.01, Math.floor(money / 3000) / 100).toFixed(2))
+  return Number(Math.max(0.01, Math.ceil(money / 10000) / 100).toFixed(2))
 }
 
 watchEffect(() => {
