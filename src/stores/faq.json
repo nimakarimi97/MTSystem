@@ -60,6 +60,14 @@
     "answer": "La MT VPS è un computer virtuale sul quale andrà installato il bot per far si che il bot ti lavori H24. Questa VPS è ottima ed è con server Londra, ideale perché offre bassa latenza nei mercati finanziari europei. Questo significa che le tue strategie di trading possono eseguirsi in modo più veloce ed efficiente, riducendo il rischio di ritardi nell'esecuzione delle operazioni. Inoltre, incluso nel servizio, avrai gratuitamente assistenza H24 in caso di problemi più il setup di trading completo comprendente Metatrader4 e Software MT configurato. Questo in modo da semplificare il processo di avvio e iniziare ad operare fin da subito senza problemi."
   },
   {
+    "question": "Cos’è MTCalculator Simple Interest?",
+    "answer": "È un calcolatore creato per effettuare una stima dei potenziali profitti che possiamo generare con il software MT a seconda del settaggio che andremo ad inserire. È ad Interesse semplice perchè all’aumentare del capitale non consideriamo l’aumento del settaggio. Se serve supporto sull’utilizzo scrivi MarkFx o il tuo referente che ti ha portato a conoscere MT."
+  },
+  {
+    "question": "Cos’è MTCalculator Coumpound interest?",
+    "answer": "A differenza dell’MTCalculator Simple Interest, questo calcolatore considera un incremento di +0.01 automatico nel settaggio per ogni 10mila di capitale investito. In questo modo, all’aumentare del capitale abbiamo una crescita esponenziale dei profitti."
+  },
+  {
     "question": "Gli investitori avranno la possibilità di collaborare direttamente con il team di MT?",
     "answer": "Sì, diamo il benvenuto alla collaborazione diretta con il nostro team da parte degli investitori. Siamo aperti a comunicazioni, domande e feedback diretti per garantire un'esperienza di investimento positiva e soddisfacente. Potrai unirti al canale telegram pubblico e iscriverti alla pagina Instagram per entrare a far parte della nostra community."
   },
