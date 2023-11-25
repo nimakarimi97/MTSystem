@@ -8,7 +8,7 @@ const { t } = useI18n()
 const chartInputsData = ref({
   capital: 1500,
   setting: 0.01,
-  month: 12,
+  month: 10,
 })
 
 // const sliderValue = ref(10);

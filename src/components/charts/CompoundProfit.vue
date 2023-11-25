@@ -8,7 +8,7 @@ const { t } = useI18n()
 const chartInputsData = ref({
   capital: 5000,
   setting: [0.01],
-  month: 1,
+  month: 10,
 })
 
 const balance = ref(0)
