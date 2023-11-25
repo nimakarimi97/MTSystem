@@ -64,7 +64,7 @@
     "answer": "È un calcolatore creato per effettuare una stima dei potenziali profitti che possiamo generare con il software MT a seconda del settaggio che andremo ad inserire. È ad Interesse semplice perchè all’aumentare del capitale non consideriamo l’aumento del settaggio. Se serve supporto sull’utilizzo scrivi MarkFx o il tuo referente che ti ha portato a conoscere MT."
   },
   {
-    "question": "Cos’è MTCalculator Coumpound interest?",
+    "question": "Cos’è MTCalculator Coumpound Interest?",
     "answer": "A differenza dell’MTCalculator Simple Interest, questo calcolatore considera un incremento di +0.01 automatico nel settaggio per ogni 10mila di capitale investito. In questo modo, all’aumentare del capitale abbiamo una crescita esponenziale dei profitti."
   },
   {
