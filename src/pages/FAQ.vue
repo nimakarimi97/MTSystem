@@ -1,6 +1,8 @@
 <script setup>
 import faq from '~/stores/faq.json'
 
+const { t } = useI18n()
+
 const faqItems = ref(faq)
 
 function closeOtherQuestions() {
@@ -26,6 +28,7 @@ const show = ref(true)
 
 <template>
   <div>
+    <h2>{{ t("faq.title") }}</h2>
     <div
       v-for="(item, index) in faqItems"
       :key="index"
