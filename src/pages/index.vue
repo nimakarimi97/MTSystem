@@ -8,6 +8,7 @@ import Fx from './Fx.vue'
 import Profit from './Profit.vue'
 import Calculator from './Calculator.vue'
 import FAQ from './FAQ.vue'
+import VPS from './VPS.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -15,14 +16,15 @@ defineOptions({
 </script>
 
 <template>
-  <Home id="home" />
-  <WhoWeAre id="who" />
-  <Fx id="fx" />
-  <Profit id="profit" />
-  <Calculator id="calculator" />
-  <Reviews id="reviews" />
-  <Prices id="prices" />
-  <FAQ id="faq" my-5 />
-  <WorkWithUs id="work" my-5 />
-  <Contact id="contact" />
+  <Home id="home" mb-60 />
+  <WhoWeAre id="who" mb-60 />
+  <Fx id="fx" mb-60 />
+  <Profit id="profit" mb-60 />
+  <Calculator id="calculator" mb-60 />
+  <Reviews id="reviews" mb-60 />
+  <Prices id="prices" mb-60 />
+  <VPS id="vps" mb-60 />
+  <FAQ id="faq" mb-60 />
+  <WorkWithUs id="work" mb-60 />
+  <Contact id="contact" mb-60 />
 </template>

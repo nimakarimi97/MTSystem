@@ -75,6 +75,14 @@ prices:
 
 vps:
   title: Server Virtuali Privati
+  body1: L’MTVps è un server virtuale windows che consente di far lavorare H24 il bot MT senza interruzioni, offrendo affidabilità, velocità e flessibilità.
+  body2: MTVps ha server situati a Londra. È ottima per il trading algoritmico ed ha bassa latenza coi broker finanziari.
+  body3: È la scelta ideale per massimizzare le prestazioni del tuo bot ! 
+  body4: Avrai incluso
+  body5:
+    - Setup MT4 preinstallato
+    - EA (bot) MT gratuito
+    - Assistenza H24 gratuita in caso di problemi col bot o con la vps.
 
 faq:
   title: Domande Frequenti
