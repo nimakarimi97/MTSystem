@@ -4,7 +4,9 @@ const { t } = useI18n()
 
 <template>
   <div>
-    <h3>{{ t("vps.title") }}</h3>
+    <h2 primary-color>
+      {{ t("vps.title") }}
+    </h2>
 
     <p>{{ t("vps.body1") }}</p>
     <p>{{ t("vps.body2") }}</p>
@@ -19,8 +21,8 @@ const { t } = useI18n()
     </ul>
   </div>
 
-  <div class="flex justify-around">
-    <div class="card flex-center-col gap-4">
+  <div class="flex justify-center" gap-5>
+    <div class="card flex-center-col gap-6" border-2 border-amber-6>
       <h4>MENSILE</h4>
       <p>20€ al Mese + Iva</p>
       <p>(abbonamento automatico ogni mese)</p>
@@ -29,7 +31,7 @@ const { t } = useI18n()
       </button>
     </div>
 
-    <div class="card flex-center-col gap-4">
+    <div class="card flex-center-col gap-6" border-2 border-amber-6>
       <h4>TRIMESTRALE</h4>
       <p>50€ + iva</p>
       <p>(abbonamento automatico ogni tre mesi)</p>
@@ -38,7 +40,7 @@ const { t } = useI18n()
       </button>
     </div>
 
-    <div class="card flex-center-col gap-4">
+    <div class="card flex-center-col gap-6" border-2 border-amber-6>
       <h4>ANNUALE</h4>
       <p>180€ + iva</p>
       <p>(abbonamento automatico ogni 12 mesi)</p>
@@ -51,23 +53,22 @@ const { t } = useI18n()
 
 <style lang="scss" scoped>
 .bullet-point {
-  list-style-type: none; /* Remove default bullet point */
-  padding-left: 1em; /* Add some padding to the left of the text */
+  list-style-type: none;
+  padding-left: 1em;
 
-  /* Add a custom bullet point before the text */
   &::before {
-    content: "•"; /* This is your custom bullet point */
-    display: inline-block; /* Make it inline with the text */
-    width: 2em; /* Specify a width */
-    margin-left: -1em; /* Pull the bullet back over the padding */
+    content: "•";
+    display: inline-block;
+    width: 2em;
+    margin-left: -1em;
   }
 }
 
 .card {
-  border: 1px solid #ccc;
+  background: black;
   border-radius: 5px;
-  padding: 20px;
-  width: 25%;
+  padding: 20px 1rem;
+  width: fit-content;
   text-align: center;
 }
 </style>
