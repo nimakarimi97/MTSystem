@@ -24,7 +24,7 @@ const { t } = useI18n()
   <div class="flex justify-center" gap-5>
     <div class="card flex-center-col gap-6" border-2 border-amber-6>
       <h4>MENSILE</h4>
-      <p>20€ al Mese + Iva</p>
+      <p>20€ al Mese + iva</p>
       <p>(abbonamento automatico ogni mese)</p>
       <button class="btn">
         Acquista Ora

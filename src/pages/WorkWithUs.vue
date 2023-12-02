@@ -13,6 +13,9 @@ const { t } = useI18n()
     <p class="text-lg">
       {{ $t('work.body2') }}
     </p>
+    <p class="mt-8 text-lg">
+      {{ $t('work.body3') }}
+    </p>
   </div>
 </template>
 

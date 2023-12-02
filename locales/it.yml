@@ -24,7 +24,7 @@ intro:
   hi: Ciao, {name}!
 form:
   name: Il tuo nome
-  email: Il tuo email
+  email: La tua email
   message: Il tuo messaggio 
 not-found: Non trovato
 
@@ -91,8 +91,8 @@ faq:
 Work: Lavora Con Noi
 work:
   body1: Se sei una persona determinata in cerca di un'opportunità per cambiare la tua vita, abbiamo una proposta per te. Unisciti al nostro team MT e preparati a trasformare il futuro del trading. I nostri investitori avranno l’opportunità di collaborare direttamente con noi.
-  body2: Siamo alla ricerca d’individui appassionati e ambiziosi. Se credi di avere la determinazione e la voglia di fare la differenza nel mondo del trading automatizzato, non esitare a contattarci o contattare chi ti ha presentato MT. La tua prossima avventura professionale potrebbe iniziare qui.
-
+  body2: Siamo alla ricerca d’individui appassionati e ambiziosi. Se credi di avere la determinazione e la voglia di fare la differenza nel mondo del trading automatizzato, non esitare a contattarci o contattare chi ti ha presentato MT.
+  body3: La tua prossima avventura professionale potrebbe iniziare qui.
 
 Contact: Contact
 contact:
