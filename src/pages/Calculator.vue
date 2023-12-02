@@ -7,7 +7,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div my-4 flex-center flex-col justify-around gap-12>
+  <div my-4 flex-center flex-col justify-around gap-12 px-8>
     <CompoundProfit />
     <BarChartComponent />
     <!-- <PieChartComponent /> -->

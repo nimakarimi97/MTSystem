@@ -3,12 +3,12 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="mx-auto my-15 p-2">
+  <div class="mx-auto my-15 flex-center-col p-2">
     <h3 primary-color>
       {{ t("profit.title").toUpperCase() }}
     </h3>
 
-    <div class="mx-auto my-15 p-2 md:w-60%">
+    <div class="my-15 flex-center-col p-2 md:w-60%">
       <p my-5>
         {{ t("profit.body1") }}
       </p>
@@ -21,8 +21,8 @@ const { t } = useI18n()
     </div>
 
     <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
-      <img pb-4 md:p-0 src="/risultati/MYFXBOOK/left.jpg" alt="">
-      <img src="/risultati/MYFXBOOK/right.jpg" alt="">
+      <img src="/risultati/MYFXBOOK/left.jpg" alt="" h-auto pb-4 md-h-125 md:p-0>
+      <img src="/risultati/MYFXBOOK/right.jpg" alt="" h-auto md-h-125>
     </div>
 
     <div class="mx-auto flex flex-col gap-3 lg:w-90%">
@@ -40,6 +40,5 @@ const { t } = useI18n()
 <style scoped lang="scss">
 img {
   width: 90%;
-  object-fit: cover;
 }
 </style>
