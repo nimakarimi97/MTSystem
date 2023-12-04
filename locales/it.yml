@@ -107,19 +107,23 @@ calculator:
       part1: Per 
       boldPart: un rischio conservativo
       part2: raccomandiamo agli investitori di seguire il seguente settaggio 
-    description1: da €1,5k a €6k seleziona la size 0,01
-    description2: da €6k a €12k seleziona la size 0,02
-    description3: da €12k a €18k seleziona la size 0,03
-    description4: da €18k a €24k+ seleziona la size 0,04
+    description1: da €1,500 a €6,000 seleziona la size 0,01
+    description2: da €6,000 a €12,000 seleziona la size 0,02
+    description3: da €12,000 a €18,000 seleziona la size 0,03
+    description4: da €18,000 a €24,000+ seleziona la size 0,04
   superRisk:
     title:
       part1: Per 
       boldPart: un rischio super conservativo
       part2: raccomandiamo agli investitori di seguire il seguente settaggio 
-    description1: da €1,5k a €10k seleziona la size 0,01
-    description2: da €10k a €20k seleziona la size 0,02
-    description3: da €20k a €30k seleziona la size 0,03
-    description4: da €30k a €40k+ seleziona la size 0,04
+    description1: da €1,500 a €10,000 seleziona la size 0,01
+    description2: da €10,000 a €20,000 seleziona la size 0,02
+    description3: da €20,000 a €30,000 seleziona la size 0,03
+    description4: da €30,000 a €40,000+ seleziona la size 0,04
+  compoundDescription: 
+    part1: Questo
+    boldPart: calcolatore ad interesse composto
+    part2: tiene in considerazione un aumento di +0.01 nel settaggio per ogni €10,000 di capitale aggiunto. Quindi in modalità super conservativa.
   chart:
     capital: Capital
     capital_error: Il capitale deve essere maggiore di 1500€
