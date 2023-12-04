@@ -102,12 +102,24 @@ calculator:
   title:
     simple: MTCalculator Interesse Semplice
     compound: MTCalculator Interesse Composto 
-  description1: Per un rischio conservativo consigliamo agli investitori di seguire le seguenti proporzioni
-  description2: dagli 1.500 € ai 6000 € investiti selezionare 0.01
-  description3: da 6000 a 12.000 € investiti selezionare 0.02 
-  description4: da 12.000 a 15.000 € investiti selezionare 0.03
-  description5: da 15.000 a 18.000 € investiti selezionare 0.04 
-  description6: Aumentando il lottaggio del settaggio di +0.01 ogni 3000 di capitale aggiunto.
+  risk:
+    title:
+      part1: Per 
+      boldPart: un rischio conservativo
+      part2: raccomandiamo agli investitori di seguire il seguente settaggio 
+    description1: da €1,5k a €6k seleziona la size 0,01
+    description2: da €6k a €12k seleziona la size 0,02
+    description3: da €12k a €18k seleziona la size 0,03
+    description4: da €18k a €24k+ seleziona la size 0,04
+  superRisk:
+    title:
+      part1: Per 
+      boldPart: un rischio super conservativo
+      part2: raccomandiamo agli investitori di seguire il seguente settaggio 
+    description1: da €1,5k a €10k seleziona la size 0,01
+    description2: da €10k a €20k seleziona la size 0,02
+    description3: da €20k a €30k seleziona la size 0,03
+    description4: da €30k a €40k+ seleziona la size 0,04
   chart:
     capital: Capital
     capital_error: Il capitale deve essere maggiore di 1500€
