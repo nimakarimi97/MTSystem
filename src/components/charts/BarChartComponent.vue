@@ -132,7 +132,7 @@ const { barChartProps } = useBarChart({
       </p>
     </div>
 
-    <BarChart id="BarChart" class="w-100%" v-bind="barChartProps" />
+    <BarChart id="BarChart" class="w-90%" v-bind="barChartProps" />
   </div>
 </template>
 
