@@ -1,8 +1,10 @@
 <script setup>
 import BarChartComponent from '~/components/charts/BarChartComponent.vue'
 import CompoundProfit from '~/components/charts/CompoundProfit.vue'
+import PieChartComponent from '~/components/charts/PieChartComponent.vue'
 
 const { t } = useI18n()
+const EinsteinImage = '/public/Einstein-en.jpg'
 </script>
 
 <template>
@@ -48,6 +50,8 @@ const { t } = useI18n()
       }}</span>
       {{ t("calculator.compoundDescription.part2") }}
     </p>
+
+    <img class="max-w-2xl object-cover" :src="EinsteinImage" alt="">
 
     <!-- <PieChartComponent /> -->
   </div>
