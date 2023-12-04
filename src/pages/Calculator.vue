@@ -3,8 +3,14 @@ import BarChartComponent from '~/components/charts/BarChartComponent.vue'
 import CompoundProfit from '~/components/charts/CompoundProfit.vue'
 import PieChartComponent from '~/components/charts/PieChartComponent.vue'
 
-const { t } = useI18n()
-const EinsteinImage = '/public/Einstein-en.jpg'
+const { t, locale } = useI18n()
+let EinsteinImage = '/public/Einstein-en.jpg'
+
+watch(() => {
+  if (locale.value === 'it') 
+    EinsteinImage = '/public/Einstein.jpg'
+  else EinsteinImage = '/public/Einstein-en.jpg'
+})
 </script>
 
 <template>
