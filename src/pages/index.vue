@@ -9,6 +9,7 @@ import Profit from './Profit.vue'
 import Calculator from './Calculator.vue'
 import FAQ from './FAQ.vue'
 import VPS from './VPS.vue'
+import Disclaimer from './Disclaimer.vue'
 
 defineOptions({
   name: 'IndexPage',
@@ -26,5 +27,6 @@ defineOptions({
   <VPS id="vps" mb-60 />
   <FAQ id="faq" mb-60 />
   <WorkWithUs id="work" mb-60 />
-  <Contact id="contact" mb-60 />
+  <Contact id="contact" mb-30 />
+  <Disclaimer id="disclaimer" mb-30 />
 </template>
