@@ -4,12 +4,12 @@ import CompoundProfit from '~/components/charts/CompoundProfit.vue'
 import PieChartComponent from '~/components/charts/PieChartComponent.vue'
 
 const { t, locale } = useI18n()
-let EinsteinImage = '/public/Einstein-en.jpg'
+let EinsteinImage = '/Einstein-en.jpg'
 
 watch(() => {
   if (locale.value === 'it') 
-    EinsteinImage = '/public/Einstein.jpg'
-  else EinsteinImage = '/public/Einstein-en.jpg'
+    EinsteinImage = '/Einstein.jpg'
+  else EinsteinImage = '/Einstein-en.jpg'
 })
 </script>
 
