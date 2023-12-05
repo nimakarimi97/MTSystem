@@ -3,7 +3,7 @@ import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import { isMobile } from '~/composables/deviceType'
 
-const totalImages = 21
+const totalImages = 27
 const slides = ref(
   Array.from({ length: totalImages }, (_, i) => `/feedback/feedback${i + 1}.jpg`),
 )
