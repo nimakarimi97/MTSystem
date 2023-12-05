@@ -11,6 +11,9 @@ const { t } = useI18n()
     <p class="w-80% text-justify">
       {{ t("disclaimer.text") }}
     </p>
+    <p class="mt-4 w-80% text-justify">
+      {{ t("disclaimer.text2") }}
+    </p>
   </div>
 </template>
 

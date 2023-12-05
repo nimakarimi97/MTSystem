@@ -28,5 +28,5 @@ defineOptions({
   <FAQ id="faq" mb-60 />
   <WorkWithUs id="work" mb-60 />
   <Contact id="contact" mb-30 />
-  <Disclaimer id="disclaimer" mb-30 />
+  <Disclaimer id="disclaimer" mb-10 />
 </template>
