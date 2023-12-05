@@ -76,6 +76,30 @@ prices:
 
 vps:  
   title: Virtual Private Servers
+  body1: MTVps is a Windows virtual server that allows the MT bot to work 24 hours a day without interruptions, offering reliability, speed and flexibility.
+  body2: MTVps has servers located in London. It is excellent for algorithmic trading and has low latency with financial brokers.
+  body3: It is the ideal choice to maximize the performance of your bot!
+  body4: You will have included
+  body5:
+    - Pre-installed MT4 setup
+    - Free MT EA (bot).
+    - Free 24-hour assistance in case of problems with the bot or the vps.
+  cards:
+    button: Buy Now
+    c1:
+      title: MONTHLY
+      price: €20 per Month + VAT
+      desc: (automatic subscription every month)
+    c2:
+      title: QUARTERLY
+      price: €50 + VAT
+      desc: (automatic subscription every three months)
+    c3:
+      title: ANNUAL
+      price: €100 + VAT
+      desc: (automatic subscription every 12 months)
+
+
 
 faq:
   title: Frequently Asked Questions

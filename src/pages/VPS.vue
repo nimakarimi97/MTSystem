@@ -23,30 +23,19 @@ const { t } = useI18n()
     </div>
 
     <div class="flex justify-center" gap-5>
-      <div class="card flex-center-col gap-6" border-2 border-amber-6>
-        <h4>MENSILE</h4>
-        <p>20€ al Mese + iva</p>
-        <p>(abbonamento automatico ogni mese)</p>
-        <button class="btn">
-          Acquista Ora
-        </button>
-      </div>
+      <div
+        v-for="i in 3"
+        :key="i"
+        class="card flex-center-col gap-6"
+        border-2
+        border-amber-6
+      >
+        <h4>{{ t(`vps.cards.c${i}.title`) }}</h4>
+        <p>{{ t(`vps.cards.c${i}.price`) }}</p>
+        <p>{{ t(`vps.cards.c${i}.desc`) }}</p>
 
-      <div class="card flex-center-col gap-6" border-2 border-amber-6>
-        <h4>TRIMESTRALE</h4>
-        <p>50€ + iva</p>
-        <p>(abbonamento automatico ogni tre mesi)</p>
         <button class="btn">
-          Acquista ora
-        </button>
-      </div>
-
-      <div class="card flex-center-col gap-6" border-2 border-amber-6>
-        <h4>ANNUALE</h4>
-        <p>180€ + iva</p>
-        <p>(abbonamento automatico ogni 12 mesi)</p>
-        <button class="btn">
-          Acquista ora
+          {{ t("vps.cards.button") }}
         </button>
       </div>
     </div>
