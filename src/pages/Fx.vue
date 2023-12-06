@@ -17,15 +17,25 @@ const { t } = useI18n()
         <p>
           {{ t("fx.body1").toUpperCase() }}
         </p>
-        <img pb-4 md:p-0 src="/myfxbook/chart.jpg" alt="myfx-chart">
+        <img src="/myfxbook/storico1sinistra.PNG" alt="myfx-aziendale">
       </div>
 
       <div flex flex-col items-center gap-4>
         <p>
           {{ t("fx.body2").toUpperCase() }}
         </p>
-        <img src="/myfxbook/myfx-aziendale.jpg" alt="myfx-aziendale">
+        <img pb-4 md:p-0 src="/myfxbook/MT41destra.PNG" alt="myfx-chart">
       </div>
+    </div>
+
+    <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
+      <img src="/myfxbook/storico2sinistra.PNG" alt="profit" h-auto>
+      <img src="/myfxbook/MT42destra.PNG" alt="profit" h-auto pb-4 md:p-0>
+    </div>
+
+    <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
+      <img src="/myfxbook/storico3sinistra.JPG" alt="profit" h-auto>
+      <img src="/myfxbook/MT43destra.PNG" alt="profit" h-auto pb-4 md:p-0>
     </div>
   </div>
 </template>
@@ -33,6 +43,5 @@ const { t } = useI18n()
 <style scoped>
 img {
   width: 90%;
-  object-fit: cover;
 }
 </style>
