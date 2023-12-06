@@ -154,4 +154,11 @@ calculator:
 
 disclaimer:
   text: This website provides information on the use of an automated trading bot in the context of the Forex and CFD market. It is cautioned that CFDs are complex instruments and carry the possibility of significant financial losses. The information herein does not constitute financial advice and should not be interpreted as an investment solicitation. Investors are responsible for their own financial decisions and should seek advice from a qualified professional. The use of the bot is at the user's risk, and the author disclaims any responsibility for any losses or damages resulting from the use of the service. It is emphasized that past performance is not indicative of future results, and the percentages displayed on the website do not guarantee similar results in the subsequent months. Investors have the right to activate or deactivate the bot and adjust its parameters at any time following their own strategy. Full control over capital and transactions lies in the hands of the user, who is entirely responsible for the outcomes of their investments. 
-  text2: The responsibility cannot be attributed in any way to the author of the website, the software programmer or the person who introduced you to the project.  
+  text2: The responsibility cannot be attributed in any way to the author of the website, the software programmer or the person who introduced you to the project.
+
+footer:
+  companyInfo:
+    name: Company Name
+    piva: VAT Number
+    address: Legal Address
+    rights: © 2024 MTSystem Ltd. All rights reserved.
