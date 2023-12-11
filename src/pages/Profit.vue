@@ -12,25 +12,42 @@ const { t } = useI18n()
       <p my-5>
         {{ t("profit.body1") }}
       </p>
-      <img src="/risultati/MYFXBOOK/a.jpg" alt="profit">
+      <img src="/risultati/MYFXBOOK/1myfxbook.png" alt="profit">
 
       <p my-5>
         {{ t("profit.body2") }}
       </p>
-      <img src="/risultati/MYFXBOOK/b.jpg" alt="profit">
+      <img src="/risultati/MYFXBOOK/2myfxbook.png" alt="profit">
+
+      <p my-5>
+        {{ t("profit.body3") }}
+      </p>
+      <img src="/risultati/MYFXBOOK/3myfxbook.png" alt="profit">
     </div>
 
-    <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
-      <img src="/risultati/MYFXBOOK/left.jpg" alt="profit" h-auto pb-4 md-h-125 md:p-0>
-      <img src="/risultati/MYFXBOOK/right.jpg" alt="profit" h-auto md-h-125>
+    <!-- <div class="my-15 w-85% items-end gap-0 px-8 md:flex-center"> -->
+    <div class="w-70% flex-center-col md:flex-row">
+      <div>
+        <p mb-4>
+          {{ t("profit.body4") }}
+        </p>
+        <img src="/risultati/MYFXBOOK/4myfxbook.jpeg" alt="profit" h-auto md-h-125>
+      </div>
+
+      <div>
+        <p mb-4>
+          {{ t("profit.body5") }}
+        </p>
+        <img src="/risultati/MYFXBOOK/5myfxbook.jpeg" alt="profit" h-auto md-h-125>
+      </div>
     </div>
 
-    <div class="mx-auto flex flex-col gap-3 lg:w-90%">
+    <div class="mx-auto mt-12 flex flex-col gap-3 lg:w-90%">
       <h3 primary-color>
         {{ t("profit.title2") }}
       </h3>
       <img class="max-w-2xl object-cover" src="/risultati/MT4/1.jpg" alt="profit">
-      <img class="max-w-2xl self-end" src="/risultati/MT4/2.jpg" alt="profit">
+      <img class="max-w-2xl self-end" src="/risultati/MT4/2.png" alt="profit">
       <img class="max-w-2xl" src="/risultati/MT4/3.jpg" alt="profit">
       <img class="max-w-2xl self-end" src="/risultati/MT4/4.jpg" alt="profit">
     </div>
