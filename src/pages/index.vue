@@ -19,14 +19,14 @@ defineOptions({
 <template>
   <Home id="home" mb-60 />
   <WhoWeAre id="who" mb-60 />
-  <Fx id="fx" mb-60 />
-  <Profit id="profit" mb-60 />
-  <Calculator id="calculator" mb-60 />
-  <Reviews id="reviews" mb-60 />
-  <Prices id="prices" mb-60 />
-  <VPS id="vps" mb-60 />
-  <FAQ id="faq" mb-60 />
-  <WorkWithUs id="work" mb-60 />
+  <Fx id="fx" mb-30 />
+  <Profit id="profit" mb-30 />
+  <Calculator id="calculator" mb-30 />
+  <Reviews id="reviews" mb-30 />
+  <Prices id="prices" mb-30 />
+  <VPS id="vps" mb-30 />
+  <FAQ id="faq" mb-10 />
+  <WorkWithUs id="work" mb-10 />
   <Contact id="contact" mb-30 />
   <Disclaimer id="disclaimer" mb-10 />
 </template>
