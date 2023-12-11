@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div flex-center-col gap-15>
+  <div flex-center-col gap-7>
     <h3 my-8 primary-color>
       {{ t("fx.title").toUpperCase() }}
     </h3>
@@ -29,11 +29,17 @@ const { t } = useI18n()
       </div>
     </div>
 
+    <p my-0>
+      {{ t("fx.description2") }}
+    </p>
     <div class="mx-auto w-45% flex-center-col gap-12 px-8 lg:w-40% md:flex-row">
       <img src="/myfxbook/storico2sinistra.PNG" alt="profit" h-auto>
       <img src="/myfxbook/MT42destra.PNG" alt="profit" h-auto pb-4 md:p-0>
     </div>
 
+    <p my-0>
+      {{ t("fx.description3") }}
+    </p>
     <div class="mx-auto w-45% flex-center-col gap-12 px-8 lg:w-40% md:flex-row">
       <img src="/myfxbook/storico3sinistra.JPG" alt="profit" h-auto>
       <img src="/myfxbook/MT43destra.PNG" alt="profit" h-auto pb-4 md:p-0>

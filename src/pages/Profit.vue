@@ -26,7 +26,7 @@ const { t } = useI18n()
     </div>
 
     <!-- <div class="my-15 w-85% items-end gap-0 px-8 md:flex-center"> -->
-    <div class="w-70% flex-center-col md:flex-row">
+    <div class="w-70% flex-center-col text-left md:flex-row">
       <div>
         <p mb-4>
           {{ t("profit.body4") }}

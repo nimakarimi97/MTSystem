@@ -39,9 +39,11 @@ who:
 
 fx:
   title: Risultati Certificati
-  description: Conto MT da 10.000 a 16.000£ generando in automatico 6.365£ di profitto netto.
+  description: Conto MT da 10.000€ a 19.148€ generando in automatico 9.148€ di profitto netto.
   body1: Percentuali dal Myfxbook
   body2: Profitto dall'MT4 in Euro
+  description2: Conto MT da 4.500€ a 7.518€ generando in automatico 7.518€ di profitto netto
+  description3: Conto MT da 6.482€ a 16.887€ generando in automatico 10.405€ di profitto netto
 
 
 Profit: Profitti
@@ -49,7 +51,7 @@ profit:
   title: Ecco Altri Risultati Dei Nostri Investitori
   body1: Conto MT da 10,000€ a 19,194€ ha generato in automatico un profitto netto di 9194€
   body2: Conto MT da 6,750€ a 12,016€ ha generato in automatico un profitto netto di 7,516€
-  body3: Conto MT da 6,982€ a 17,399€ ha generato in automatico un profitto netto di 10,417€ con un prelievo di 8,564€
+  body3: Conto MT da 6,982€ a 17,399€ ha generato in automatico un profitto netto di 10,417€ 
   body4: Conto MT da 2,500€ a 7,236€ ha generato in automatico un profitto netto di 4,736€
   body5: Conto MT da 3,000€ a 6,025€ ha generato in automatico un profitto netto di 3,025€
   title2: Profitti degli investitori dagli MT4
