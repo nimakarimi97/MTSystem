@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div>
+  <div flex-center-col gap-15>
     <h3 my-8 primary-color>
       {{ t("fx.title").toUpperCase() }}
     </h3>
@@ -12,28 +12,29 @@ const { t } = useI18n()
       {{ t("fx.description").toUpperCase() }}
     </p>
 
-    <div class="mx-auto my-15 gap-1 px-8 lg:w-80% md:flex-center">
-      <div flex flex-col items-center justify-evenly gap-10>
+    <!-- <div class="mx-auto w-85% items-end gap-0 px-8 lg:w-70% md:flex-center"> -->
+    <div class="w-45% flex-center-col md:w-70% md:flex-row">
+      <div flex-center-col gap-4>
         <p>
           {{ t("fx.body1").toUpperCase() }}
         </p>
         <img src="/myfxbook/storico1sinistra.PNG" alt="myfx-aziendale">
       </div>
 
-      <div flex flex-col items-center gap-4>
+      <div flex-center-col gap-4>
         <p>
           {{ t("fx.body2").toUpperCase() }}
         </p>
-        <img pb-4 md:p-0 src="/myfxbook/MT41destra.PNG" alt="myfx-chart">
+        <img src="/myfxbook/MT41destra.PNG" alt="myfx-chart">
       </div>
     </div>
 
-    <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
+    <div class="mx-auto w-45% flex-center-col gap-12 px-8 lg:w-40% md:flex-row">
       <img src="/myfxbook/storico2sinistra.PNG" alt="profit" h-auto>
       <img src="/myfxbook/MT42destra.PNG" alt="profit" h-auto pb-4 md:p-0>
     </div>
 
-    <div class="mx-auto my-15 w-55% items-end gap-3 px-8 lg:w-40% md:flex-center">
+    <div class="mx-auto w-45% flex-center-col gap-12 px-8 lg:w-40% md:flex-row">
       <img src="/myfxbook/storico3sinistra.JPG" alt="profit" h-auto>
       <img src="/myfxbook/MT43destra.PNG" alt="profit" h-auto pb-4 md:p-0>
     </div>
