@@ -9,7 +9,7 @@ const { t } = useI18n()
     </h2>
 
     <h4>{{ t("prices.title2") }}</h4>
-    <p>{{ t("prices.description") }}</p>
+    <p>{{ t("prices.description") }} :</p>
 
     <ul mx-auto text-left>
       <li v-for="i in 9" :key="i" flex-center justify-start py-1>
