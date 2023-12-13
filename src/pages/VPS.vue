@@ -61,5 +61,6 @@ const { t } = useI18n()
   padding: 20px 1rem;
   width: fit-content;
   text-align: center;
+  color: rgb(225, 225, 225);
 }
 </style>
