@@ -19,7 +19,7 @@ import WebfontDownload from 'vite-plugin-webfont-dl'
 export default defineConfig({
   build: {
     rollupOptions: {
-      external: 'NonExistingPath',
+      external: './public',
     },
   },
 
