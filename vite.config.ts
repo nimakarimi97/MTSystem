@@ -25,7 +25,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${path.resolve(__dirname, './src')}/`,
     },
   },
 
@@ -55,21 +55,21 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
-      dts: 'src/auto-imports.d.ts',
+      dts: './src/auto-imports.d.ts',
       dirs: [
-        'src/composables',
-        'src/stores',
+        './src/composables',
+        './src/stores',
       ],
       vueTemplate: true,
     }),
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
-      // allow auto load markdown components under `./src/components/`
+      // allow auto load markdown components under `././src/components/`
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts',
+      dts: './src/components.d.ts',
     }),
 
     // https://github.com/antfu/unocss
