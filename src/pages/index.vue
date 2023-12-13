@@ -3,7 +3,8 @@ import Contact from './Contact.vue'
 import Prices from './Prices.vue'
 import WorkWithUs from './WorkWithUs.vue'
 import Reviews from './Reviews.vue'
-import WhoWeAre from './WhoWeAre.vue'
+
+// import WhoWeAre from './WhoWeAre.vue'
 import Fx from './Fx.vue'
 import Profit from './Profit.vue'
 import Calculator from './Calculator.vue'
@@ -18,7 +19,7 @@ defineOptions({
 
 <template>
   <Home id="home" mb-60 />
-  <WhoWeAre id="who" mb-60 />
+  <!-- <WhoWeAre id="who" mb-60 /> -->
   <Fx id="fx" mb-30 />
   <Profit id="profit" mb-30 />
   <Calculator id="calculator" mb-30 />
