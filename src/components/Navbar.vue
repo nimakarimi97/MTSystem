@@ -1,6 +1,5 @@
-<script setup lang="ts">
+<script setup>
 import { useI18n } from 'vue-i18n'
-import { Slide } from 'vue3-burger-menu'
 import DarkModeToggle from './DarkModeToggle.vue'
 import LanguageToggle from './LanguageToggle.vue'
 import { scrollToComponent } from '~/composables/scrollToComponent'
@@ -10,7 +9,7 @@ import { getRoutes } from '~/routes'
 const { t } = useI18n()
 
 const routes = getRoutes()
-const navbarHeight: number = 100 // Height of the navbar in pixels
+const navbarHeight = 100 // Height of the navbar in pixels
 // const isNavbarOpen: Ref<boolean> = ref(true)
 
 // Function to handle scroll event
@@ -70,7 +69,7 @@ window.addEventListener('scroll', handleScroll)
     </div>
   </nav>
 
-  <Slide v-else :close-on-navigation="true" no-overlay mb-22 flex-center flex-col>
+  <!-- <Slide v-else :close-on-navigation="true" no-overlay mb-22 flex-center flex-col>
     <div flex-center flex-col gap-4>
       <button
         icon-btn
@@ -81,7 +80,7 @@ window.addEventListener('scroll', handleScroll)
             : scrollToComponent('home', navbarHeight)
         "
       >
-        <img src="/logo-without-background.png" alt="Logo" w-32>
+        <img src="/logo-without-background.png" alt="Logo" w-32 />
       </button>
 
       <div flex items-start>
@@ -101,7 +100,7 @@ window.addEventListener('scroll', handleScroll)
         icon-btn
       />
     </div>
-  </Slide>
+  </Slide> -->
 </template>
 
 <style>
