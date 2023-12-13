@@ -1,5 +1,9 @@
 [
   {
+    "question": "Chi siamo e come mai il nome della società è MTSystem ? ",
+    "answer": "“MTSystem” come acronomico di MarkTradingSystem, ovvero un sistema di trading sviluppato da MarkFx. <br><br> Un trader e investitore con esperienza di più di 5 anni nei mercati finanziari del forex. Insieme a lui, hanno partecipato alla crescita aziendale molti collaboratori a livello internazionale. Alcuni dei quali son membri e soci interni d’azienda come Gianni, Pietro e tantissime altre persone che hanno contribuito alla crescita e svolto importanti ruoli manageriali, marketing e consulenziale. Siamo in costante evoluzione e formando sempre più professionisti nella nostra attività."
+  },
+  {
     "question": "Cos’è il sistema MTHedging ?",
     "answer": "Un sistema di trading automatico in Hedging è un bot, detto anche Expert Advisor che esegue operazioni di trading con obiettivo di mitigare il rischio e trarre profitto utilizzando strategie di copertura nei mercati finanziari. Non lavora in martingala o con le solite strategie aggressive che si trovano sul mercato, ma ha una strategia unica e conservativa."
   },

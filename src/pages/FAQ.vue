@@ -40,9 +40,7 @@ const show = ref(true)
       </div>
 
       <div class="answer-wrapper">
-        <div class="answer">
-          {{ item.answer }}
-        </div>
+        <div class="answer" v-html="item.answer" />
       </div>
     </div>
   </div>
