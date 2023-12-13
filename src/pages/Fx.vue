@@ -18,14 +18,14 @@ const { t } = useI18n()
         <p>
           {{ t("fx.body1").toUpperCase() }}
         </p>
-        <img src="/myfxbook/storico1sinistra.png" alt="myfx-aziendale">
+        <img src="/public//myfxbook/storico1sinistra.png" alt="myfx-aziendale">
       </div>
 
       <div flex-center-col gap-4>
         <p>
           {{ t("fx.body2").toUpperCase() }}
         </p>
-        <img src="/myfxbook/MT41destra.png" alt="myfx-chart">
+        <img src="/public/myfxbook/MT41destra.png" alt="myfx-chart">
       </div>
     </div>
 
