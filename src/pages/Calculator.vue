@@ -57,6 +57,9 @@ watch(() => {
       {{ t("calculator.compoundDescription.part2") }}
     </p>
 
+    <p>
+      {{ t("calculator.einstein") }}:
+    </p>
     <img class="max-w-2xl object-cover" :src="EinsteinImage" alt="">
 
     <!-- <PieChartComponent /> -->
