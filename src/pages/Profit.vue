@@ -26,7 +26,7 @@ const { t } = useI18n()
     </div>
 
     <!-- <div class="my-15 w-85% items-end gap-0 px-8 md:flex-center"> -->
-    <div class="w-70% flex-center-col text-left md:flex-row">
+    <div class="w-70% flex-center-col gap7 text-left md:flex-row"> 
       <div>
         <p mb-4>
           {{ t("profit.body4") }}
@@ -46,10 +46,10 @@ const { t } = useI18n()
       <h3 primary-color>
         {{ t("profit.title2") }}
       </h3>
-      <img class="max-w-2xl object-cover" src="/risultati/MT4/1.jpg" alt="profit">
-      <img class="max-w-2xl self-end" src="/risultati/MT4/2.png" alt="profit">
-      <img class="max-w-2xl" src="/risultati/MT4/3.jpg" alt="profit">
-      <img class="max-w-2xl self-end" src="/risultati/MT4/4.jpg" alt="profit">
+      <img class="max-w-184 object-cover" src="/risultati/MT4/1.jpg" alt="profit">
+      <img class="max-w-184 self-end" src="/risultati/MT4/2.png" alt="profit">
+      <img class="max-w-184" src="/risultati/MT4/3.jpg" alt="profit">
+      <img class="max-w-184 self-end" src="/risultati/MT4/4.jpg" alt="profit">
     </div>
   </div>
 </template>
