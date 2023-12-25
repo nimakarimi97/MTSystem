@@ -153,6 +153,7 @@ calculator:
     capital: Capital
     capital_error: The capital must be greater than 1500€
     setting: Setting
+    setting_explanation: Don't know what to insert?
     month: Month
   balance: Total Balance
   profit: Estimated Net Profit
@@ -170,3 +171,6 @@ footer:
     piva: VAT Number
     address: Legal Address
     rights: © 2024 MTSystem Ltd. All rights reserved.
+
+
+click_here: Click here

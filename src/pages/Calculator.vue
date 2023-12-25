@@ -1,6 +1,6 @@
 <script setup>
-import BarChartComponent from '~/components/charts/BarChartComponent.vue'
-import CompoundProfit from '~/components/charts/CompoundProfit.vue'
+import SimpleInterest from '~/components/charts/SimpleInterest.vue'
+import CompoundInterest from '~/components/charts/CompoundInterest.vue'
 import PieChartComponent from '~/components/charts/PieChartComponent.vue'
 
 const { t, locale } = useI18n()
@@ -15,9 +15,9 @@ watch(() => {
 
 <template>
   <div my-4 flex-center flex-col justify-around gap-12 px-8>
-    <BarChartComponent />
+    <SimpleInterest />
 
-    <div flex gap-17 text-left class="w-70%">
+    <div id="risk-explanation" flex gap-17 text-left class="w-70%">
       <div>
         <p>
           {{ t("calculator.risk.title.part1") }}
@@ -47,19 +47,9 @@ watch(() => {
       </div>
     </div>
 
-    <CompoundProfit />
+    <CompoundInterest />
 
-    <p class="w-60%">
-      {{ t("calculator.compoundDescription.part1") }}
-      <span primary-color class="fw-bold">{{
-        t("calculator.compoundDescription.boldPart")
-      }}</span>
-      {{ t("calculator.compoundDescription.part2") }}
-    </p>
-
-    <p>
-      {{ t("calculator.einstein") }}:
-    </p>
+    <p>{{ t("calculator.einstein") }}:</p>
     <img class="max-w-2xl object-cover" :src="EinsteinImage" alt="">
 
     <!-- <PieChartComponent /> -->
