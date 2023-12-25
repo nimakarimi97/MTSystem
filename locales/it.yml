@@ -151,6 +151,7 @@ calculator:
     capital: Capital
     capital_error: Il capitale deve essere maggiore di 1500€
     setting: Setting
+    setting_explanation: Non sai cosa inserire?
     month: Mesi
   balance: Totale Equilibrio
   profit: Profitto Netto Stimato
@@ -168,3 +169,5 @@ footer:
     address: Sede Legale
     rights: © 2024 MTSystem S.r.l. Tutti i diritti riservati.
 
+
+click_here: Clicca qui

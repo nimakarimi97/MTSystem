@@ -17,7 +17,7 @@ watch(() => {
   <div my-4 flex-center flex-col justify-around gap-12 px-8>
     <BarChartComponent />
 
-    <div flex gap-17 text-left class="w-70%">
+    <div id="risk-explanation" flex gap-17 text-left class="w-70%">
       <div>
         <p>
           {{ t("calculator.risk.title.part1") }}
@@ -49,17 +49,7 @@ watch(() => {
 
     <CompoundProfit />
 
-    <p class="w-60%">
-      {{ t("calculator.compoundDescription.part1") }}
-      <span primary-color class="fw-bold">{{
-        t("calculator.compoundDescription.boldPart")
-      }}</span>
-      {{ t("calculator.compoundDescription.part2") }}
-    </p>
-
-    <p>
-      {{ t("calculator.einstein") }}:
-    </p>
+    <p>{{ t("calculator.einstein") }}:</p>
     <img class="max-w-2xl object-cover" :src="EinsteinImage" alt="">
 
     <!-- <PieChartComponent /> -->

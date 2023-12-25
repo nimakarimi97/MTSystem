@@ -13,7 +13,7 @@ const chartInputsData = ref({
 
 const balance = ref(0)
 const profit = ref(0)
-const profitPerMonth = ref([400])         
+const profitPerMonth = ref([400])
 const months = ref([
   'January',
   'February',
@@ -72,6 +72,14 @@ const { barChartProps } = useBarChart({
 <template>
   <div my-14 flex-center-col justify-around gap-3>
     <h2>{{ t("calculator.title.compound") }}</h2>
+
+    <p class="w-60%">
+      {{ t("calculator.compoundDescription.part1") }}
+      <span primary-color class="fw-bold">{{
+        t("calculator.compoundDescription.boldPart")
+      }}</span>
+      {{ t("calculator.compoundDescription.part2") }}
+    </p>
 
     <div my-4 flex-center gap-7>
       <div grid gap-2 text-left>

@@ -80,7 +80,7 @@ const { barChartProps } = useBarChart({
         />
       </div>
 
-      <div grid gap-2 text-left>
+      <div position-relative grid gap-2 text-left>
         <span>{{ t("calculator.chart.setting") }}</span>
         <Input
           v-model="chartInputsData.setting"
@@ -90,6 +90,10 @@ const { barChartProps } = useBarChart({
           step="0.01"
           min="0"
         />
+        <span class="setting-explanation">
+          {{ t("calculator.chart.setting_explanation") }}
+          <span cursor-pointer underline @click="scrollToComponent('#risk-explanation')">{{ t("click_here") }}</span>
+        </span>
       </div>
 
       <div grid gap-2 text-left>
@@ -119,7 +123,7 @@ const { barChartProps } = useBarChart({
       </div> -->
     </div>
 
-    <div flex-center-col gap-3 primary-color>
+    <div mt8 flex-center-col gap-3 primary-color>
       <p>
         {{ `${t("calculator.profit")} : ` }}
         <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
@@ -194,5 +198,12 @@ const { barChartProps } = useBarChart({
 
 .PB-range-slidervalue {
   font-weight: 600;
+}
+
+.setting-explanation {
+  position: absolute;
+  bottom: -32%;
+  font-size: 11px;
+  text-wrap: nowrap;
 }
 </style>
