@@ -140,7 +140,7 @@ const { barChartProps } = useBarChart({
       </p>
     </div>
 
-    <BarChart class="BarChart w-90%" v-bind="barChartProps" />
+    <BarChart class="BarChart max-w-3xl w90%" v-bind="barChartProps" />
   </div>
 </template>
 
@@ -151,6 +151,7 @@ const { barChartProps } = useBarChart({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  max-width: 48rem;
 }
 
 .PB-range-slider {
