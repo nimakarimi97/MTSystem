@@ -8,13 +8,17 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div mb-9 flex-center-col gap-10 p-4 px-12 md:flex-row>
+  <div mb-9 flex-center-col flex-col-reverse gap-10 p-4 pl-12 pr-28 md:flex-row>
     <div flex-center-col>
       <h3 mb-10 class="title w-75%">
         {{ t("home.title") }}
       </h3>
 
-      <ul mx-auto>
+      <button mb7 btn @click="scrollToComponent('#vps')">
+        {{ t("prices.button") }}
+      </button>
+
+      <ul>
         <li v-for="i in 9" :key="i" text- flex-center justify-start py-1>
           <svg
             primary-color
@@ -31,10 +35,6 @@ watchEffect(() => {
           {{ t(`prices.features[${i - 1}]`) }}
         </li>
       </ul>
-
-      <button mt7 btn @click="scrollToComponent('#vps')">
-        {{ t("prices.button") }}
-      </button>
     </div>
 
     <img :src="imgSrc" alt="Welcome Image" w-130>
