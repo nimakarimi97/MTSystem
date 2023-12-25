@@ -32,7 +32,7 @@ watchEffect(() => {
         </li>
       </ul>
 
-      <button mt7 btn @click="scrollToComponent('#prices')">
+      <button mt7 btn @click="scrollToComponent('#vps')">
         {{ t("prices.button") }}
       </button>
     </div>
