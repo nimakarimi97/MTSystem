@@ -1,0 +1,145 @@
+<script setup>
+import { Chart, registerables } from 'chart.js'
+import { BarChart, useBarChart } from 'vue-chart-3'
+
+Chart.register(...registerables)
+const { t } = useI18n()
+
+const chartInputsData = ref({
+  capital: 5000,
+  setting: [0.01],
+  month: 10,
+})
+
+const balance = ref(0)
+const profit = ref(0)
+const profitPerMonth = ref([400])
+const months = ref([
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+])
+const monthsToShow = ref([months])
+
+function calculateSetting(money) {
+  return Number(Math.max(0.01, Math.ceil(money / 10000) / 100).toFixed(2))
+}
+
+watchEffect(() => {
+  profit.value = 0
+  balance.value = chartInputsData.value.capital
+  chartInputsData.value.setting = [0.01]
+  profitPerMonth.value = []
+
+  for (let i = 0; i < chartInputsData.value.month; i++) {
+    const currentSetting = calculateSetting(balance.value)
+    chartInputsData.value.setting.push(currentSetting)
+
+    const monthlyProfit = 400 * currentSetting * 100
+    profitPerMonth.value[i] = monthlyProfit
+    profit.value += monthlyProfit
+    balance.value += monthlyProfit
+  }
+
+  monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
+})
+
+const chartData = computed(() => ({
+  labels: monthsToShow.value,
+  datasets: [
+    {
+      data: profitPerMonth.value,
+      backgroundColor: ['rgba(217, 119, 6)'],
+      label: 'Profit per month',
+    },
+  ],
+}))
+
+const { barChartProps } = useBarChart({
+  chartData,
+})
+</script>
+
+<template>
+  <div my-14 flex-center-col justify-around gap-3>
+    <h2>{{ t("calculator.title.compound") }}</h2>
+
+    <p class="w-60%">
+      {{ t("calculator.compoundDescription.part1") }}
+      <span primary-color class="fw-bold">{{
+        t("calculator.compoundDescription.boldPart")
+      }}</span>
+      {{ t("calculator.compoundDescription.part2") }}
+    </p>
+
+    <div my-4 flex-center gap-7>
+      <div grid gap-2 text-left>
+        <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
+          {{ t("calculator.chart.capital_error") }}
+        </span>
+        <span v-else>{{ t("calculator.chart.capital") }}</span>
+
+        <Input
+          v-model="chartInputsData.capital"
+          :value="chartInputsData.capital"
+          type="number"
+          name="capital"
+          :class="{
+            'border-red-7': chartInputsData.capital < 1500,
+          }"
+          :placeholder="t('calculator.chart.capital')"
+          min="1500"
+        />
+      </div>
+
+      <div grid gap-2 text-left>
+        <span>{{ t("calculator.chart.setting") }}</span>
+        <Input
+          v-model="chartInputsData.setting"
+          :value="chartInputsData.setting.slice(-1)"
+          type="number"
+          :placeholder="t('calculator.chart.setting')"
+          step="0.01"
+          min="0"
+        />
+      </div>
+
+      <div grid gap-2 text-left>
+        <span>{{ t("calculator.chart.month") }}</span>
+        <Input
+          v-model="chartInputsData.month"
+          :value="chartInputsData.month"
+          type="number"
+          :placeholder="t('calculator.chart.month')"
+          max="12"
+          min="1"
+          w-50
+        />
+      </div>
+    </div>
+
+    <div flex-center-col gap-3 primary-color>
+      <p>
+        {{ `${t("calculator.profit")} : ` }}
+        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-else text-white>{{ profit }}</span>
+      </p>
+      <p>
+        {{ `${t("calculator.balance")} : ` }}
+        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-else text-white>{{ balance }}</span>
+      </p>
+    </div>
+
+    <BarChart class="BarChart w-90%" v-bind="barChartProps" />
+  </div>
+</template>

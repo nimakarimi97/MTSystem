@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BarChartComponent: typeof import('./components/charts/BarChartComponent.vue')['default']
+    CompoundInterest: typeof import('./components/charts/CompoundInterest.vue')['default']
     CompoundProfit: typeof import('./components/charts/CompoundProfit.vue')['default']
     DarkModeToggle: typeof import('./components/DarkModeToggle.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
@@ -20,6 +21,7 @@ declare module 'vue' {
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SimpleInterest: typeof import('./components/charts/SimpleInterest.vue')['default']
     Slideshow: typeof import('./components/Slideshow.vue')['default']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
   }
