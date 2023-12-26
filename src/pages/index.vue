@@ -19,7 +19,7 @@ defineOptions({
 </script>
 
 <template>
-  <Home id="home" mb-60 />
+  <Home id="home" mb-60 md:mb-0 />
   <!-- <WhoWeAre id="who" mb-60 /> -->
   <Fx id="fx" mb-30 />
   <Profit id="profit" mb-30 />

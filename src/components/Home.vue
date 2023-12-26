@@ -8,7 +8,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div mb-9 flex-center-col flex-col gap-10 p-4 pl-12 pr-28 md:flex-row>
+  <div h-100vh flex-center-col items-start gap-10 py-14 pl-12 pr-28 md:flex-row>
     <img :src="imgSrc" alt="Welcome Image" w-130>
 
     <div flex-center-col>
