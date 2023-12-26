@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Contact from './Contact.vue'
-import Prices from './Prices.vue'
+
+// import Prices from './Prices.vue'
 import WorkWithUs from './WorkWithUs.vue'
 import Reviews from './Reviews.vue'
 
@@ -24,7 +25,7 @@ defineOptions({
   <Profit id="profit" mb-30 />
   <Calculator id="calculator" mb-30 />
   <Reviews id="reviews" mb-30 />
-  <Prices id="prices" mb-30 />
+  <!-- <Prices id="prices" mb-30 /> -->
   <VPS id="vps" mb-30 />
   <FAQ id="faq" mb-10 />
   <WorkWithUs id="work" mb-10 />

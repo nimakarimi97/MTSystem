@@ -16,7 +16,7 @@ export function getRoutes(): Array<{ to: string }> {
     { to: 'profit' },
     { to: 'calculator' },
     { to: 'reviews' },
-    { to: 'prices' },
+    // { to: 'prices' },
     { to: 'vps' },
     { to: 'faq' },
     { to: 'work' },
