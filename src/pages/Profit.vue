@@ -25,8 +25,7 @@ const { t } = useI18n()
       <img src="/risultati/MYFXBOOK/3myfxbook.png" alt="profit">
     </div>
 
-    <!-- <div class="my-15 w-85% items-end gap-0 px-8 md:flex-center"> -->
-    <div class="w-70% flex-center-col gap7 text-left md:flex-row">
+    <!-- <div class="w-70% flex-center-col gap7 text-left md:flex-row">
       <div>
         <p mb-4>
           {{ t("profit.body4") }}
@@ -39,8 +38,8 @@ const { t } = useI18n()
           {{ t("profit.body5") }}
         </p>
         <img src="/risultati/MYFXBOOK/5myfxbook.jpeg" alt="profit" h-auto md-h-135>
-      </div>
-    </div>
+      </div> 
+    </div> -->
 
     <!-- <div class="mx-auto mt-12 flex flex-col gap-3 lg:w-90%">
       <h3 primary-color>
