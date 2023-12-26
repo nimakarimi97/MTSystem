@@ -11,7 +11,7 @@ watchEffect(() => {
   <div h-100vh flex-center-col items-start gap-10 py-14 pl-12 pr-28 md:flex-row>
     <img :src="imgSrc" alt="Welcome Image" w-130>
 
-    <div flex-center-col>
+    <div flex-center-col pt-16>
       <h3 mb-10 class="title w-75%">
         {{ t("home.title") }}
       </h3>
