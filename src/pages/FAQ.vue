@@ -1,9 +1,16 @@
 <script setup>
-import faq from '~/stores/faq.json'
+import faq_it from '~/stores/faq_it.json'
+import faq_en from '~/stores/faq_en.json'
 
-const { t } = useI18n()
+const faqItems = ref(faq_en)
 
-const faqItems = ref(faq)
+const { t, locale } = useI18n()
+
+watchEffect(() => {
+  if (locale.value === 'it') 
+    faqItems.value = faq_it
+  else faqItems.value = faq_en
+})
 
 function closeOtherQuestions() {
   const activeAnswerEl = document.querySelector('.answer-wrapper.active')
