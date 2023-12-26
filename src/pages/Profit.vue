@@ -26,23 +26,23 @@ const { t } = useI18n()
     </div>
 
     <!-- <div class="my-15 w-85% items-end gap-0 px-8 md:flex-center"> -->
-    <div class="w-70% flex-center-col gap7 text-left md:flex-row"> 
+    <div class="w-70% flex-center-col gap7 text-left md:flex-row">
       <div>
         <p mb-4>
           {{ t("profit.body4") }}
         </p>
-        <img src="/risultati/MYFXBOOK/4myfxbook.jpeg" alt="profit" h-auto md-h-125>
+        <img src="/risultati/MYFXBOOK/4myfxbook.jpeg" alt="profit" h-auto md-h-135>
       </div>
 
       <div>
         <p mb-4>
           {{ t("profit.body5") }}
         </p>
-        <img src="/risultati/MYFXBOOK/5myfxbook.jpeg" alt="profit" h-auto md-h-125>
+        <img src="/risultati/MYFXBOOK/5myfxbook.jpeg" alt="profit" h-auto md-h-135>
       </div>
     </div>
 
-    <div class="mx-auto mt-12 flex flex-col gap-3 lg:w-90%">
+    <!-- <div class="mx-auto mt-12 flex flex-col gap-3 lg:w-90%">
       <h3 primary-color>
         {{ t("profit.title2") }}
       </h3>
@@ -50,7 +50,7 @@ const { t } = useI18n()
       <img class="max-w-184 self-end" src="/risultati/MT4/2.png" alt="profit">
       <img class="max-w-184" src="/risultati/MT4/3.jpg" alt="profit">
       <img class="max-w-184 self-end" src="/risultati/MT4/4.jpg" alt="profit">
-    </div>
+    </div> -->
   </div>
 </template>
 
