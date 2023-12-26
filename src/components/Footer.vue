@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { scrollToComponent } from '~/composables/scrollToComponent'
 
 const { t } = useI18n()
@@ -23,7 +23,6 @@ const { t } = useI18n()
         <div i-carbon-home />
       </RouterLink>
 
-      <DarkModeToggle />
       <LanguageToggle />
     </div>
 

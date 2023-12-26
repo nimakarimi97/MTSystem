@@ -1,6 +1,5 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import DarkModeToggle from './DarkModeToggle.vue'
 import LanguageToggle from './LanguageToggle.vue'
 import { scrollToComponent } from '~/composables/scrollToComponent'
 import { isLaptop } from '~/composables/deviceType'
@@ -64,7 +63,7 @@ window.addEventListener('scroll', handleScroll)
     </div>
 
     <div flex="~ row justify-center gap-3">
-      <DarkModeToggle />
+      <!-- <DarkModeToggle /> -->
       <LanguageToggle />
     </div>
   </nav>
@@ -84,7 +83,6 @@ window.addEventListener('scroll', handleScroll)
       </button>
 
       <div flex items-start>
-        <DarkModeToggle mx-3 text-xl />
         <LanguageToggle text-xl />
       </div>
     </div>
