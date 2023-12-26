@@ -8,18 +8,16 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div mb-9 flex-center-col flex-col-reverse gap-10 p-4 pl-12 pr-28 md:flex-row>
+  <div mb-9 flex-center-col flex-col gap-10 p-4 pl-12 pr-28 md:flex-row>
+    <img :src="imgSrc" alt="Welcome Image" w-130>
+
     <div flex-center-col>
       <h3 mb-10 class="title w-75%">
         {{ t("home.title") }}
       </h3>
 
-      <button mb7 btn @click="scrollToComponent('#vps')">
-        {{ t("prices.button") }}
-      </button>
-
-      <ul>
-        <li v-for="i in 9" :key="i" text- flex-center justify-start py-1>
+      <ul flex-center gap8>
+        <li v-for="i in 3" :key="i" text- flex-center justify-start py-1>
           <svg
             primary-color
             xmlns="http://www.w3.org/2000/svg"
@@ -35,8 +33,10 @@ watchEffect(() => {
           {{ t(`prices.features[${i - 1}]`) }}
         </li>
       </ul>
-    </div>
 
-    <img :src="imgSrc" alt="Welcome Image" w-130>
+      <button mt7 btn @click="scrollToComponent('#vps')">
+        {{ t("prices.button") }}
+      </button>
+    </div>
   </div>
 </template>
