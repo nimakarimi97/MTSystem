@@ -17,7 +17,16 @@ watch(() => {
   <div my-4 flex-center flex-col justify-around gap-12 px-8>
     <SimpleInterest />
 
-    <div id="risk-explanation" flex gap-17 text-left class="w-70%">
+    <div
+      id="risk-explanation"
+      
+      
+      
+      
+      class="md:w-70%"
+      
+      flex-center-col gap-17 px-4 text-left lg:flex-row md:px-8 
+    >
       <div>
         <p>
           {{ t("calculator.risk.title.part1") }}
@@ -50,7 +59,7 @@ watch(() => {
     <CompoundInterest />
 
     <p>{{ t("calculator.einstein") }}:</p>
-    <img class="max-w-2xl object-cover" :src="EinsteinImage" alt="">
+    <img class="max-w-2xl w-sm object-cover md:w-100%" :src="EinsteinImage" alt="">
 
     <!-- <PieChartComponent /> -->
   </div>

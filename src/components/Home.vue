@@ -9,7 +9,7 @@ watchEffect(() => {
 
 <template>
   <div h-90vh flex-center-col items-start gap-10 py-14 pl-12 pr-28 md:flex-row>
-    <img :src="imgSrc" alt="Welcome Image" w-130>
+    <img :src="imgSrc" alt="Welcome Image" class="h-100 w-100% md:w-130">
 
     <div flex-center-col pt-16>
       <h3 mb-10 class="title w-75%">

@@ -58,9 +58,11 @@ const { barChartProps } = useBarChart({
 
 <template>
   <div my-14 flex-center-col justify-around gap-3>
-    <h2>{{ t("calculator.title.simple") }}</h2>
+    <h3 mb-5 primary-color>
+      {{ t("calculator.title.simple") }}
+    </h3>
 
-    <div my-4 flex-center gap-7>
+    <div my-4 flex-center-col gap-7 md:flex-row>
       <div grid gap-2 text-left>
         <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
           {{ t("calculator.chart.capital_error") }}
@@ -90,7 +92,7 @@ const { barChartProps } = useBarChart({
           step="0.01"
           min="0"
         />
-        <span class="setting-explanation">
+        <span italic class="setting-explanation">
           {{ t("calculator.chart.setting_explanation") }}
           <span
             cursor-pointer
@@ -140,7 +142,7 @@ const { barChartProps } = useBarChart({
       </p>
     </div>
 
-    <BarChart class="BarChart max-w-3xl w90%" v-bind="barChartProps" />
+    <BarChart class="BarChart max-w-3xl md:w90%" v-bind="barChartProps" />
   </div>
 </template>
 

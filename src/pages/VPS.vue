@@ -4,8 +4,8 @@ const { t } = useI18n()
 
 <template>
   <div>
-    <div>
-      <h2 primary-color>
+    <div px-12 text-left md:text-center>
+      <h2 mb-6 text-center primary-color>
         {{ t("vps.title") }}
       </h2>
 
@@ -22,13 +22,15 @@ const { t } = useI18n()
       </ul>
     </div>
 
-    <div class="flex justify-center" gap-5>
+    <div class="flex-center-col lg:flex-row" gap-5 px-8>
       <div
         v-for="i in 3"
         :key="i"
         class="card flex-center-col gap-6"
-        border-2
-        border-amber-6
+        
+        
+        
+        max-w-80 border-2 border-amber-6 md:max-w-180 
       >
         <h4>{{ t(`vps.cards.c${i}.title`) }}</h4>
         <p>{{ t(`vps.cards.c${i}.price`) }}</p>

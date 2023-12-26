@@ -71,7 +71,9 @@ const { barChartProps } = useBarChart({
 
 <template>
   <div my-14 flex-center-col justify-around gap-3>
-    <h2>{{ t("calculator.title.compound") }}</h2>
+    <h3 mb-6 primary-color>
+      {{ t("calculator.title.compound") }}
+    </h3>
 
     <p class="w-60%">
       {{ t("calculator.compoundDescription.part1") }}
@@ -81,7 +83,7 @@ const { barChartProps } = useBarChart({
       {{ t("calculator.compoundDescription.part2") }}
     </p>
 
-    <div my-4 flex-center gap-7>
+    <div my-4 flex-center-col gap-7 md:flex-row>
       <div grid gap-2 text-left>
         <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
           {{ t("calculator.chart.capital_error") }}
@@ -140,11 +142,11 @@ const { barChartProps } = useBarChart({
       </p>
     </div>
 
-    <BarChart class="BarChart max-w-3xl w60%" v-bind="barChartProps" />
+    <BarChart class="BarChart max-w-3xl md:w60%" v-bind="barChartProps" />
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .barChart {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -152,5 +154,9 @@ const { barChartProps } = useBarChart({
   text-align: center;
   color: #2c3e50;
   max-width: 420px !important;
+}
+
+#bar-chart {
+  min-height: 300px !important;
 }
 </style>
