@@ -146,7 +146,7 @@ calculator:
   compoundDescription: 
     part1: Questo
     boldPart: calcolatore ad interesse composto
-    part2: tiene in considerazione un aumento di +0.01 nel settaggio per ogni €10,000 di capitale aggiunto. Quindi in modalità super conservativa.
+    part2: tiene in considerazione un aumento automatico di +0.01 nel settaggio per ogni €10,000 di capitale aggiunto. Quindi in modalità super conservativa.
   chart:
     capital: Capital
     capital_error: Il capitale deve essere maggiore di 1500€

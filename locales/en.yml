@@ -148,7 +148,7 @@ calculator:
   compoundDescription: 
     part1: This
     boldPart: compound interest calculator
-    part2: takes into account an increase of +0.01 in the setting for every €10,000 of capital added. So in super conservative mode.
+    part2: takes into account an automatic increase of +0.01 in the setting for every €10,000 of capital added. So in super conservative mode.
   chart:
     capital: Capital
     capital_error: The capital must be greater than 1500€
