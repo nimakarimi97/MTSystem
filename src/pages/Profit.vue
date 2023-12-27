@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="mx-auto my-15 flex-center-col p-2">
+  <div class="mx-auto mt-15 flex-center-col p-2">
     <h3 primary-color>
       {{ t("profit.title").toUpperCase() }}
     </h3>

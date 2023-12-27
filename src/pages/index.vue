@@ -22,7 +22,7 @@ defineOptions({
   <Home id="home" mb-60 md:mb-0 />
   <!-- <WhoWeAre id="who" mb-60 /> -->
   <Fx id="fx" mb-30 />
-  <Profit id="profit" mb-30 />
+  <Profit id="profit" />
   <Calculator id="calculator" mb-30 />
   <Reviews id="reviews" mb-30 />
   <!-- <Prices id="prices" mb-30 /> -->

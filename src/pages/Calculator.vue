@@ -14,18 +14,18 @@ watch(() => {
 </script>
 
 <template>
-  <div my-4 flex-center flex-col justify-around gap-12 px-8>
+  <div mb-4 flex-center flex-col justify-around gap-12 px-8>
     <SimpleInterest />
 
     <div
       id="risk-explanation"
-      
-      
-      
-      
       class="md:w-70%"
-      
-      flex-center-col gap-17 px-4 text-left lg:flex-row md:px-8 
+      flex-center-col
+      gap-17
+      px-4
+      text-left
+      lg:flex-row
+      md:px-8
     >
       <div>
         <p>
