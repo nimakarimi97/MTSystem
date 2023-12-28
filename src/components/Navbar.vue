@@ -9,7 +9,7 @@ const { t } = useI18n()
 
 const routes = getRoutes()
 const navbarHeight = 100 // Height of the navbar in pixels
-// const isNavbarOpen: Ref<boolean> = ref(true)
+const isNavbarOpen = ref(false)
 
 // Function to handle scroll event
 function handleScroll() {
@@ -68,8 +68,26 @@ window.addEventListener('scroll', handleScroll)
     </div>
   </nav>
 
-  <!-- <Slide v-else :close-on-navigation="true" no-overlay mb-22 flex-center flex-col>
-    <div flex-center flex-col gap-4>
+  <nav v-else class="navbar-mobile">
+    <label class="hamburger">
+      <input type="checkbox" @click="isNavbarOpen = !isNavbarOpen">
+      <svg viewBox="0 0 32 32">
+        <path
+          class="line line-top-bottom"
+          d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+        />
+        <path class="line" d="M7 16 27 16" />
+      </svg>
+    </label>
+
+    <div
+      v-if="isNavbarOpen"
+      class="navbar-items"
+      flex
+      flex-col
+      items-center
+      justify-center
+    >
       <button
         icon-btn
         :title="t('button.home')"
@@ -79,29 +97,31 @@ window.addEventListener('scroll', handleScroll)
             : scrollToComponent('home', navbarHeight)
         "
       >
-        <img src="/logo-without-background.png" alt="Logo" w-32 />
+        <img src="/logo-without-background.png" alt="Logo" w-32>
       </button>
 
-      <div flex items-start>
+      <div flex-center flex-wrap gap-5 px-4>
+        <NavbarLink
+          v-for="route of routes"
+          :key="route.to"
+          :to="route.to"
+          :title="`nav.${route.to}`"
+          :navbar-height="navbarHeight"
+          flex-row
+          icon-btn
+        />
+
         <LanguageToggle text-xl />
       </div>
     </div>
-
-    <div flex-center flex-col flex-wrap gap-5 px-4>
-      <NavbarLink
-        v-for="route of routes"
-        :key="route.to"
-        :to="route.to"
-        :title="`nav.${route.to}`"
-        :navbar-height="navbarHeight"
-        flex-row
-        icon-btn
-      />
-    </div>
-  </Slide> -->
+  </nav>
 </template>
 
 <style>
+nav {
+  overflow-x: hidden;
+}
+
 nav.navbar-desktop {
   padding: 1rem;
   position: sticky;
@@ -131,51 +151,49 @@ nav.navbar-desktop.scrolled {
   gap: 1rem;
 }
 
-.bm-burger-button {
-  position: fixed !important;
-  width: 36px;
-  height: 30px;
-  left: 7%;
-  top: 4%;
+nav.navbar-mobile {
+  padding-top: 3rem;
+}
+
+.hamburger {
   cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0.7;
-}
-
-.bm-burger-button:hover {
-  transform: scale(1.06);
-  opacity: 1;
-}
-
-.bm-burger-button .bm-burger-bars {
-  background-color: var(--btn-bg-color);
-}
-
-.bm-burger-button .line-style {
   position: absolute;
-  height: 20%;
-  left: 0;
-  right: 0;
+  top: 2%;
+  left: 5%;
 }
 
-.bm-cross-button {
-  position: absolute;
-  right: 4% !important;
-  top: 2% !important;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  height: 2rem;
-  width: 2rem;
-  background: rgba(128, 128, 128, 0.5);
-  background: rgb(128, 128, 128);
-  border-radius: 50%;
-  opacity: 0.5;
-  transition: all 0.4s ease;
+.hamburger input {
+  display: none;
 }
 
-.bm-cross-button:hover {
-  transform: rotate(180deg);
-  opacity: 1;
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
 }
 </style>
