@@ -6,7 +6,7 @@ import PieChartComponent from '~/components/charts/PieChartComponent.vue'
 const { t, locale } = useI18n()
 let EinsteinImage = '/Einstein-en.jpg'
 
-watch(() => {
+watchEffect(() => {
   if (locale.value === 'it') 
     EinsteinImage = '/Einstein.jpg'
   else EinsteinImage = '/Einstein-en.jpg'
