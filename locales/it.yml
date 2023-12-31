@@ -12,7 +12,7 @@ nav:
   contact: Contatti
 button:
   about: Su di me
-  back: Indietro``
+  back: Indietro
   go: Vai
   home: Home
   toggle_dark: Attiva/disattiva modalità scura
@@ -57,7 +57,8 @@ profit:
   title2: Profitti degli investitori dagli MT4
 
 reviews:
-  title: Siamo lieti di presentare alcuni feedback positivi che abbiamo ricevuto dai nostri clienti soddisfatti.
+  title: FEEDBACK INVESTITORI 
+
 
 prices:
   title: I Prezzi
