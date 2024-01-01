@@ -3,10 +3,10 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div my-10 class="reviews">
-    <h4 my-10 px-4 font-size-1.2rem tracking-widest primary-color class="reviews">
+  <div my-28 class="reviews">
+    <h3 my-14 px-4 tracking-widest primary-color class="reviews">
       {{ t("reviews.title") }}
-    </h4>
+    </h3>
     <Slideshow />
   </div>
 </template>
