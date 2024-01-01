@@ -10,6 +10,7 @@ nav:
   faq: FAQ
   work: Lavora Con Noi
   contact: Contatti
+
 button:
   about: Su di me
   back: Indietro
@@ -18,14 +19,17 @@ button:
   toggle_dark: Attiva/disattiva modalità scura
   toggle_langs: Cambia lingua
   send: Invia
+
 intro:
   desc: Modello per una Applicazione Vite
   dynamic-route: Demo di rotta dinamica
   hi: Ciao, {name}!
+
 form:
   name: Il tuo nome
   email: La tua email
   message: Il tuo messaggio 
+
 not-found: Non trovato
 
 home:
