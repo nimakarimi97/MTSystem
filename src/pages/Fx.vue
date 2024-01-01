@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div flex-center-col gap-7>
+  <div flex-center-col gap-7 px-4>
     <h3 my-8 primary-color>
       {{ t("fx.title").toUpperCase() }}
     </h3>
@@ -12,7 +12,7 @@ const { t } = useI18n()
       {{ t("fx.description").toUpperCase() }}
     </p>
 
-    <div class="w-45% flex-center-col md:w-70% md:flex-row">
+    <div class="flex-center-col gap-8 md:w-45% md:w-70% md:flex-row">
       <div flex-center-col gap-4>
         <p>
           {{ t("fx.body1").toUpperCase() }}
@@ -31,7 +31,7 @@ const { t } = useI18n()
     <p my-0>
       {{ t("fx.description2") }}
     </p>
-    <div class="mx-auto w-45% flex-center-col gap-12 px-8 lg:w-40% md:flex-row">
+    <div class="mx-auto flex-center-col gap-12 px-8 lg:w-40% md:w-45% md:flex-row">
       <img src="/myfxbook/2sinistra.jpg" alt="profit" h-auto>
       <img src="/myfxbook/2destra.jpg" alt="profit" h-auto pb-4 md:p-0>
     </div>
@@ -39,7 +39,7 @@ const { t } = useI18n()
     <p my-0>
       {{ t("fx.description3") }}
     </p>
-    <div class="mx-auto w-45% flex-center-col gap-12 px-8 lg:w-40% md:flex-row">
+    <div class="mx-auto flex-center-col gap-12 px-8 lg:w-40% md:w-45% md:flex-row">
       <img src="/myfxbook/3sinistra.jpg" alt="profit" h-auto>
       <img src="/myfxbook/3destra.jpg" alt="profit" h-auto pb-4 md:p-0>
     </div>

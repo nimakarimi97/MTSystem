@@ -8,15 +8,27 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div h-90vh flex-center-col items-start gap-10 py-14 pl-12 pr-28 md:flex-row>
-    <img :src="imgSrc" alt="Welcome Image" class="h-100 w-100% md:w-130">
+  <div
+    v-100vh
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    flex-center-col items-start gap-10 px-4 py4 md:h-80vh md:flex-row md:py-14 md:pl-12 md:pr-28 
+  >
+    <img :src="imgSrc" alt="Welcome Image" class="w-80% lg:w-130 md:w-50%">
 
-    <div flex-center-col pt-16>
+    <div flex-center-col md:pt-16>
       <h3 mb-10 class="title w-75%">
         {{ t("home.title") }}
       </h3>
 
-      <ul flex-center gap8>
+      <ul flex-center flex-wrap gap1 px-4 md:gap8>
         <li v-for="i in 3" :key="i" text- flex-center justify-start py-1>
           <svg
             primary-color

@@ -79,4 +79,8 @@ html.dark .carousel__pagination-button--active::after,
 .carousel__pagination-button--active::after {
   background-color: var(--btn-bg-color);
 }
+
+.carousel__pagination {
+  flex-wrap: wrap;
+}
 </style>

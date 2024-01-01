@@ -14,7 +14,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div mb-4 flex-center flex-col justify-around gap-12 px-8>
+  <div mb-4 flex-center flex-col justify-around gap-12 px-1 sm:px-8>
     <SimpleInterest />
 
     <div
