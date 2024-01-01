@@ -105,7 +105,7 @@ vps:
       desc: (abbonamento automatico ogni tre mesi)
     c3:
       title: ANNUALE
-      price: €100 + iva
+      price: €180 + iva
       desc: (abbonamento automatico ogni 12 mesi)
 
 
