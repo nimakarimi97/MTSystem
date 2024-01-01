@@ -8,7 +8,22 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div v-100vh class="home-container">
+  <div
+    class="home-container"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    h-100vh flex flex-col items-start justify-center gap-10 px-4 py4 md:h-80vh md:flex-row md:py-14 md:pl-12 md:pr-28 
+  >
     <img :src="imgSrc" alt="Welcome Image" class="w-80% lg:w-130 md:w-50%">
 
     <div flex-center-col md:pt-16>
