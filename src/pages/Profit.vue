@@ -8,7 +8,7 @@ const { t } = useI18n()
       {{ t("profit.title").toUpperCase() }}
     </h3>
 
-    <div class="my-15 flex-center-col p-2 md:w-60%">
+    <div class="flex-center-col p-2 md:my-6 md:w-60%">
       <p my-5>
         {{ t("profit.body1") }}
       </p>

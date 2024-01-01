@@ -10,24 +10,24 @@ watchEffect(() => {
 <template>
   <div
     class="home-container"
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    h-100vh flex flex-col items-start justify-center gap-10 px-4 py4 md:h-80vh md:flex-row md:py-14 md:pl-12 md:pr-28 
+    h-100vh
+    flex
+    flex-col
+    items-start
+    justify-center
+    gap-4
+    px-4
+    py4
+    lg:h-80vh
+    md:flex-row
+    md:py-14
+    md:pl-12
+    md:pr-28
   >
     <img :src="imgSrc" alt="Welcome Image" class="w-80% lg:w-130 md:w-50%">
 
     <div flex-center-col md:pt-16>
-      <h3 mb-10 class="title w-75%">
+      <h3 md:mb-10 class="title md:w-75%">
         {{ t("home.title") }}
       </h3>
 

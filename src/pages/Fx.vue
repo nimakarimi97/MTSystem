@@ -31,7 +31,7 @@ const { t } = useI18n()
     <p my-0>
       {{ t("fx.description2") }}
     </p>
-    <div class="mx-auto flex-center-col gap-12 px-8 lg:w-40% md:w-45% md:flex-row">
+    <div class="mx-auto flex-center-col gap-12 lg:w-40% md:w-45% md:flex-row md:px-8">
       <img src="/myfxbook/2sinistra.jpg" alt="profit" h-auto>
       <img src="/myfxbook/2destra.jpg" alt="profit" h-auto pb-4 md:p-0>
     </div>
@@ -39,7 +39,7 @@ const { t } = useI18n()
     <p my-0>
       {{ t("fx.description3") }}
     </p>
-    <div class="mx-auto flex-center-col gap-12 px-8 lg:w-40% md:w-45% md:flex-row">
+    <div class="mx-auto flex-center-col gap-12 lg:w-40% md:w-45% md:flex-row md:px-8">
       <img src="/myfxbook/3sinistra.jpg" alt="profit" h-auto>
       <img src="/myfxbook/3destra.jpg" alt="profit" h-auto pb-4 md:p-0>
     </div>
