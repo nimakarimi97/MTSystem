@@ -87,6 +87,7 @@ window.addEventListener('scroll', handleScroll)
       flex-col
       items-center
       justify-center
+      pt8
     >
       <button
         icon-btn
@@ -149,10 +150,6 @@ nav.navbar-desktop.scrolled {
 .navbar-items {
   display: flex;
   gap: 1rem;
-}
-
-nav.navbar-mobile {
-  padding-top: 3rem;
 }
 
 .hamburger {
