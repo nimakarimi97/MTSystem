@@ -80,6 +80,8 @@ window.addEventListener('scroll', handleScroll)
       </svg>
     </label>
 
+    <LanguageToggle class="language-toggle" />
+
     <div
       v-if="isNavbarOpen"
       class="navbar-items"
@@ -111,8 +113,6 @@ window.addEventListener('scroll', handleScroll)
           flex-row
           icon-btn
         />
-
-        <LanguageToggle text-xl />
       </div>
     </div>
   </nav>
@@ -157,6 +157,13 @@ nav.navbar-desktop.scrolled {
   position: absolute;
   top: 2%;
   left: 5%;
+}
+
+.language-toggle {
+  cursor: pointer;
+  position: absolute;
+  top: 3%;
+  right: 3%;
 }
 
 .hamburger input {
