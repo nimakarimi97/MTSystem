@@ -14,7 +14,7 @@ watchEffect(() => {
     flex
     flex-col
     items-start
-    justify-center
+    justify-start
     gap-4
     px-4
     py4
