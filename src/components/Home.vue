@@ -17,7 +17,8 @@ watchEffect(() => {
     justify-start
     gap-4
     px-4
-    py4
+    pb4
+    pt12
     lg:h-80vh
     md:flex-row
     md:py-14
@@ -31,7 +32,7 @@ watchEffect(() => {
         {{ t("home.title") }}
       </h3>
 
-      <ul flex-center flex-wrap gap1 px-4 md:gap8>
+      <ul flex-center flex-wrap gap1 px-1 md:gap8>
         <li v-for="i in 3" :key="i" text- flex-center justify-start py-1>
           <svg
             primary-color
