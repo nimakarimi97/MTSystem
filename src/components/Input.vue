@@ -1,7 +1,6 @@
 <script setup lang="ts">
-const { name, type } = defineModels<{
+const { name } = defineModels<{
   name?: string
-  type?: string
 }>()
 </script>
 
@@ -15,6 +14,5 @@ const { name, type } = defineModels<{
     bg="transparent"
     border="~ rounded amber-600"
     outline="none active:none"
-    :type="type"
   >
 </template>
