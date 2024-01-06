@@ -32,8 +32,8 @@ watchEffect(() => {
         {{ t("home.title") }}
       </h3>
 
-      <ul flex-center flex-wrap gap1 px-1 md:gap8>
-        <li v-for="i in 3" :key="i" text- flex-center justify-start py-1>
+      <ul flex-center flex-wrap gap1 md:gap8>
+        <li v-for="i in 3" :key="i" flex-center justify-start py-1>
           <svg
             primary-color
             xmlns="http://www.w3.org/2000/svg"
