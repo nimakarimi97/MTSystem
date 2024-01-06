@@ -136,12 +136,12 @@ const { barChartProps } = useBarChart({
       <p>
         {{ `${t("calculator.profit")} : ` }}
         <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
-        <span v-else text-white>{{ profit }}</span>
+        <span v-else text-white>{{ Math.round(profit) }}</span>
       </p>
       <p>
         {{ `${t("calculator.balance")} : ` }}
         <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
-        <span v-else text-white>{{ balance }}</span>
+        <span v-else text-white>{{ Math.round(balance) }}</span>
       </p>
     </div>
 
