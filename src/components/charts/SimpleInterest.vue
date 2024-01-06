@@ -104,7 +104,7 @@ const { barChartProps } = useBarChart({
         </span>
       </div>
 
-      <div grid gap-2 text-left>
+      <div grid gap-2 text-left class="w-100%">
         <span>{{ t("calculator.chart.month") }}</span>
         <Input
           v-model="chartInputsData.month"
@@ -114,7 +114,7 @@ const { barChartProps } = useBarChart({
           :placeholder="t('calculator.chart.month')"
           max="12"
           min="1"
-          w-50
+          md:w-50
         />
       </div>
 
