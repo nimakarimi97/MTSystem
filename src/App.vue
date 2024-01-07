@@ -7,10 +7,10 @@ import { scrollToComponent } from '~/composables/scrollToComponent'
 useHead({
   title: 'Fx Trading',
   meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    { name: 'description', content: 'Mark Trading System' },
     {
       name: 'theme-color',
-      content: () => (isDark.value ? '#00aba9' : '#ffffff'),
+      content: () => (isDark.value ? '#d97706' : '#ffffff'),
     },
   ],
   link: [
