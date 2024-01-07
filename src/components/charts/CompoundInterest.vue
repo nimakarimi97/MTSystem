@@ -95,12 +95,12 @@ const { barChartProps } = useBarChart({
           :value="chartInputsData.capital"
           type="number"
           inputmode="decimal"
-          name="capital"
           :class="{
             'border-red-7': chartInputsData.capital < 1500,
           }"
           :placeholder="t('calculator.chart.capital')"
           min="1500"
+          class="show-arrows"
         />
       </div>
 
@@ -114,6 +114,7 @@ const { barChartProps } = useBarChart({
           :placeholder="t('calculator.chart.setting')"
           step="0.01"
           min="0"
+          class="setting-input"
         />
       </div>
 
@@ -128,6 +129,7 @@ const { barChartProps } = useBarChart({
           max="12"
           min="1"
           md:w-50
+          class="show-arrows"
         />
       </div>
     </div>
@@ -161,5 +163,27 @@ const { barChartProps } = useBarChart({
 
 #bar-chart {
   min-height: 300px !important;
+}
+
+// .setting-input {
+//   input[type="number"]::-webkit-inner-spin-button,
+//   input[type="number"]::-webkit-outer-spin-button {
+//     opacity: 0 !important;
+//     -webkit-appearance: none !important;
+//     margin: 0 !important;
+//   }
+// }
+</style>
+
+<style scoped lang="scss">
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.setting-input::-webkit-inner-spin-button,
+.setting-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 </style>
