@@ -42,6 +42,8 @@ watchEffect(() => {
   // if (isNaN(chartInputsData.value.capital) || chartInputsData.value.capital < 1500) {
   //   chartInputsData.value.capital = 1500;
   // }
+
+  chartInputsData.value.setting = Math.round(chartInputsData.value.setting * 100) / 100
 })
 
 const chartData = computed(() => ({
@@ -103,6 +105,7 @@ function decrementInput(input) {
             :placeholder="t('calculator.chart.capital')"
             min="1500"
           />
+
           <div class="spinners">
             <button class="spinner increment" @click="incrementInput('capital')">
               &#9650;
@@ -126,7 +129,7 @@ function decrementInput(input) {
             :placeholder="t('calculator.chart.setting')"
             min="0"
           />
-          <!-- step="0.01" -->
+
           <div class="spinners">
             <button class="spinner increment" @click="incrementInput('setting')">
               &#9650;
@@ -160,6 +163,7 @@ function decrementInput(input) {
             min="1"
             w-50
           />
+
           <div class="spinners month">
             <button class="spinner increment" @click="incrementInput('month')">
               &#9650;
