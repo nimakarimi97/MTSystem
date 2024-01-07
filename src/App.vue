@@ -10,14 +10,14 @@ useHead({
     { name: 'description', content: 'Opinionated Vite Starter Template' },
     {
       name: 'theme-color',
-      content: () => isDark.value ? '#00aba9' : '#ffffff',
+      content: () => (isDark.value ? '#00aba9' : '#ffffff'),
     },
   ],
   link: [
     {
       rel: 'icon',
-      type: 'image/svg+xml',
-      href: () => preferredDark.value ? '/logo-without-background-cropped' : '/logo-without-background-cropped',
+      type: 'image/png',
+      href: '/logo-without-background-cropped.png',
     },
   ],
 })
