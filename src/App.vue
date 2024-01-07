@@ -17,7 +17,7 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: () => preferredDark.value ? '/logo-without-background-cropped' : '/logo-without-background-logo-without-background-cropped',
+      href: () => preferredDark.value ? '/logo-without-background-cropped' : '/logo-without-background-cropped',
     },
   ],
 })
