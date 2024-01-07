@@ -120,7 +120,7 @@ function decrementInput(input) {
         <div class="number-input">
           <Input
             v-model="chartInputsData.setting"
-            :value="chartInputsData.setting?.toFixed(2)"
+            :value="chartInputsData.setting"
             type="number"
             inputmode="decimal"
             :placeholder="t('calculator.chart.setting')"
