@@ -62,7 +62,7 @@ const { barChartProps } = useBarChart({
 function incrementInput(input) {
   if (input === 'setting') 
     chartInputsData.value[input] += 0.01
-  else if (input === chartInputsData.value.capital) 
+  else if (input === 'capital') 
     chartInputsData.value[input]++
   else if (chartInputsData.value.month < 12) 
     chartInputsData.value[input]++
@@ -71,7 +71,9 @@ function incrementInput(input) {
 function decrementInput(input) {
   if (input === 'setting') 
     chartInputsData.value[input] -= 0.01
-  else if (chartInputsData.value.capital > 1500 && chartInputsData.value.month > 0)
+  else if (input === 'capital' && chartInputsData.value.capital > 1500)
+    chartInputsData.value[input]--
+  else if (input === 'monthG' && chartInputsData.value.month > 0)
     chartInputsData.value[input]--
 }
 </script>
@@ -95,7 +97,6 @@ function decrementInput(input) {
             :value="chartInputsData.capital"
             type="number"
             inputmode="decimal"
-            name="capital"
             :class="{
               'border-red-7': chartInputsData.capital < 1500,
             }"
