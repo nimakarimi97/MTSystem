@@ -38,6 +38,10 @@ watchEffect(() => {
 
   monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
   // sliderValue.value = Number.parseInt(sliderValue.value);
+
+  // if (isNaN(chartInputsData.value.capital) || chartInputsData.value.capital < 1500) {
+  //   chartInputsData.value.capital = 1500;
+  // }
 })
 
 const chartData = computed(() => ({
@@ -54,6 +58,22 @@ const chartData = computed(() => ({
 const { barChartProps } = useBarChart({
   chartData,
 })
+
+function incrementInput(input) {
+  if (input === 'setting') 
+    chartInputsData.value[input] += 0.01
+  else if (input === chartInputsData.value.capital) 
+    chartInputsData.value[input]++
+  else if (chartInputsData.value.month < 12) 
+    chartInputsData.value[input]++
+}
+
+function decrementInput(input) {
+  if (input === 'setting') 
+    chartInputsData.value[input] -= 0.01
+  else if (chartInputsData.value.capital > 1500 && chartInputsData.value.month > 0)
+    chartInputsData.value[input]--
+}
 </script>
 
 <template>
@@ -64,36 +84,58 @@ const { barChartProps } = useBarChart({
 
     <div my-4 flex-center-col gap-7 md:flex-row>
       <div grid gap-2 text-left>
-        <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
+        <span v-if="chartInputsData.capital < 1500" mb-2 text-xs style="color: red">
           {{ t("calculator.chart.capital_error") }}
         </span>
         <span v-else>{{ t("calculator.chart.capital") }}</span>
 
-        <Input
-          v-model="chartInputsData.capital"
-          :value="chartInputsData.capital"
-          type="number"
-          inputmode="decimal"
-          name="capital"
-          :class="{
-            'border-red-7': chartInputsData.capital < 1500,
-          }"
-          :placeholder="t('calculator.chart.capital')"
-          min="1500"
-        />
+        <div class="number-input">
+          <Input
+            v-model="chartInputsData.capital"
+            :value="chartInputsData.capital"
+            type="number"
+            inputmode="decimal"
+            name="capital"
+            :class="{
+              'border-red-7': chartInputsData.capital < 1500,
+            }"
+            :placeholder="t('calculator.chart.capital')"
+            min="1500"
+          />
+          <div class="spinners">
+            <button class="spinner increment" @click="incrementInput('capital')">
+              &#9650;
+            </button>
+            <button class="spinner decrement" @click="decrementInput('capital')">
+              &#9660;
+            </button>
+          </div>
+        </div>
       </div>
 
       <div position-relative grid gap-2 text-left>
         <span>{{ t("calculator.chart.setting") }}</span>
-        <Input
-          v-model="chartInputsData.setting"
-          :value="chartInputsData.setting"
-          type="number"
-          inputmode="decimal"
-          :placeholder="t('calculator.chart.setting')"
-          step="0.01"
-          min="0"
-        />
+
+        <div class="number-input">
+          <Input
+            v-model="chartInputsData.setting"
+            :value="chartInputsData.setting?.toFixed(2)"
+            type="number"
+            inputmode="decimal"
+            :placeholder="t('calculator.chart.setting')"
+            min="0"
+          />
+          <!-- step="0.01" -->
+          <div class="spinners">
+            <button class="spinner increment" @click="incrementInput('setting')">
+              &#9650;
+            </button>
+            <button class="spinner decrement" @click="decrementInput('setting')">
+              &#9660;
+            </button>
+          </div>
+        </div>
+
         <span italic class="setting-explanation">
           {{ t("calculator.chart.setting_explanation") }}
           <span
@@ -104,18 +146,28 @@ const { barChartProps } = useBarChart({
         </span>
       </div>
 
-      <div grid gap-2 text-left class="w-100%">
-        <span>{{ t("calculator.chart.month") }}</span>
-        <Input
-          v-model="chartInputsData.month"
-          :value="chartInputsData.month"
-          type="number"
-          inputmode="decimal"
-          :placeholder="t('calculator.chart.month')"
-          max="12"
-          min="1"
-          md:w-50
-        />
+      <div class="number-input">
+        <div grid gap-2 text-left>
+          <span>{{ t("calculator.chart.month") }}</span>
+          <Input
+            v-model="chartInputsData.month"
+            :value="chartInputsData.month"
+            type="number"
+            inputmode="decimal"
+            :placeholder="t('calculator.chart.month')"
+            max="12"
+            min="1"
+            w-50
+          />
+          <div class="spinners month">
+            <button class="spinner increment" @click="incrementInput('month')">
+              &#9650;
+            </button>
+            <button class="spinner decrement" @click="decrementInput('month')">
+              &#9660;
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- <div class="PB-range-slider-div" mx-8 px-5>
@@ -215,5 +267,43 @@ const { barChartProps } = useBarChart({
   bottom: -32%;
   font-size: 11px;
   text-wrap: nowrap;
+}
+</style>
+
+<style scoped>
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-input {
+  position: relative;
+  width: fit-content;
+}
+
+.spinners {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 1px;
+  transform: translateY(-50%);
+}
+
+.spinners.month {
+  top: 70%;
+}
+
+.spinner {
+  font-size: 9px;
+  border: none;
+  padding: 2px 8px;
+}
+
+.spinner:hover {
+  background: #3e3e3e;
 }
 </style>
