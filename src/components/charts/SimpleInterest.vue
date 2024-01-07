@@ -73,7 +73,7 @@ function decrementInput(input) {
     chartInputsData.value[input] -= 0.01
   else if (input === 'capital' && chartInputsData.value.capital > 1500)
     chartInputsData.value[input]--
-  else if (input === 'monthG' && chartInputsData.value.month > 0)
+  else if (input === 'month' && chartInputsData.value.month > 0)
     chartInputsData.value[input]--
 }
 </script>
