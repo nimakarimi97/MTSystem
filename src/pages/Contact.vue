@@ -85,7 +85,7 @@ const { t } = useI18n()
           </span>
         </a>
 
-        <a href="mailto:tradingmtsysyem@gmail.com" target="_blank" flex-center gap4>
+        <a href="mailto:mtsystemtrading@gmail.com" target="_blank" flex-center gap4>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -100,7 +100,7 @@ const { t } = useI18n()
             />
           </svg>
 
-          tradingmtsysyem@gmail.com
+          mtsystemtrading@gmail.com
         </a>
       </div>
     </div>
