@@ -8,8 +8,8 @@ const { t } = useI18n()
   <nav mt-6 flex-center-col justify-center gap-6 py-12 pb-20>
     <div flex-center-col gap-2>
       <span>{{ t("footer.companyInfo.name") }} : MTSystem</span>
-      <span>{{ t("footer.companyInfo.piva") }} :</span>
-      <span>{{ t("footer.companyInfo.address") }} :</span>
+      <span>{{ t("footer.companyInfo.piva") }} : 207645129</span>
+      <span>{{ t("footer.companyInfo.address") }} : Via Pop Bogomil № 1A, Oborishte, 1202, Sofia</span>
       <span>{{ t("footer.companyInfo.rights") }}</span>
     </div>
 
