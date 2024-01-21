@@ -6,13 +6,7 @@ import { scrollToComponent } from '~/composables/scrollToComponent'
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
   title: 'Fx Trading',
-  meta: [
-    { name: 'description', content: 'Mark Trading System' },
-    {
-      name: 'theme-color',
-      content: () => (isDark.value ? '#d97706' : '#ffffff'),
-    },
-  ],
+  meta: [{ name: 'description', content: 'Mark Trading System' }],
   link: [
     {
       rel: 'icon',

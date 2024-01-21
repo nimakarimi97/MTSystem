@@ -1,10 +1,10 @@
 <script setup>
 const { t } = useI18n()
-const imgSrc = ref('MTLight.png')
+const imgSrc = ref('MTDark-without-background.png')
 
-watchEffect(() => {
-  imgSrc.value = isDark.value ? 'MTDark-without-background.png' : 'MTLight.png'
-})
+// watchEffect(() => {
+//   imgSrc.value = isDark.value ? 'MTDark-without-background.png' : 'MTLight.png'
+// })
 </script>
 
 <template>
