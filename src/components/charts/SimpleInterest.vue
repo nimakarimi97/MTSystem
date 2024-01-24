@@ -6,7 +6,7 @@ Chart.register(...registerables)
 const { t } = useI18n()
 
 const chartInputsData = ref({
-  capital: 1500,
+  capital: 2000,
   setting: 0.01,
   month: 10,
 })
@@ -39,8 +39,8 @@ watchEffect(() => {
   monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
   // sliderValue.value = Number.parseInt(sliderValue.value);
 
-  // if (isNaN(chartInputsData.value.capital) || chartInputsData.value.capital < 1500) {
-  //   chartInputsData.value.capital = 1500;
+  // if (isNaN(chartInputsData.value.capital) || chartInputsData.value.capital < 2000) {
+  //   chartInputsData.value.capital = 2000;
   // }
 
   chartInputsData.value.setting = Math.round(chartInputsData.value.setting * 100) / 100
@@ -73,7 +73,7 @@ function incrementInput(input) {
 function decrementInput(input) {
   if (input === 'setting') 
     chartInputsData.value[input] -= 0.01
-  else if (input === 'capital' && chartInputsData.value.capital > 1500)
+  else if (input === 'capital' && chartInputsData.value.capital > 2000)
     chartInputsData.value[input]--
   else if (input === 'month' && chartInputsData.value.month > 0)
     chartInputsData.value[input]--
@@ -88,7 +88,7 @@ function decrementInput(input) {
 
     <div my-4 flex-center-col gap-7 md:flex-row>
       <div grid gap-2 text-left>
-        <span v-if="chartInputsData.capital < 1500" mb-2 text-xs style="color: red">
+        <span v-if="chartInputsData.capital < 2000" mb-2 text-xs style="color: red">
           {{ t("calculator.chart.capital_error") }}
         </span>
         <span v-else>{{ t("calculator.chart.capital") }}</span>
@@ -100,10 +100,10 @@ function decrementInput(input) {
             type="number"
             inputmode="decimal"
             :class="{
-              'border-red-7': chartInputsData.capital < 1500,
+              'border-red-7': chartInputsData.capital < 2000,
             }"
             :placeholder="t('calculator.chart.capital')"
-            min="1500"
+            min="2000"
           />
 
           <div class="spinners">
@@ -192,12 +192,12 @@ function decrementInput(input) {
     <div mt8 flex-center-col gap-3 primary-color>
       <p>
         {{ `${t("calculator.profit")} : ` }}
-        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-if="chartInputsData.capital < 2000" text-white> -- </span>
         <span v-else text-white>€{{ Math.round(profit) }}</span>
       </p>
       <p>
         {{ `${t("calculator.balance")} : ` }}
-        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-if="chartInputsData.capital < 2000" text-white> -- </span>
         <span v-else text-white>€{{ Math.round(balance) }}</span>
       </p>
     </div>

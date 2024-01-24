@@ -85,7 +85,7 @@ const { barChartProps } = useBarChart({
 
     <div my-4 flex-center-col gap-7 md:flex-row>
       <div grid gap-2 text-left>
-        <span v-if="chartInputsData.capital < 1500" text-xs style="color: red">
+        <span v-if="chartInputsData.capital < 2000" text-xs style="color: red">
           {{ t("calculator.chart.capital_error") }}
         </span>
         <span v-else>{{ t("calculator.chart.capital") }}</span>
@@ -96,10 +96,10 @@ const { barChartProps } = useBarChart({
           type="number"
           inputmode="decimal"
           :class="{
-            'border-red-7': chartInputsData.capital < 1500,
+            'border-red-7': chartInputsData.capital < 2000,
           }"
           :placeholder="t('calculator.chart.capital')"
-          min="1500"
+          min="2000"
           class="show-arrows"
         />
       </div>
@@ -137,12 +137,12 @@ const { barChartProps } = useBarChart({
     <div flex-center-col gap-3 primary-color>
       <p>
         {{ `${t("calculator.profit")} : ` }}
-        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-if="chartInputsData.capital < 2000" text-white> -- </span>
         <span v-else text-white>€{{ profit }}</span>
       </p>
       <p>
         {{ `${t("calculator.balance")} : ` }}
-        <span v-if="chartInputsData.capital < 1500" text-white> -- </span>
+        <span v-if="chartInputsData.capital < 2000" text-white> -- </span>
         <span v-else text-white>€{{ balance }}</span>
       </p>
     </div>

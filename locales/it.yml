@@ -154,7 +154,7 @@ calculator:
     part2: tiene in considerazione un aumento automatico di +0.01 nel settaggio per ogni €10,000 di capitale aggiunto. Quindi in modalità super conservativa.
   chart:
     capital: Capital
-    capital_error: Il capitale deve essere maggiore di 1500€
+    capital_error: Il capitale deve essere maggiore di 2000€
     setting: Setting
     setting_explanation: Non sai cosa inserire?
     month: Mesi
