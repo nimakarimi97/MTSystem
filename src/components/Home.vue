@@ -10,24 +10,25 @@ const imgSrc = ref('MTDark-without-background.png')
 <template>
   <div
     class="home-container"
-    h-100vh
-    flex
-    flex-col
-    items-start
-    justify-start
-    gap-4
-    px-4
-    pb4
-    pt12
-    lg:h-80vh
-    md:flex-row
-    md:py-14
-    md:pl-12
-    md:pr-28
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    h-100vh flex flex-col items-start justify-start gap-4 px-4 pb4 pt12 lg:h-80vh md:flex-row md:pb-14 md:pl-12 md:pr-28 md:pt-8 
   >
     <img :src="imgSrc" alt="Welcome Image" class="w-80% lg:w-130 md:w-50%">
 
-    <div flex-center-col md:pt-16>
+    <div flex-center-col md:pt-28>
       <h3 md:mb-10 class="title md:w-75%">
         {{ t("home.title") }}
       </h3>
