@@ -12,7 +12,7 @@ const { t } = useI18n()
       {{ t("fx.description").toUpperCase() }}
     </p>
 
-    <div class="flex-center-col gap-8 md:w-70% md:flex-row">
+    <div class="flex-center-col md:w-70% md:flex-row">
       <div flex-center-col gap-4>
         <p>
           {{ t("fx.body1").toUpperCase() }}
