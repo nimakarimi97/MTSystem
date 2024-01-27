@@ -19,7 +19,6 @@ watchEffect(() => {
 
     <div
       id="risk-explanation"
-      class="lg-w-60% sm-w-80% xl-w-50%"
       flex-center-col
       gap-17
       px-4
@@ -41,7 +40,7 @@ watchEffect(() => {
         </p>
       </div> -->
 
-      <div>
+      <div class="md-w-60%">
         <p>
           {{ t("calculator.superRisk.title.part1") }}
           <span primary-color class="fw-bold">{{
