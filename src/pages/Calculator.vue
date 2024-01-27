@@ -19,7 +19,7 @@ watchEffect(() => {
 
     <div
       id="risk-explanation"
-      class="md:w-70%"
+      class="lg-w-60% sm-w-80% xl-w-50%"
       flex-center-col
       gap-17
       px-4
@@ -27,7 +27,7 @@ watchEffect(() => {
       lg:flex-row
       md:px-8
     >
-      <div>
+      <!-- <div>
         <p>
           {{ t("calculator.risk.title.part1") }}
           <span primary-color class="fw-bold">{{
@@ -39,7 +39,7 @@ watchEffect(() => {
         <p v-for="index in 4" :key="index" mt-4>
           {{ t(`calculator.risk.description${index}`) }}
         </p>
-      </div>
+      </div> -->
 
       <div>
         <p>

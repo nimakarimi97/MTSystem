@@ -70,7 +70,7 @@ const { barChartProps } = useBarChart({
 </script>
 
 <template>
-  <div my-14 flex-center-col justify-around gap-3>
+  <div mb-14 flex-center-col justify-around gap-3>
     <h3 mb-6 primary-color>
       {{ t("calculator.title.compound") }}
     </h3>
