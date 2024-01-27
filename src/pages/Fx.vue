@@ -9,20 +9,20 @@ const { t } = useI18n()
     </h3>
 
     <p>
-      {{ t("fx.description").toUpperCase() }}
+      {{ t("fx.description") }}
     </p>
 
     <div class="flex-center-col md:w-70% md:flex-row">
       <div flex-center-col gap-4>
         <p>
-          {{ t("fx.body1").toUpperCase() }}
+          {{ t("fx.body1") }}
         </p>
         <img src="/myfxbook/1sinistra.jpg" alt="myfx-aziendale">
       </div>
 
       <div flex-center-col gap-4>
         <p>
-          {{ t("fx.body2").toUpperCase() }}
+          {{ t("fx.body2") }}
         </p>
         <img src="/myfxbook/1destra.jpg" alt="myfx-chart">
       </div>
