@@ -56,5 +56,9 @@ const { t } = useI18n()
 <style scoped lang="scss">
 img {
   width: 90%;
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
 }
 </style>
