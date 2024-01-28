@@ -8,13 +8,13 @@ const { t } = useI18n()
       {{ t("nav.work") }}
     </h3>
     <p class="my-6 text-lg">
-      {{ $t("work.body1") }}
+      {{ t("work.body1") }}
     </p>
     <p class="text-lg">
-      {{ $t("work.body2") }}
+      {{ t("work.body2") }}
     </p>
     <p class="mt-6 text-lg">
-      {{ $t("work.body3") }}
+      {{ t("work.body3") }}
     </p>
   </div>
 </template>
