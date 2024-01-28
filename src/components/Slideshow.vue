@@ -83,4 +83,24 @@ html.dark .carousel__pagination-button--active::after,
 .carousel__pagination {
   flex-wrap: wrap;
 }
+
+/* Navigation */
+.carousel__prev,
+.carousel__next {
+  width: 35% !important;
+  height: 100% !important;
+  justify-content: start;
+  margin: 0;
+}
+
+.carousel__next {
+  justify-content: end !important;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel__prev,
+  .carousel__next {
+    width: 15% !important;
+  }
+}
 </style>
