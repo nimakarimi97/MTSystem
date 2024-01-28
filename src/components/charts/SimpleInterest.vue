@@ -3,6 +3,9 @@ import { Chart, registerables } from 'chart.js'
 import { BarChart, useBarChart } from 'vue-chart-3'
 
 Chart.register(...registerables)
+
+
+
 const { t } = useI18n()
 
 const chartInputsData = ref({
@@ -62,16 +65,16 @@ const { barChartProps } = useBarChart({
 })
 
 function incrementInput(input) {
-  if (input === 'setting') 
+  if (input === 'setting')
     chartInputsData.value[input] += 0.01
-  else if (input === 'capital') 
+  else if (input === 'capital')
     chartInputsData.value[input]++
-  else if (chartInputsData.value.month < 12) 
+  else if (chartInputsData.value.month < 12)
     chartInputsData.value[input]++
 }
 
 function decrementInput(input) {
-  if (input === 'setting') 
+  if (input === 'setting')
     chartInputsData.value[input] -= 0.01
   else if (input === 'capital' && chartInputsData.value.capital > 2000)
     chartInputsData.value[input]--
@@ -95,15 +98,10 @@ function decrementInput(input) {
 
         <div class="number-input">
           <Input
-            v-model="chartInputsData.capital"
-            :value="chartInputsData.capital"
-            type="number"
-            inputmode="decimal"
+            v-model="chartInputsData.capital" :value="chartInputsData.capital" type="number" inputmode="decimal"
             :class="{
               'border-red-7': chartInputsData.capital < 2000,
-            }"
-            :placeholder="t('calculator.chart.capital')"
-            min="2000"
+            }" :placeholder="t('calculator.chart.capital')" min="2000"
           />
 
           <div class="spinners">
@@ -122,12 +120,8 @@ function decrementInput(input) {
 
         <div class="number-input">
           <Input
-            v-model="chartInputsData.setting"
-            :value="chartInputsData.setting"
-            type="number"
-            inputmode="decimal"
-            :placeholder="t('calculator.chart.setting')"
-            min="0"
+            v-model="chartInputsData.setting" :value="chartInputsData.setting" type="number" inputmode="decimal"
+            :placeholder="t('calculator.chart.setting')" min="0" lang="en-US"
           />
 
           <div class="spinners">
@@ -142,11 +136,7 @@ function decrementInput(input) {
 
         <span italic class="setting-explanation">
           {{ t("calculator.chart.setting_explanation") }}
-          <span
-            cursor-pointer
-            underline
-            @click="scrollToComponent('#risk-explanation')"
-          >{{ t("click_here") }}</span>
+          <span cursor-pointer underline @click="scrollToComponent('#risk-explanation')">{{ t("click_here") }}</span>
         </span>
       </div>
 
@@ -154,14 +144,8 @@ function decrementInput(input) {
         <div grid gap-2 text-left>
           <span>{{ t("calculator.chart.month") }}</span>
           <Input
-            v-model="chartInputsData.month"
-            :value="chartInputsData.month"
-            type="number"
-            inputmode="decimal"
-            :placeholder="t('calculator.chart.month')"
-            max="12"
-            min="1"
-            w-50
+            v-model="chartInputsData.month" :value="chartInputsData.month" type="number" inputmode="decimal"
+            :placeholder="t('calculator.chart.month')" max="12" min="1" w-50
           />
 
           <div class="spinners month">

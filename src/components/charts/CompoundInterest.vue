@@ -91,45 +91,27 @@ const { barChartProps } = useBarChart({
         <span v-else>{{ t("calculator.chart.capital") }}</span>
 
         <Input
-          v-model="chartInputsData.capital"
-          :value="chartInputsData.capital"
-          type="number"
-          inputmode="decimal"
+          v-model="chartInputsData.capital" :value="chartInputsData.capital" type="number" inputmode="decimal"
           :class="{
             'border-red-7': chartInputsData.capital < 2000,
-          }"
-          :placeholder="t('calculator.chart.capital')"
-          min="2000"
-          class="show-arrows"
+          }" :placeholder="t('calculator.chart.capital')" min="2000" class="show-arrows"
         />
       </div>
 
       <div grid gap-2 text-left>
         <span>{{ t("calculator.chart.setting") }}</span>
         <Input
-          v-model="chartInputsData.setting"
-          :value="chartInputsData.setting.slice(-1)"
-          type="number"
-          inputmode="decimal"
-          :placeholder="t('calculator.chart.setting')"
-          step="0.01"
-          min="0"
-          class="setting-input"
+          v-model="chartInputsData.setting" :value="chartInputsData.setting.slice(-1)" type="number"
+          inputmode="decimal" :placeholder="t('calculator.chart.setting')" step="0.01" min="0" class="setting-input"
+          lang="en-US"
         />
       </div>
 
       <div grid gap-2 text-left class="w-100%">
         <span>{{ t("calculator.chart.month") }}</span>
         <Input
-          v-model="chartInputsData.month"
-          :value="chartInputsData.month"
-          type="number"
-          inputmode="decimal"
-          :placeholder="t('calculator.chart.month')"
-          max="12"
-          min="1"
-          md:w-50
-          class="show-arrows"
+          v-model="chartInputsData.month" :value="chartInputsData.month" type="number" inputmode="decimal"
+          :placeholder="t('calculator.chart.month')" max="12" min="1" md:w-50 class="show-arrows"
         />
       </div>
     </div>
