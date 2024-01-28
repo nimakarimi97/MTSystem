@@ -7,7 +7,7 @@ const { t, locale } = useI18n()
 let EinsteinImage = '/Einstein-en.jpg'
 
 watchEffect(() => {
-  if (locale.value === 'it') 
+  if (locale.value === 'it')
     EinsteinImage = '/Einstein.jpg'
   else EinsteinImage = '/Einstein-en.jpg'
 })
@@ -17,15 +17,7 @@ watchEffect(() => {
   <div mb-4 flex-center flex-col justify-around gap-12 px-1 sm:px-8>
     <SimpleInterest />
 
-    <div
-      id="risk-explanation"
-      flex-center-col
-      gap-17
-      px-4
-      text-left
-      lg:flex-row
-      md:px-8
-    >
+    <div id="risk-explanation" flex-center-col gap-17 px-4 text-left lg:flex-row md:px-8>
       <!-- <div>
         <p>
           {{ t("calculator.risk.title.part1") }}

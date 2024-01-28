@@ -77,7 +77,7 @@ const { barChartProps } = useBarChart({
 
     <p class="w-60%">
       {{ t("calculator.compoundDescription.part1") }}
-      <span primary-color class="fw-bold">{{
+      <span primary-color class="fw-800">{{
         t("calculator.compoundDescription.boldPart")
       }}</span>
       {{ t("calculator.compoundDescription.part2") }}

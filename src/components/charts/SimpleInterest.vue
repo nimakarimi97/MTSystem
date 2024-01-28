@@ -89,6 +89,10 @@ function decrementInput(input) {
       {{ t("calculator.title.simple") }}
     </h3>
 
+    <p class="w-60%">
+      {{ t("calculator.simpleDescription") }}
+    </p>
+
     <div my-4 flex-center-col gap-7 md:flex-row>
       <div grid gap-2 text-left>
         <span v-if="chartInputsData.capital < 2000" mb-2 text-xs style="color: red">
