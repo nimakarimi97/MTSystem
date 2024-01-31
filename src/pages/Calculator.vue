@@ -32,7 +32,7 @@ watchEffect(() => {
         </p>
       </div> -->
 
-      <div class="md-w-60%">
+      <div class="md-w-55%">
         <p>
           {{ t("calculator.superRisk.title.part1") }}
           <span primary-color class="fw-bold">{{
