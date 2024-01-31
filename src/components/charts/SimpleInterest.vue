@@ -190,7 +190,7 @@ function decrementInput(input) {
       </p>
     </div>
 
-    <BarChart class="BarChart max-w-3xl md:w90%" v-bind="barChartProps" />
+    <BarChart class="BarChart max-w-3xl md:w60%" v-bind="barChartProps" />
   </div>
 </template>
 
