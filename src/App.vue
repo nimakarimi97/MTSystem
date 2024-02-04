@@ -5,7 +5,7 @@ import { scrollToComponent } from '~/composables/scrollToComponent'
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
-  title: 'Fx Trading',
+  title: 'MTSystem',
   meta: [{ name: 'description', content: 'Mark Trading System' }],
   link: [
     {
