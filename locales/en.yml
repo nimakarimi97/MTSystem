@@ -101,11 +101,11 @@ vps:
       desc: (automatic subscription every month)
     c2:
       title: QUARTERLY
-      price: €50 + VAT
+      price: €55 + VAT
       desc: (automatic subscription every three months)
     c3:
       title: ANNUAL
-      price: €180 + VAT
+      price: €190 + VAT
       desc: (automatic subscription every 12 months)
 
 

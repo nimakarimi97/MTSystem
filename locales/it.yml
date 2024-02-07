@@ -43,7 +43,7 @@ who:
 
 fx:
   title: Risultati Certificati
-  description: Conto MT da 10.000€ a 19.148€ generando in automatico 9.148€ di profitto netto.
+  description: Conto MT da 10.000€ a 19.148€ generando in automatico 9.148€ di profitto netto
   body1: Percentuali dal Myfxbook
   body2: Profitto dall'MT4 in Euro
   description2: Conto MT da 4.500€ a 7.518€ generando in automatico 7.518€ di profitto netto
@@ -101,11 +101,11 @@ vps:
       desc: (abbonamento automatico ogni mese)
     c2:
       title: TRIMESTRALE
-      price: €50 + iva
+      price: €55 + iva
       desc: (abbonamento automatico ogni tre mesi)
     c3:
       title: ANNUALE
-      price: €180 + iva
+      price: €190 + iva
       desc: (abbonamento automatico ogni 12 mesi)
 
 

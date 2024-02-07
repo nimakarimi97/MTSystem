@@ -23,17 +23,9 @@ const { t } = useI18n()
     </div>
 
     <div class="flex-center-col lg:flex-row" gap-5 px-8>
-      <div
-        v-for="i in 3"
-        :key="i"
-        class="card flex-center-col gap-6"
-        
-        
-        
-        max-w-80 border-2 border-amber-6 md:max-w-180 
-      >
+      <div v-for="i in 3" :key="i" class="card flex-center-col gap-6" max-w-80 border-2 border-amber-6 md:max-w-180>
         <h4>{{ t(`vps.cards.c${i}.title`) }}</h4>
-        <p>{{ t(`vps.cards.c${i}.price`) }}</p>
+        <h5>{{ t(`vps.cards.c${i}.price`) }}</h5>
         <p>{{ t(`vps.cards.c${i}.desc`) }}</p>
 
         <button class="btn">
