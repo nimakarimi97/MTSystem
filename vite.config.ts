@@ -104,8 +104,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['safari-pinned-tab.svg'],
       manifest: {
-        name: 'MarkFx',
-        short_name: 'MarkFx',
+        name: 'MTSystemTrading',
+        short_name: 'MTSystem',
         theme_color: '#ffffff',
         icons: [
           {
@@ -118,11 +118,23 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
           },
+          // {
+          //   src: '/pwa-512x512.png',
+          //   sizes: '512x512',
+          //   type: 'image/png',
+          //   purpose: 'any maskable',
+          // },
           {
-            src: '/pwa-512x512.png',
+            src: '/pwa-maskable-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+          {
+            src: '/pwa-maskable-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable',
+            purpose: 'maskable',
           },
         ],
       },
