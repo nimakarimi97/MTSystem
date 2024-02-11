@@ -16,10 +16,15 @@ useHead({
   ],
 })
 
+const navbarHeight = 100 // Height of the navbar in pixels
+
 onMounted(() => {
   if (window.location.hash) {
     const section = window.location.hash.substring(1)
-    scrollToComponent(section, 0)
+
+    setTimeout(() => {
+      scrollToComponent(section, navbarHeight)
+    }, 0)
   }
 })
 </script>
