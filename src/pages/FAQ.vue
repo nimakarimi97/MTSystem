@@ -19,7 +19,7 @@ function closeOtherQuestions() {
     activeAnswerEl.classList.remove('active')
 }
 
-function toggleItem($event, index) {
+function toggleItem($event ) {
   closeOtherQuestions()
 
   const el = $event.target
@@ -40,7 +40,7 @@ const show = ref(true)
       v-for="(item, index) in faqItems"
       :key="index"
       class="card"
-      @click="toggleItem($event, index)"
+      @click="toggleItem($event)"
     >
       <div class="question">
         {{ item.question }}
