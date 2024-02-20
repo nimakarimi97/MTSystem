@@ -130,12 +130,13 @@ nav.navbar-desktop {
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease;
+  will-change: auto;
 }
 
 nav.navbar-desktop.scrolled {
   padding: 0.2rem 1rem 0.1rem;
-  transition: all 0.5s ease-in-out;
+  transition: padding 0.5s ease-in-out;
 }
 
 .navbar-desktop .navbar-brand {

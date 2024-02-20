@@ -13,7 +13,7 @@ async function toggleLocales() {
 </script>
 
 <template>
-  <a icon-btn :title="t('button.toggle_langs')" @click="toggleLocales()">
+  <a class="cursor-pointer select-none opacity-80 hover:opacity-100" :title="t('button.toggle_langs')" @click="toggleLocales()">
     <svg
       v-if="locale === 'en'"
       xmlns="http://www.w3.org/2000/svg"
