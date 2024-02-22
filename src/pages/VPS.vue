@@ -1,5 +1,11 @@
 <script setup>
 const { t } = useI18n()
+
+const links = [
+  'https://buy.stripe.com/bIY6ou4y38gUaze288',
+  'https://buy.stripe.com/bIYaEK2pV0Osaze9AB',
+  'https://buy.stripe.com/bIY5kq4y39kYbDibIK',
+]
 </script>
 
 <template>
@@ -28,9 +34,9 @@ const { t } = useI18n()
         <h5>{{ t(`vps.cards.c${i}.price`) }}</h5>
         <p>{{ t(`vps.cards.c${i}.desc`) }}</p>
 
-        <button class="btn">
+        <a :href="links[i - 1]" target="_blank" class="btn">
           {{ t("vps.cards.button") }}
-        </button>
+        </a>
       </div>
     </div>
   </div>
