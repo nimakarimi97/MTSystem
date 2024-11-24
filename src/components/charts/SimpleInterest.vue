@@ -261,9 +261,7 @@ function decrementInput(input) {
   font-size: 11px;
   text-wrap: nowrap;
 }
-</style>
 
-<style scoped>
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;

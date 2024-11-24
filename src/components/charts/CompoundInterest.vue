@@ -53,6 +53,24 @@ watchEffect(() => {
   monthsToShow.value = months.value.slice(0, chartInputsData.value.month)
 })
 
+function incrementInput(input) {
+  if (input === 'setting')
+    chartInputsData.value[input] += 0.01
+  else if (input === 'capital')
+    chartInputsData.value[input]++
+  else if (chartInputsData.value.month < 12)
+    chartInputsData.value[input]++
+}
+
+function decrementInput(input) {
+  if (input === 'setting')
+    chartInputsData.value[input] -= 0.01
+  else if (input === 'capital' && chartInputsData.value.capital > 2000)
+    chartInputsData.value[input]--
+  else if (input === 'month' && chartInputsData.value.month > 0)
+    chartInputsData.value[input]--
+}
+
 const chartData = computed(() => ({
   labels: monthsToShow.value,
   datasets: [
@@ -90,12 +108,22 @@ const { barChartProps } = useBarChart({
         </span>
         <span v-else>{{ t("calculator.chart.capital") }}</span>
 
-        <Input
-          v-model="chartInputsData.capital" :value="chartInputsData.capital" type="number" inputmode="decimal"
-          :class="{
-            'border-red-7': chartInputsData.capital < 2000,
-          }" :placeholder="t('calculator.chart.capital')" min="2000" class="show-arrows"
-        />
+        <div class="number-input">
+          <Input
+            v-model="chartInputsData.capital" :value="chartInputsData.capital" type="number" inputmode="decimal"
+            :class="{ 'border-red-7': chartInputsData.capital < 2000 }" :placeholder="t('calculator.chart.capital')"
+            min="2000" class="show-arrows"
+          />
+
+          <div class="spinners">
+            <button class="spinner increment" @click="incrementInput('capital')">
+              &#9650;
+            </button>
+            <button class="spinner decrement" @click="decrementInput('capital')">
+              &#9660;
+            </button>
+          </div>
+        </div>
       </div>
 
       <div grid gap-2 text-left>
@@ -103,16 +131,27 @@ const { barChartProps } = useBarChart({
         <Input
           v-model="chartInputsData.setting" :value="chartInputsData.setting.slice(-1)" type="number"
           inputmode="decimal" :placeholder="t('calculator.chart.setting')" step="0.01" min="0" class="setting-input"
-          lang="en-US"
+          lang="en-US" disabled
         />
       </div>
 
-      <div grid gap-2 text-left class="w-100%">
-        <span>{{ t("calculator.chart.month") }}</span>
-        <Input
-          v-model="chartInputsData.month" :value="chartInputsData.month" type="number" inputmode="decimal"
-          :placeholder="t('calculator.chart.month')" max="12" min="1" md:w-50 class="show-arrows"
-        />
+      <div class="number-input">
+        <div grid gap-2 text-left class="w-100%">
+          <span>{{ t("calculator.chart.month") }}</span>
+          <Input
+            v-model="chartInputsData.month" :value="chartInputsData.month" type="number" inputmode="decimal"
+            :placeholder="t('calculator.chart.month')" max="12" min="1" md:w-50 class="show-arrows"
+          />
+
+          <div class="spinners month">
+            <button class="spinner increment" @click="incrementInput('month')">
+              &#9650;
+            </button>
+            <button class="spinner decrement" @click="decrementInput('month')">
+              &#9660;
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -145,27 +184,5 @@ const { barChartProps } = useBarChart({
 
 #bar-chart {
   min-height: 300px !important;
-}
-
-// .setting-input {
-//   input[type="number"]::-webkit-inner-spin-button,
-//   input[type="number"]::-webkit-outer-spin-button {
-//     opacity: 0 !important;
-//     -webkit-appearance: none !important;
-//     margin: 0 !important;
-//   }
-// }
-</style>
-
-<style scoped lang="scss">
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  opacity: 1;
-}
-
-.setting-input::-webkit-inner-spin-button,
-.setting-input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 </style>
