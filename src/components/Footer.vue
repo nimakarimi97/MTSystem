@@ -27,7 +27,19 @@ const { t } = useI18n()
     </div>
 
     <div flex items-center justify-center gap-1>
-      <span mr-1 italic text-gray> Developed by Nima Karimi </span>
+      <span mr-1 italic text-gray> Developed by 
+        <a
+          underline
+          underline-sky-5
+          icon-btn 
+          rel="noreferrer"
+          href="https://nimakarimi.me"
+          target="_blank"
+          title="GitHub"
+        >
+          Nima Karimi
+        </a>
+      </span>
 
       <a
         text-xl
